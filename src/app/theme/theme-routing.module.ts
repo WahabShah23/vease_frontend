@@ -14,6 +14,10 @@ const routes: Routes = [
                 'loadChildren': '.\/pages\/default\/index\/index.module#IndexModule',
             },
             {
+                'path': 'services',
+                'loadChildren': '.\/pages\/default\/services\/services.module#ServiceModule',
+            },
+            {
                 'path': '',
                 'redirectTo': 'index',
                 'pathMatch': 'full',
