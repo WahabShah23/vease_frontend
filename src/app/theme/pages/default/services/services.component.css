@@ -224,6 +224,7 @@
 {
     margin-top: -2px;
     margin-left: 4px;
+    float: right;
 }
 a.btn-primary
 {
@@ -239,4 +240,15 @@ a.btn-primary
 }
 agm-map {
     height: 600px;
+}
+
+.servicesListForm .services-categories
+{
+    padding-left: 48px;
+}
+
+
+.servicesListForm .m-widget3__item
+{
+    margin-bottom: 25px;
 }

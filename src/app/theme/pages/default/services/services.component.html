@@ -13,8 +13,8 @@
 
 
 			<div class="col-md-1 ">
-					<a (click)="doit()" id="adjustRadius"  style="margin-top:  13px;display:  inline-block; cursor:pointer;">
-							<i class="fa fa-map-marker" style="font-size: 1.45rem;"></i>
+					<a (click)="adjustRadiusMap()" id="adjustRadius"  style="margin-top:  10px;display:  inline-block; cursor:pointer;">
+							<i class="fa fa-map-marker" style="font-size: 2rem;color: rgba(255,0,0,0.8);"></i>
 						</a>
 			</div>
 
@@ -64,7 +64,7 @@
 			</div>
 			
 		</div>
-		<button  class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGrsidView}" ></i> {{viewName}} </button>
+		<button  class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
 
 	</div>
 </div>
@@ -98,7 +98,7 @@
 							 <p   class="personappartmentno"><i   class="fa fa-clock-o"></i> 6:00 - 23:00</p>
 							 <p   class="personbuildingname"><i   class="fa fa-money"></i> $60 - $200</p>
 							 <p   class="personaddress"><i   class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-							  <a href="javascript:;" class="btn btn-default chatServiceButton"><i class="fa fa-envelope"></i> Message</a>
+							  <a href="javascript:;" class="btn btn-default chatServiceButton"><i class="la la-comments"></i> Message</a>
 							 
 					  </div>
 					  <div   class="card-right col-lg-9" >
@@ -190,110 +190,6 @@
 												
 								</div>
 
-							  <!--div   class="col-sm-4">
-									  <div   class="m-widget26">
-											 
-											  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												  <canvas   id="m_chart_quick_stats_1" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-											  </div>
-											  <div   class="m-widget26__number">
-												  690
-												  <small  >
-													  All Orders
-												  </small>
-											  </div>
-										  </div>
-
-
-							  </div>
-
-							  <div   class="col-sm-4">
-									  <div   class="m-widget26">
-											 
-											  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												  <canvas   id="m_chart_quick_stats_2" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-											  </div>
-											  <div   class="m-widget26__number">
-												  690
-												  <small  >
-													  All Orders
-												  </small>
-											  </div>
-										  </div>
-
-
-							  </div>
-
-							  <div   class="col-sm-4">
-									  <div   class="m-widget26">
-											  
-											  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												  <canvas   id="m_chart_quick_stats_3" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-											  </div>
-											  <div   class="m-widget26__number">
-												  690
-												  <small  >
-													  All Orders
-												  </small>
-											  </div>
-										  </div>
-
-
-							  </div>
-
-							  <div  class="col-sm-4">
-								  <div  class="m-widget26">
-										  
-										  <div  class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-											  <canvas   id="m_chart_quick_stats_4" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-										  </div>
-										  <div   class="m-widget26__number">
-											  690
-											  <small  >
-												  All Orders
-											  </small>
-										  </div>
-									  </div>
-
-
-						  </div>
-
-						  <div   class="col-sm-4">
-							  <div   class="m-widget26">
-									  
-									  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-										  <canvas   id="m_chart_quick_stats_5" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-									  </div>
-									  <div   class="m-widget26__number">
-										  690
-										  <small  >
-											  All Orders
-										  </small>
-									  </div>
-								  </div>
-
-
-					  </div>
-					  <div   class="col-sm-4">
-						  <div   class="m-widget26">
-								  
-								  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-									  <canvas   id="m_chart_quick_stats_6" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-								  </div>
-								  <div   class="m-widget26__number">
-									  690
-									  <small  >
-										  All Orders
-									  </small>
-								  </div>
-							  </div>
-
-
-				  </div-->
-						   
-		  
-							
-							
 							
 						</div>   
 						
@@ -326,7 +222,7 @@
 						<p   class="personappartmentno"><i   class="fa fa-clock-o"></i> 6:00 - 23:00</p>
 						<p   class="personbuildingname"><i   class="fa fa-money"></i> $100 - $200</p>
 								 <p   class="personaddress"><i   class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-								 <a href="javascript:;" class="btn btn-default chatServiceButton"><i class="fa fa-envelope"></i> Message</a>
+								 <a href="javascript:;" class="btn btn-default chatServiceButton"><i class="la la-comments"></i> Message</a>
 								 
 						  </div>
 						  <div   class="card-right col-lg-9">
@@ -417,122 +313,100 @@
 							<p   class="personappartmentno"><i   class="fa fa-clock-o"></i> 9:00 - 18:00</p>
 							<p   class="personbuildingname"><i   class="fa fa-money"></i> $120 - $160</p>
 									 <p   class="personaddress"><i   class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-									  <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-primary bookServiceButton">Book Service</a>
+									 <a class="btn btn-default chatServiceButton" href="javascript:;" ><i class="la la-comments"></i> Message</a>
 									 
 							  </div>
-							  <div   class="card-right col-lg-9">
+							  <div  class="card-right col-lg-9">
 									  <h6   class="text-muted pull-left"><i   class="fa fa-cog"></i> Service Details</h6>
 									  <button   class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
 									  <div   class="clearfix"></div>
-								<div   class="row">
-									
-		
-									  <div   class="col-sm-4">
-											  <div   class="m-widget26">
-													 
-													  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-														  <canvas   id="m_chart_quick_stats_13" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-													  </div>
-													  <div   class="m-widget26__number">
-														  690
-														  <small  >
-															  All Orders
-														  </small>
-													  </div>
-												  </div>
-		
-		
-									  </div>
-		
-									  <div   class="col-sm-4">
-											  <div   class="m-widget26">
-													 
-													  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-														  <canvas   id="m_chart_quick_stats_14" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-													  </div>
-													  <div   class="m-widget26__number">
-														  690
-														  <small  >
-															  All Orders
-														  </small>
-													  </div>
-												  </div>
-		
-		
-									  </div>
-		
-									  <div   class="col-sm-4">
-											  <div   class="m-widget26">
-													  
-													  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-														  <canvas   id="m_chart_quick_stats_15" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-													  </div>
-													  <div   class="m-widget26__number">
-														  690
-														  <small  >
-															  All Orders
-														  </small>
-													  </div>
-												  </div>
-		
-		
-									  </div>
-		
-									  <div  class="col-sm-4">
-										  <div  class="m-widget26">
-												  
-												  <div  class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-													  <canvas   id="m_chart_quick_stats_16" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-												  </div>
-												  <div   class="m-widget26__number">
-													  690
-													  <small  >
-														  All Orders
-													  </small>
-												  </div>
-											  </div>
-		
-		
-								  </div>
-		
-								  <div   class="col-sm-4">
-									  <div   class="m-widget26">
-											  
-											  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												  <canvas   id="m_chart_quick_stats_17" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-											  </div>
-											  <div   class="m-widget26__number">
-												  690
-												  <small  >
-													  All Orders
-												  </small>
-											  </div>
-										  </div>
-		
-		
-							  </div>
-							  <div   class="col-sm-4">
-								  <div   class="m-widget26">
-										  
-										  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-											  <canvas   id="m_chart_quick_stats_18" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-										  </div>
-										  <div   class="m-widget26__number">
-											  690
-											  <small  >
-												  All Orders
-											  </small>
-										  </div>
-									  </div>
-		
-		
-						  </div>
-								   
-				  
-									
-									
-									
-								</div>   
+									  <div  class="row services-categories">
+											<div class="col-md-12 category-list">
+												<h6 class="service-heading">Room Cleaning</h6>
+												<div class="row service-item">
+													<div class="col-md-6">
+															One Room With Bath
+													</div>
+													<div class="col-md-3">
+															<span class="m--font-success">
+																	$120.00
+															</span>
+													</div>
+													<div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+													</div>
+													<div class="col-md-12">
+														<hr>
+													</div>
+				
+												</div>
+												
+				
+												<div class="row service-item">
+														<div class="col-md-6">
+																Multiple Rooms With Baths
+														</div>
+														<div class="col-md-3">
+																<span class="m--font-success">
+																		$260
+																</span>
+														</div>
+														<div class="col-md-3">
+																<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div>
+														<div class="col-md-12">
+															<hr>
+														</div>
+					
+													</div>		
+															
+											</div>
+				
+				
+				
+											<div class="col-md-12 category-list">
+													<h6 class="service-heading">Office Cleaning</h6>
+													<div class="row service-item">
+														<div class="col-md-6">
+															One Room Office with Bath
+														</div>
+														<div class="col-md-3">
+																<span class="m--font-success">
+																		$500.00
+																</span>
+														</div>
+														<div class="col-md-3">
+																<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div>
+														<div class="col-md-12">
+															<hr>
+														</div>
+					
+													</div>
+													
+					
+													<div class="row service-item">
+															<div class="col-md-6">
+																Multi Room Office with Baths
+															</div>
+															<div class="col-md-3">
+																	<span class="m--font-success">
+																			$800.00
+																	</span>
+															</div>
+															<div class="col-md-3">
+																	<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+															</div>
+															<div class="col-md-12">
+																<hr>
+															</div>
+						
+														</div>		
+																
+												</div>
+				
+											
+										</div>
 								
 							  </div>
 							</div>
@@ -562,14 +436,69 @@
 								<p   class="personappartmentno"><i   class="fa fa-clock-o"></i> 6:00 - 23:00</p>
 								<p   class="personbuildingname"><i   class="fa fa-money"></i> $60 - $200</p>
 										 <p   class="personaddress"><i   class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-										  <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-primary bookServiceButton">Book Service</a>
+										 <a class="btn btn-default chatServiceButton" href="javascript:;" ><i class="la la-comments"></i> Message</a>
 										 
 								  </div>
 								  <div   class="card-right col-lg-9">
 										  <h6   class="text-muted pull-left"><i   class="fa fa-cog"></i> Service Details</h6>
 										  <button   class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
 										  <div   class="clearfix"></div>
-										  
+										  <div class="row services-categories">
+												<div class="col-md-12 category-list">
+													<h6 class="service-heading">Checkup Services</h6>
+													<div class="row service-item">
+															<div class="col-md-6">
+																Fever
+															</div>
+															<div class="col-md-3">
+																	<span class="m--font-success">
+																			$60.50
+																	</span>
+															</div>
+															<div class="col-md-3">
+																	<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+															</div>
+															<div class="col-md-12">
+																<hr>
+															</div>
+						
+														</div>
+														<div class="row service-item">
+																<div class="col-md-6">
+																		Dental
+																</div>
+																<div class="col-md-3">
+																		<span class="m--font-success">
+																				$100.00
+																		</span>
+																</div>
+																<div class="col-md-3">
+																		<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																</div>
+																<div class="col-md-12">
+																	<hr>
+																</div>
+							
+															</div>
+															<div class="row service-item">
+																	<div class="col-md-6">
+																			Overall Body
+																	</div>
+																	<div class="col-md-3">
+																			<span class="m--font-success">
+																					$200
+																			</span>
+																	</div>
+																	<div class="col-md-3">
+																			<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																	</div>
+																	<div class="col-md-12">
+																		<hr>
+																	</div>
+								
+																</div>
+												</div>
+											</div>
 									  
 									
 								  </div>
@@ -577,7 +506,7 @@
 								</div>
 						</div>
 </div>
-<div class="row justify-content-md-center" style="padding: 0px 10px;"   [style.display]="!isGridView ? 'flex' : 'none'">
+<div class="row justify-content-md-center servicesListForm" style="padding: 0px 10px;"   [style.display]="!isGridView ? 'flex' : 'none'">
 	
 	<div class="m-portlet m-portlet--full-height">
 		
@@ -745,10 +674,10 @@
 									</span>
 
 								</div>
-								<a class="btn btn-default chatServiceButton" href="javascript:;" ng-reflect-href="javascript:;"><i class="fa fa-envelope"></i> Message</a>
+								<a class="btn btn-default chatServiceButton" href="javascript:;" ><i class="la la-comments"></i> Message</a>
 							</div>
 							<div class="m-widget3__body">
-									<div class="row services-categories" style="padding-left: 48px;">
+									<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Electronic Repairs</h6>
 												<div class="row service-item">
@@ -871,10 +800,10 @@
 										</span>
 	
 									</div>
-									<a class="btn btn-default chatServiceButton" href="javascript:;" ng-reflect-href="javascript:;"><i class="fa fa-envelope"></i> Message</a>
+								<a class="btn btn-default chatServiceButton" href="javascript:;" ><i class="la la-comments"></i> Message</a>
 								</div>
 								<div class="m-widget3__body">
-										<div class="row services-categories" style="padding-left: 48px;">
+										<div class="row services-categories" >
 												<div class="col-md-12 category-list">
 													<h6 class="service-heading">Hair</h6>
 													<div class="row service-item">
@@ -962,12 +891,65 @@
 											</span>
 		
 										</div>
-										<a class="btn btn-primary bookServiceButton" data-target="#addBookingModal" data-toggle="modal">Book Service</a>
+									<a class="btn btn-default chatServiceButton" href="javascript:;" ><i class="la la-comments"></i> Message</a>
 									</div>
 									<div class="m-widget3__body">
-										<p class="m-widget3__text">
-											Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
-										</p>
+											<div class="row services-categories">
+													<div class="col-md-12 category-list">
+														<h6 class="service-heading">Checkup Services</h6>
+														<div class="row service-item">
+																<div class="col-md-6">
+																	Fever
+																</div>
+																<div class="col-md-3">
+																		<span class="m--font-success">
+																				$60.50
+																		</span>
+																</div>
+																<div class="col-md-3">
+																		<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																</div>
+																<div class="col-md-12">
+																	<hr>
+																</div>
+							
+															</div>
+															<div class="row service-item">
+																	<div class="col-md-6">
+																			Dental
+																	</div>
+																	<div class="col-md-3">
+																			<span class="m--font-success">
+																					$100.00
+																			</span>
+																	</div>
+																	<div class="col-md-3">
+																			<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																	</div>
+																	<div class="col-md-12">
+																		<hr>
+																	</div>
+								
+																</div>
+																<div class="row service-item">
+																		<div class="col-md-6">
+																				Overall Body
+																		</div>
+																		<div class="col-md-3">
+																				<span class="m--font-success">
+																						$200
+																				</span>
+																		</div>
+																		<div class="col-md-3">
+																				<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																		</div>
+																		<div class="col-md-12">
+																			<hr>
+																		</div>
+									
+																	</div>
+													</div>
+												</div>
 									</div>
 								</div>
 								<div class="m-widget3__item">
@@ -998,12 +980,96 @@
 												</span>
 			
 											</div>
-											<a class="btn btn-primary bookServiceButton" data-target="#addBookingModal" data-toggle="modal">Book Service</a>
+											<a class="btn btn-default chatServiceButton" href="javascript:;" ><i class="la la-comments"></i> Message</a>
 										</div>
 										<div class="m-widget3__body">
-											<p class="m-widget3__text">
-												Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
-											</p>
+												<div class="row services-categories">
+														<div class="col-md-12 category-list">
+															<h6 class="service-heading">Room Cleaning</h6>
+															<div class="row service-item">
+																<div class="col-md-6">
+																		One Room With Bath
+																</div>
+																<div class="col-md-3">
+																		<span class="m--font-success">
+																				$120.00
+																		</span>
+																</div>
+																<div class="col-md-3">
+																		<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																</div>
+																<div class="col-md-12">
+																	<hr>
+																</div>
+							
+															</div>
+															
+							
+															<div class="row service-item">
+																	<div class="col-md-6">
+																			Multiple Rooms With Baths
+																	</div>
+																	<div class="col-md-3">
+																			<span class="m--font-success">
+																					$260
+																			</span>
+																	</div>
+																	<div class="col-md-3">
+																			<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+																	</div>
+																	<div class="col-md-12">
+																		<hr>
+																	</div>
+								
+																</div>		
+																		
+														</div>
+							
+							
+							
+														<div class="col-md-12 category-list">
+																<h6 class="service-heading">Office Cleaning</h6>
+																<div class="row service-item">
+																	<div class="col-md-6">
+																		One Room Office with Bath
+																	</div>
+																	<div class="col-md-3">
+																			<span class="m--font-success">
+																					$500.00
+																			</span>
+																	</div>
+																	<div class="col-md-3">
+																			<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+																	</div>
+																	<div class="col-md-12">
+																		<hr>
+																	</div>
+								
+																</div>
+																
+								
+																<div class="row service-item">
+																		<div class="col-md-6">
+																			Multi Room Office with Baths
+																		</div>
+																		<div class="col-md-3">
+																				<span class="m--font-success">
+																						$800.00
+																				</span>
+																		</div>
+																		<div class="col-md-3">
+																				<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+																		</div>
+																		<div class="col-md-12">
+																			<hr>
+																		</div>
+									
+																	</div>		
+																			
+															</div>
+							
+														
+													</div>
 										</div>
 									</div>
 					</div>
@@ -1291,6 +1357,9 @@
 							</agm-map>
 					</div>
 					<div class="modal-footer">
+						<button class="btn btn-primary" data-dismiss="modal" type="button">
+							Save Changes
+						</button>
 						<button class="btn btn-secondary" data-dismiss="modal" type="button">
 							Close
 						</button>
