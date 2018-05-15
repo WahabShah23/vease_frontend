@@ -1,10 +1,68 @@
 <!-- BEGIN: Subheader -->
 <div class="m-subheader" appunwraptag="">
 	<div class="d-flex align-items-center">
-		<div class="mr-auto">
-			<h3 class="m-subheader__title">
-				Services
-			</h3>
+		<div class="mr-auto row">
+
+			<div class="col-md-2">
+					<h3 class="m-subheader__title" style="display:inline-block">
+							Services
+						</h3>
+						
+						
+			</div>
+
+
+			<div class="col-md-1 ">
+					<a (click)="doit()" id="adjustRadius"  style="margin-top:  13px;display:  inline-block; cursor:pointer;">
+							<i class="fa fa-map-marker" style="font-size: 1.45rem;"></i>
+						</a>
+			</div>
+
+			<div class="col-md-3">
+					<div class="form-group m-form__group" style="display:inline-block ; margin-left:8px;">
+							<label>
+								Service Type
+							</label>
+							<select class="form-control m-input">
+								<option>
+									All
+								</option>
+								<option>
+									Hair
+								</option>
+								
+								<option>
+									Health
+								</option>
+								<option>
+									Shopping
+								</option>
+								<option>
+									Electronics
+								</option>
+								<option>
+									Cleaning
+								</option>
+							</select>
+						</div>
+				
+			</div>
+
+			<div class="col-md-4">
+					<div class="form-group m-form__group" style="display:inline-block; margin-left:8px;">
+							<label>
+								Search Shop/ Business:
+							</label>
+							<input class="form-control" type="text">
+					</div>
+
+			</div>
+
+			<div class="col-md-2">
+				<button class="btn btn-primary" style="margin-top: 23px;margin-left: 8px;">Search</button>
+
+			</div>
+			
 		</div>
 		<button  class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGrsidView}" ></i> {{viewName}} </button>
 
@@ -29,7 +87,7 @@
 						<div   class="row onepersonrow">
 						 
 						  <div   class="col-md-12">
-								<img   class="personimage" src="./assets/demo/demo3/media/img/logo/logo-citzen.png">
+								<img   class="personimage" src="./assets/demo/demo3/media/img/electric.png">
 								<p   class="personname">Jaz Electric</p>
 								<p   class="persontype">Electronics</p>
 						  </div> 
@@ -40,17 +98,99 @@
 							 <p   class="personappartmentno"><i   class="fa fa-clock-o"></i> 6:00 - 23:00</p>
 							 <p   class="personbuildingname"><i   class="fa fa-money"></i> $60 - $200</p>
 							 <p   class="personaddress"><i   class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-							  <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-primary bookServiceButton">Book Service</a>
+							  <a href="javascript:;" class="btn btn-default chatServiceButton"><i class="fa fa-envelope"></i> Message</a>
 							 
 					  </div>
 					  <div   class="card-right col-lg-9" >
 							  <h6   class="text-muted pull-left"><i   class="fa fa-cog"></i> Service Details</h6>
 							  <button   class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
 							  <div   class="clearfix"></div>
-						<div   class="row">
-							
+						<div  class="row services-categories">
+							<div class="col-md-12 category-list">
+								<h6 class="service-heading">Electronic Repairs</h6>
+								<div class="row service-item">
+									<div class="col-md-6">
+											Single Item Repair
+									</div>
+									<div class="col-md-3">
+											<span class="m--font-success">
+													$120.00
+											</span>
+									</div>
+									<div class="col-md-3">
+											<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+									</div>
+									<div class="col-md-12">
+										<hr>
+									</div>
 
-							  <div   class="col-sm-4">
+								</div>
+								
+
+								<div class="row service-item">
+										<div class="col-md-6">
+												Multiple Item Repair
+										</div>
+										<div class="col-md-3">
+												<span class="m--font-success">
+														$60.00
+												</span>
+										</div>
+										<div class="col-md-3">
+												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+										</div>
+										<div class="col-md-12">
+											<hr>
+										</div>
+	
+									</div>		
+											
+							</div>
+
+
+
+							<div class="col-md-12 category-list">
+									<h6 class="service-heading">Buy Electronic</h6>
+									<div class="row service-item">
+										<div class="col-md-6">
+											Refrigerator
+										</div>
+										<div class="col-md-3">
+												<span class="m--font-success">
+														$500.00
+												</span>
+										</div>
+										<div class="col-md-3">
+												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+										</div>
+										<div class="col-md-12">
+											<hr>
+										</div>
+	
+									</div>
+									
+	
+									<div class="row service-item">
+											<div class="col-md-6">
+												Air Conditioner
+											</div>
+											<div class="col-md-3">
+													<span class="m--font-success">
+															$200.00
+													</span>
+											</div>
+											<div class="col-md-3">
+													<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+											</div>
+											<div class="col-md-12">
+												<hr>
+											</div>
+		
+										</div>		
+												
+								</div>
+
+							  <!--div   class="col-sm-4">
 									  <div   class="m-widget26">
 											 
 											  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
@@ -149,7 +289,7 @@
 							  </div>
 
 
-				  </div>
+				  </div-->
 						   
 		  
 							
@@ -175,7 +315,7 @@
 							<div   class="row onepersonrow">
 							 
 							  <div   class="col-md-12">
-									<img   class="personimage" src="./assets/demo/demo3/media/img/logo/logo1.png">
+									<img   class="personimage" src="./assets/demo/demo3/media/img/hair.png">
 									<p   class="personname">Mont Hair</p>
 									<p   class="persontype">Hair Saloon</p>
 							  </div> 
@@ -186,122 +326,69 @@
 						<p   class="personappartmentno"><i   class="fa fa-clock-o"></i> 6:00 - 23:00</p>
 						<p   class="personbuildingname"><i   class="fa fa-money"></i> $100 - $200</p>
 								 <p   class="personaddress"><i   class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-								  <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-primary bookServiceButton">Book Service</a>
+								 <a href="javascript:;" class="btn btn-default chatServiceButton"><i class="fa fa-envelope"></i> Message</a>
 								 
 						  </div>
 						  <div   class="card-right col-lg-9">
 								  <h6   class="text-muted pull-left"><i   class="fa fa-cog"></i> Service Details</h6>
 								  <button   class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
 								  <div   class="clearfix"></div>
-							<div   class="row">
-								
-	
-								  <div   class="col-sm-4">
-										  <div   class="m-widget26">
-												 
-												  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-													  <canvas   id="m_chart_quick_stats_7" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-												  </div>
-												  <div   class="m-widget26__number">
-													  550
-													  <small  >
-														  All Orders
-													  </small>
-												  </div>
-											  </div>
-	
-	
-								  </div>
-	
-								  <div   class="col-sm-4">
-										  <div   class="m-widget26">
-												 
-												  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-													  <canvas   id="m_chart_quick_stats_8" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-												  </div>
-												  <div   class="m-widget26__number">
-													  700
-													  <small  >
-														  All Orders
-													  </small>
-												  </div>
-											  </div>
-	
-	
-								  </div>
-	
-								  <div   class="col-sm-4">
-										  <div   class="m-widget26">
-												  
-												  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-													  <canvas   id="m_chart_quick_stats_9" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-												  </div>
-												  <div   class="m-widget26__number">
-													  800
-													  <small  >
-														  All Orders
-													  </small>
-												  </div>
-											  </div>
-	
-	
-								  </div>
-	
-								  <div  class="col-sm-4">
-									  <div  class="m-widget26">
-											  
-											  <div  class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												  <canvas   id="m_chart_quick_stats_10" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-											  </div>
-											  <div   class="m-widget26__number">
-												  200
-												  <small  >
-													  All Orders
-												  </small>
-											  </div>
-										  </div>
-	
-	
-							  </div>
-	
-							  <div   class="col-sm-4">
-								  <div   class="m-widget26">
-										  
-										  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-											  <canvas   id="m_chart_quick_stats_11" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-										  </div>
-										  <div   class="m-widget26__number">
-											  900
-											  <small  >
-												  All Orders
-											  </small>
-										  </div>
-									  </div>
-	
-	
-						  </div>
-						  <div   class="col-sm-4">
-							  <div   class="m-widget26">
-									  
-									  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-										  <canvas   id="m_chart_quick_stats_12" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-									  </div>
-									  <div   class="m-widget26__number">
-										  440
-										  <small  >
-											  All Orders
-										  </small>
-									  </div>
-								  </div>
-	
-	
-					  </div>
-							   
-			  
-								
-								
-								
-							</div>   
+								  <div  class="row services-categories">
+										<div class="col-md-12 category-list">
+											<h6 class="service-heading">Hair</h6>
+											<div class="row service-item">
+													<div class="col-md-6">
+															Hair Cutting
+													</div>
+													<div class="col-md-3">
+															<span class="m--font-success">
+																	$60.50
+															</span>
+													</div>
+													<div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+													</div>
+													<div class="col-md-12">
+														<hr>
+													</div>
+				
+												</div>
+												<div class="row service-item">
+														<div class="col-md-6">
+																Fancy Cutting
+														</div>
+														<div class="col-md-3">
+																<span class="m--font-success">
+																		$100.00
+																</span>
+														</div>
+														<div class="col-md-3">
+																<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+														</div>
+														<div class="col-md-12">
+															<hr>
+														</div>
+					
+													</div>
+													<div class="row service-item">
+															<div class="col-md-6">
+																	Head Shaving
+															</div>
+															<div class="col-md-3">
+																	<span class="m--font-success">
+																			$50
+																	</span>
+															</div>
+															<div class="col-md-3">
+																	<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+															</div>
+															<div class="col-md-12">
+																<hr>
+															</div>
+						
+														</div>
+										</div>
+									</div>  
 							
 						  </div>
 						</div>
@@ -482,115 +569,8 @@
 										  <h6   class="text-muted pull-left"><i   class="fa fa-cog"></i> Service Details</h6>
 										  <button   class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
 										  <div   class="clearfix"></div>
-									<div   class="row">
-										
-			
-										  <div   class="col-sm-4">
-												  <div   class="m-widget26">
-														 
-														  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-															  <canvas   id="m_chart_quick_stats_19" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-														  </div>
-														  <div   class="m-widget26__number">
-															  690
-															  <small  >
-																  All Orders
-															  </small>
-														  </div>
-													  </div>
-			
-			
-										  </div>
-			
-										  <div   class="col-sm-4">
-												  <div   class="m-widget26">
-														 
-														  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-															  <canvas   id="m_chart_quick_stats_20" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-														  </div>
-														  <div   class="m-widget26__number">
-															  690
-															  <small  >
-																  All Orders
-															  </small>
-														  </div>
-													  </div>
-			
-			
-										  </div>
-			
-										  <div   class="col-sm-4">
-												  <div   class="m-widget26">
-														  
-														  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-															  <canvas   id="m_chart_quick_stats_21" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-														  </div>
-														  <div   class="m-widget26__number">
-															  690
-															  <small  >
-																  All Orders
-															  </small>
-														  </div>
-													  </div>
-			
-			
-										  </div>
-			
-										  <div  class="col-sm-4">
-											  <div  class="m-widget26">
-													  
-													  <div  class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-														  <canvas   id="m_chart_quick_stats_22" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-													  </div>
-													  <div   class="m-widget26__number">
-														  690
-														  <small  >
-															  All Orders
-														  </small>
-													  </div>
-												  </div>
-			
-			
-									  </div>
-			
-									  <div   class="col-sm-4">
-										  <div   class="m-widget26">
-												  
-												  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-													  <canvas   id="m_chart_quick_stats_23" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-												  </div>
-												  <div   class="m-widget26__number">
-													  690
-													  <small  >
-														  All Orders
-													  </small>
-												  </div>
-											  </div>
-			
-			
-								  </div>
-								  <div   class="col-sm-4">
-									  <div   class="m-widget26">
-											  
-											  <div   class="m-widget26__chart" style="height:90px; width: 220px;"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												  <canvas   id="m_chart_quick_stats_24" width="220" height="110" class="chartjs-render-monitor" style="display: block; width: 220px; height: 110px;"></canvas>
-											  </div>
-											  <div   class="m-widget26__number">
-												  690
-												  <small  >
-													  All Orders
-												  </small>
-											  </div>
-										  </div>
-			
-			
-							  </div>
-									   
-					  
-										
-										
-										
-									</div>   
+										  
+									  
 									
 								  </div>
 								</div>
@@ -740,7 +720,7 @@
 						<div class="m-widget3__item">
 							<div class="m-widget3__header">
 								<div class="m-widget3__user-img">
-									<img alt="" class="m-widget3__img personimage" src="./assets/demo/demo3/media/img/logo/logo-citzen.png">
+									<img alt="" class="m-widget3__img personimage" src="./assets/demo/demo3/media/img/electric.png">
 								</div>
 								<div class="m-widget3__info">
 									<span class="m-widget3__username">
@@ -765,18 +745,107 @@
 									</span>
 
 								</div>
-								<a class="btn btn-primary bookServiceButton" data-target="#addBookingModal" data-toggle="modal">Book Service</a>
+								<a class="btn btn-default chatServiceButton" href="javascript:;" ng-reflect-href="javascript:;"><i class="fa fa-envelope"></i> Message</a>
 							</div>
 							<div class="m-widget3__body">
-								<p class="m-widget3__text">
-									Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
-								</p>
+									<div class="row services-categories" style="padding-left: 48px;">
+											<div class="col-md-12 category-list">
+												<h6 class="service-heading">Electronic Repairs</h6>
+												<div class="row service-item">
+													<div class="col-md-6">
+															Single Item Repair
+													</div>
+													<div class="col-md-3">
+															<span class="m--font-success">
+																	$120.00
+															</span>
+													</div>
+													<div class="col-md-3">
+															<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+													</div>
+													<div class="col-md-12">
+														<hr>
+													</div>
+				
+												</div>
+												
+				
+												<div class="row service-item">
+														<div class="col-md-6">
+																Multiple Item Repair
+														</div>
+														<div class="col-md-3">
+																<span class="m--font-success">
+																		$60.00
+																</span>
+														</div>
+														<div class="col-md-3">
+																<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+														</div>
+														<div class="col-md-12">
+															<hr>
+														</div>
+					
+													</div>		
+															
+											</div>
+				
+				
+				
+											<div class="col-md-12 category-list">
+													<h6 class="service-heading">Buy Electronic</h6>
+													<div class="row service-item">
+														<div class="col-md-6">
+															Refrigerator
+														</div>
+														<div class="col-md-3">
+																<span class="m--font-success">
+																		$500.00
+																</span>
+														</div>
+														<div class="col-md-3">
+																<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+														</div>
+														<div class="col-md-12">
+															<hr>
+														</div>
+					
+													</div>
+													
+					
+													<div class="row service-item">
+															<div class="col-md-6">
+																Air Conditioner
+															</div>
+															<div class="col-md-3">
+																	<span class="m--font-success">
+																			$200.00
+																	</span>
+															</div>
+															<div class="col-md-3">
+																	<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+															</div>
+															<div class="col-md-12">
+																<hr>
+															</div>
+						
+														</div>		
+																
+												</div>
+				
+											  
+										   
+						  
+											
+											
+											
+										</div>
 							</div>
 						</div>
 						<div class="m-widget3__item">
 								<div class="m-widget3__header">
 									<div class="m-widget3__user-img">
-										<img alt="" class="m-widget3__img personimage" src="./assets/demo/demo3/media/img/logo/logo1.png">
+										<img alt="" class="m-widget3__img personimage" src="./assets/demo/demo3/media/img/hair.png">
 									</div>
 									<div class="m-widget3__info">
 										<span class="m-widget3__username">
@@ -802,12 +871,65 @@
 										</span>
 	
 									</div>
-									<a class="btn btn-primary bookServiceButton" data-target="#addBookingModal" data-toggle="modal">Book Service</a>
+									<a class="btn btn-default chatServiceButton" href="javascript:;" ng-reflect-href="javascript:;"><i class="fa fa-envelope"></i> Message</a>
 								</div>
 								<div class="m-widget3__body">
-									<p class="m-widget3__text">
-										Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
-									</p>
+										<div class="row services-categories" style="padding-left: 48px;">
+												<div class="col-md-12 category-list">
+													<h6 class="service-heading">Hair</h6>
+													<div class="row service-item">
+															<div class="col-md-6">
+																	Hair Cutting
+															</div>
+															<div class="col-md-3">
+																	<span class="m--font-success">
+																			$60.50
+																	</span>
+															</div>
+															<div class="col-md-3">
+																	<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+															</div>
+															<div class="col-md-12">
+																<hr>
+															</div>
+						
+														</div>
+														<div class="row service-item">
+																<div class="col-md-6">
+																		Fancy Cutting
+																</div>
+																<div class="col-md-3">
+																		<span class="m--font-success">
+																				$100.00
+																		</span>
+																</div>
+																<div class="col-md-3">
+																		<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																</div>
+																<div class="col-md-12">
+																	<hr>
+																</div>
+							
+															</div>
+															<div class="row service-item">
+																	<div class="col-md-6">
+																			Head Shaving
+																	</div>
+																	<div class="col-md-3">
+																			<span class="m--font-success">
+																					$50
+																			</span>
+																	</div>
+																	<div class="col-md-3">
+																			<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+																	</div>
+																	<div class="col-md-12">
+																		<hr>
+																	</div>
+								
+																</div>
+												</div>
+											</div>
 								</div>
 							</div>
 							<div class="m-widget3__item">
@@ -1109,5 +1231,75 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+	<div aria-labelledby="exampleModalLabel" class="modal fade" id="radiusModal" role="dialog" tabindex="-1">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">
+							Service Provider Radius Adjustment
+						</h5>
+						<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+							<span aria-hidden="true">
+								×
+							</span>
+						</button>
+					</div>
+					<div class="modal-body">
+							<agm-map [latitude]="43.589045"  [longitude]="-79.64412" [zoom]="10" #AgmMap>
+									<agm-marker  [latitude]="43.589045" [longitude]="-79.64412">
+											<agm-info-window><strong>Category</strong>: Food<br>
+												<strong>Subcategory</strong>: Seafood<br>
+												<strong>Name</strong>: Mississaga Sea Restaraunt<br>
+												<strong>Contact</strong>: 019182010
+											</agm-info-window>
+									</agm-marker>
+		
+									<agm-marker  [latitude]="43.758931" [longitude]="-79.398645">
+											<agm-info-window><strong>Category</strong>: Games<br>
+												<strong>Subcategory</strong>: Video<br>
+												<strong>Name</strong>: North York Fun Games<br>
+												<strong>Contact</strong>: 019182010
+											</agm-info-window>
+									</agm-marker>
+		
+									<agm-marker  [latitude]="43.677718" [longitude]="-79.62482">
+											<agm-info-window>
+												<strong>Category</strong>: Shipping<br>
+												<strong>Subcategory</strong>: Luggage<br>
+												<strong>Name</strong>: Mississaga International Airport Cargo<br>
+												<strong>Contact</strong>: 019182010
+											</agm-info-window>
+									</agm-marker>
+		
+		
+									<agm-circle [latitude]="43.677718" [longitude]="-79.62482" 
+									[radius]="15000"
+									  [fillColor]="'lightgreen'"
+									  [circleDraggable]="true"
+									  [editable]="true">
+									  </agm-circle>
+							</agm-map>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" data-dismiss="modal" type="button">
+							Close
+						</button>
+						<button class="btn btn-primary" type="button">
+							Send message
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 	<!-- Modals End-->

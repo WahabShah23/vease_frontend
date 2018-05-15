@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
-
+import { AgmMap } from '@agm/core';
 
 @Component({
     selector: "app-services",
@@ -11,7 +11,7 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
 
-
+    @ViewChild(AgmMap) agmMap: AgmMap;
     isGridView=true;
     viewName= "List View";
     constructor(private _script: ScriptLoaderService) {
@@ -27,9 +27,21 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             ['//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js',
             '//www.amcharts.com/lib/3/plugins/export/export.min.js',
             'assets/app/js/services.js']);
+
+          
         
 
     }
+    
+    doit()
+    {
+        setTimeout(() => {
+            this.agmMap.triggerResize();
+        }, 2000);
+    }
+
+   
+    
     changeView()
     {
         this.isGridView=!this.isGridView;

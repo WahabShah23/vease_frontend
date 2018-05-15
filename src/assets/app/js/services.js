@@ -126,5 +126,18 @@ jQuery(document).ready(function() {
 
 
     //Widget Charts Ends
+
+    $(".chatServiceButton").click(function(){
+        $("#m_quick_sidebar_toggle").click();
+        /*
+        $("#m_quick_sidebar_close").removeClass("m-quick-sidebar--on");
+        $("#m_quick_sidebar").addClass("m-quick-sidebar--on");
+        $(".m-quick-sidebar__content").removeClass("m--hide");
+        */
+    });
+
+$("#adjustRadius").click(function(){
+   $("#radiusModal").modal('show');
+});
     
 });

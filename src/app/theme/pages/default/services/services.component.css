@@ -209,14 +209,34 @@
     margin-bottom: 10px;
 }
 
-.gridView .bookServiceButton
+.gridView .chatServiceButton
 {
     position: absolute;
     bottom: 10px;
 }
 
 
-.bookServiceButton
+.service-item hr
+{
+    margin:5px 0px 7px 0px;
+}
+.service-item a
+{
+    margin-top: -2px;
+    margin-left: 4px;
+}
+a.btn-primary
 {
     color:white !important;
+}
+.services-categories .category-list
+{
+    margin-top: 15px;
+}
+.service-heading
+{
+    font-weight: 600;
+}
+agm-map {
+    height: 600px;
 }
