@@ -33,7 +33,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     }
     
-    doit()
+    adjustRadiusMap()
     {
         setTimeout(() => {
             this.agmMap.triggerResize();
