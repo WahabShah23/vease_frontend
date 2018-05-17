@@ -252,3 +252,28 @@ agm-map {
 {
     margin-bottom: 25px;
 }
+
+
+
+.checked {
+    color: orange;
+}
+
+
+
+
+.ReviewStars span
+{
+font-size:10px;
+}
+
+.ReviewerImage img
+{
+    width:40px;
+    height: 40px;
+}
+.TheReview
+{
+    border-bottom: 1px solid #F2F3F7;
+    margin-bottom: 15px;
+}

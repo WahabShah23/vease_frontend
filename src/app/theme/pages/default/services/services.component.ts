@@ -14,6 +14,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     @ViewChild(AgmMap) agmMap: AgmMap;
     isGridView=true;
     viewName= "List View";
+    isDisplayDetail = false;
     constructor(private _script: ScriptLoaderService) {
 
     }

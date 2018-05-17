@@ -139,5 +139,12 @@ jQuery(document).ready(function() {
 $("#adjustRadius").click(function(){
    $("#radiusModal").modal('show');
 });
-    
+
+
+     _initSparklineChart($('#m_chart_quick_stats_form2'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_form3'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_form4'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+   
+
+
 });
