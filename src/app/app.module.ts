@@ -10,6 +10,8 @@ import { ScriptLoaderService } from "./_services/script-loader.service";
 import { ThemeRoutingModule } from "./theme/theme-routing.module";
 import { AuthModule } from "./auth/auth.module";
 import { AgmCoreModule } from '@agm/core';
+import { CalendarModule } from 'angular-calendar';
+
 
 @NgModule({
     declarations: [
@@ -23,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
         AppRoutingModule,
         ThemeRoutingModule,
         AuthModule,
+        CalendarModule.forRoot(),
         AgmCoreModule.forRoot({
             apiKey: 'YOUR_KEY'
           })

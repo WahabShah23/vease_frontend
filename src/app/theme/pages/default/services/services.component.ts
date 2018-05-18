@@ -2,6 +2,26 @@ import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit } from '
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
 import { AgmMap } from '@agm/core';
+import {
+    startOfDay,
+    endOfDay,
+    subDays,
+    addDays,
+    endOfMonth,
+    isSameDay,
+    isSameMonth,
+    addHours
+  } from 'date-fns';
+  import { Subject } from 'rxjs';
+  import {
+    CalendarEvent,
+    CalendarEventAction,
+    CalendarEventTimesChangedEvent
+  } from 'angular-calendar';
+
+ 
+ 
+  
 
 @Component({
     selector: "app-services",
@@ -15,6 +35,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     isGridView=true;
     viewName= "List View";
     isDisplayDetail = false;
+    viewDate: Date = new Date();
+
+ 
     constructor(private _script: ScriptLoaderService) {
 
     }
