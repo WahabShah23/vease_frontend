@@ -12,12 +12,20 @@ import {
     isSameMonth,
     addHours
   } from 'date-fns';
+
   import { Subject } from 'rxjs';
   import {
     CalendarEvent,
     CalendarEventAction,
     CalendarEventTimesChangedEvent
   } from 'angular-calendar';
+  import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition
+  } from '@angular/animations';
 
  
  
@@ -26,7 +34,23 @@ import {
 @Component({
     selector: "app-services",
     templateUrl: "./services.component.html",
-    styleUrls: ["./services.component.css"],
+    styleUrls: ["./services.component.css"],  
+      animations: [
+      
+       
+        trigger('fade' ,
+        [
+          state('void' , style({transform: 'scale(0)', height:'60px', position:'absolute', top:'17%' })),
+          
+          transition('void => *' , [
+          animate(1500 ,  style({transform: 'scale(1)'}))
+        ]),
+
+        transition('* => void' , [
+            animate(400)
+          ]),
+      ]
+    )],
     encapsulation: ViewEncapsulation.None,
 })
 export class ServicesComponent implements OnInit, AfterViewInit {

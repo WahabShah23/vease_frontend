@@ -1,5 +1,5 @@
 <!-- BEGIN: Subheader -->
-<div class="m-subheader" appunwraptag="" style="padding: 25px 10px 0px 30px;margin-bottom: -12px;" *ngIf="!isDisplayDetail">
+<div   class="m-subheader" appunwraptag="" style="padding: 25px 10px 0px 30px;margin-bottom: -12px;" *ngIf="!isDisplayDetail">
 	<div class="d-flex align-items-center">
 		<div class="mr-auto row" style="width:100%;">
 
@@ -21,9 +21,7 @@
 
 			<div class="col-md-3">
 					<div class="form-group m-form__group" style="display:inline-block ; margin-left:8px;margin-top: -15px;">
-							<label>
-								Service Type
-							</label>
+							
 							<select class="form-control m-input">
 								<option>
 									All
@@ -49,12 +47,12 @@
 				
 			</div>
 
-			<div class="col-md-3 offset-md-3">
-					<button class="btn btn-link" data-target="#c_modal_broadcast" data-toggle="modal" >
+			<div class="col-md-3 offset-md-3" style="padding-right:0px;">
+					<button class="btn btn-link" style="margin-left:20px;" data-target="#c_modal_broadcast" data-toggle="modal" >
 							<i class="fa fa-plus"></i> Broadcast
 					</button>
 
-					<button  class="btn btn-link" (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
+					<button  class="btn btn-link pull-right" (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
 
 			</div>
 
@@ -80,14 +78,14 @@
 	</div>
 </div>
 
-
+<hr class="customhr" *ngIf="!isDisplayDetail" />
 
 <!-- END: Subheader -->
 <div class="m-content">
 	<!--Begin::Section-->
 	
 
-<div class="row gridView" style="padding: 0px 10px;"[style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'" >
+<div class="row gridView"  style="padding: 0px 10px;" [style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'" >
 		<div  class="col-md-6">
 				<div   class="body organ1 serviceCard">
 					<div   class="row" style="margin:0px;">
@@ -509,7 +507,7 @@
 								</div>
 						</div>
 </div>
-<div class="row justify-content-md-center servicesListForm" style="padding: 0px 10px;"   [style.display]="(!isGridView && !isDisplayDetail) ? 'flex' : 'none'">
+<div  class="row justify-content-md-center servicesListForm" style="padding: 0px 10px;"   [style.display]="(!isGridView && !isDisplayDetail) ? 'flex' : 'none'">
 	
 	<div class="m-portlet m-portlet--full-height">
 		
@@ -519,9 +517,7 @@
 
 
 							<div class="form-group m-form__group">
-									<label >
-										Service Type
-									</label>
+									
 									<select class="form-control m-input">
 										<option>
 										    All
@@ -1085,7 +1081,8 @@
 </div>
 
 
-<div class="row detailSection" [style.display]="isDisplayDetail ? 'flex' : 'none'">
+<!--div class="row detailSection" @fade [style.display]="isDisplayDetail ? 'flex' : 'none'"-->
+<div @fade class="row detailSection"  *ngIf="isDisplayDetail">
 		<div class="col-md-12">
 				<div class="m-portlet">
 					<div class="m-portlet__body">
