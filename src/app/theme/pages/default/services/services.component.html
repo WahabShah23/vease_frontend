@@ -1,9 +1,9 @@
 <!-- BEGIN: Subheader -->
-<div   class="m-subheader" appunwraptag="" style="padding: 25px 10px 0px 30px;margin-bottom: -12px;" *ngIf="!isDisplayDetail">
+<div   class="m-subheader" appunwraptag="" style="padding: 25px 10px 0px 30px;margin-bottom: -12px;"[ngClass]="{'d-none':isDisplayDetail}" >
 	<div class="d-flex align-items-center">
 		<div class="mr-auto row" style="width:100%;">
 
-			<div class="col-md-3">
+			<div class="col-md-4">
 					<h3 class="m-subheader__title" style="display:inline-block">
 							Services
 							
@@ -19,8 +19,8 @@
 						</h3>
 			</div>
 
-			<div class="col-md-3">
-					<div class="form-group m-form__group" style="display:inline-block ; margin-left:8px;margin-top: -15px;">
+			<div class="col-md-2">
+					<div class="form-group m-form__group" >
 							
 							<select class="form-control m-input">
 								<option>
@@ -47,11 +47,13 @@
 				
 			</div>
 
-			<div class="col-md-3 offset-md-3" style="padding-right:0px;">
-					<button class="btn btn-link" style="margin-left:20px;" data-target="#c_modal_broadcast" data-toggle="modal" >
+			<div class="col-xl-1 offset-xl-4 col-md-12 offset-md-0" style="padding-right:0px;">
+					<button class="btn btn-link pull-right"  data-target="#c_modal_broadcast" data-toggle="modal" >
 							<i class="fa fa-plus"></i> Broadcast
 					</button>
+			</div>
 
+			<div class="col-xl-1  col-md-12 offset-md-0" style="padding-right:0px;">				
 					<button  class="btn btn-link pull-right" (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
 
 			</div>
@@ -2057,7 +2059,7 @@
 	
 
 <div aria-labelledby="bookingModalLabel" class="modal fade" id="addBookingModal" role="dialog" tabindex="-1" style="display: none;" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">
@@ -2072,13 +2074,20 @@
 				<div class="modal-body">
 
             <div class="row">
-				    <div class="col-md-12">
-						<img alt="" src="./assets/app/media/img/users/user4.jpg" />
+				    <div class="col-md-12 calendarsUsersSelectSection">
+						<img  alt="" src="./assets/app/media/img/users/user4.jpg" />
 						<img alt="" src="./assets/app/media/img/users/user2.jpg" />
 						<img alt="" src="./assets/app/media/img/users/user3.jpg" />
 					</div>
 					<div class="col-md-12">
 						<mwl-calendar-month-view [viewDate]="viewDate" style="width: 100%;"></mwl-calendar-month-view>
+						
+						<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+						<button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+                         Meridian - {{meridian ? "ON" : "OFF"}}
+                        </button>
+                        <pre style="margin-top:15px;">Selected time: {{time | json }}</pre>
+
 					</div>
 					
                 <!--div class="col-md-6">

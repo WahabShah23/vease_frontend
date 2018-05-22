@@ -6,6 +6,10 @@ import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
 import { AgmCoreModule, AgmMap } from '@agm/core';
 import { CalendarModule } from 'angular-calendar';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+
+
 
 
 const routes: Routes = [
@@ -24,9 +28,9 @@ const routes: Routes = [
     imports: [
         CommonModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
             apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
-          })
+          }) , NgbModule.forRoot(), FormsModule 
     ], exports: [
-        RouterModule
+        NgbModule
     ], declarations: [
         ServicesComponent
     ]
