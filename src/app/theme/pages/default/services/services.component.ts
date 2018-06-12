@@ -305,7 +305,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     //     )
     // }
 
-
+/*
     broadcastServiceRequest(recipient, serviceCategory, value, contactNumber, message ) {
 
 
@@ -318,6 +318,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         contactNumber.value = '';
         message = '';
     }
+	*/
     onSubmit() {
         // console.log(this.requestForms.value.reqName, this.requestForms.value.reqDetail,
         //             this.requestForms.value.reqCategory, this.requestForms.value.reqPrice,
