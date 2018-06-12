@@ -20,9 +20,9 @@ const routes: Routes = [
 ];
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule ,  AgmCoreModule.forRoot({
+        CommonModule, RouterModule.forChild(routes), LayoutModule, AgmCoreModule.forRoot({
             apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
-          })
+        })
     ], exports: [
         RouterModule
     ], declarations: [
