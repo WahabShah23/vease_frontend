@@ -18,6 +18,10 @@ const routes: Routes = [
                 'loadChildren': '.\/pages\/default\/services\/services.module#ServiceModule',
             },
             {
+                'path': 'orderHistory',
+                'loadChildren': '.\/pages\/default\/orderHistory\/orderHistory.module#OrderHistoryModule',
+            },
+            {
                 'path': '',
                 'redirectTo': 'index',
                 'pathMatch': 'full',
