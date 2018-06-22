@@ -1,0 +1,21 @@
+.m-portlet .m-portlet__head {
+    border-bottom: 1px solid #ebedf2;
+}
+
+.agm-map{
+    height: 400px;
+}
+.mcol {
+    height: 100%;
+} 
+
+.m-content.m-content-nopadding{
+    padding: 0px !important;
+}
+m-widget4 m-widget4__item {
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+.m-content {
+    padding: 0px 30px !important;
+}

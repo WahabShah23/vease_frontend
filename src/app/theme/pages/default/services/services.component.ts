@@ -29,7 +29,7 @@ import {
     transition
 } from '@angular/animations';
 
-import{ ServerServices_Services } from '../../../../services/serverServices.services';
+import { ServerServices_Services } from '../../../../services/serverServices.services';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -91,7 +91,7 @@ interface data {
                 ]),
             ]
         )]
-   // encapsulation: ViewEncapsulation.None,
+    // encapsulation: ViewEncapsulation.None,
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
 
@@ -127,10 +127,10 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
     reqBeautyCategories: any[];
     ngOnInit() {
-    this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services' ];
+        this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services'];
 
         this.serverServies_services.getSerices()
-        .subscribe(
+            .subscribe(
             (data) => {
                 // console.log(data.data);
                 this.serData = data.data;
@@ -141,7 +141,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
                 // console.log(this.serData);
                 // console.log(serData[0].price + ' ' + serData[0].publish);
             }
-        );
+            );
 
 
         this.requestForms = new FormGroup({
@@ -306,7 +306,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     // }
 
 
-    broadcastServiceRequest(recipient, serviceCategory, contactNumber ) {
+    broadcastServiceRequest(recipient, serviceCategory, contactNumber) {
 
 
 
@@ -318,22 +318,22 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         contactNumber.value = '';
         // message = '';
     }
-    
+
     onSubmit() {
         // console.log(this.requestForms.value.reqName, this.requestForms.value.reqDetail,
         //             this.requestForms.value.reqCategory, this.requestForms.value.reqPrice,
         //             this.requestForms.value.reqDuration, this.requestForms.value.reqContactNumber,
         //             this.requestForms.value.reqIsPublish, this.fileToUpload);
-                    this.serverServies_services.storeRequests(this.requestForms.value.reqName,
-                    this.requestForms.value.reqDetail, this.requestForms.value.reqCategory,
-                    this.requestForms.value.reqPrice, this.requestForms.value.reqDuration,
-                    this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
-                    this.fileToUpload)
-                     .subscribe(
-                         (response) => {
-                             console.log(response);
-                         }
-                     )
+        this.serverServies_services.storeRequests(this.requestForms.value.reqName,
+            this.requestForms.value.reqDetail, this.requestForms.value.reqCategory,
+            this.requestForms.value.reqPrice, this.requestForms.value.reqDuration,
+            this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
+            this.fileToUpload)
+            .subscribe(
+            (response) => {
+                console.log(response);
+            }
+            )
         this.requestForms.reset();
         this.fileToUpload = null;
     }
