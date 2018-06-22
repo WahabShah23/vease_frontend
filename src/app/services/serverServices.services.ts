@@ -14,7 +14,7 @@ export class ServerServices_Services {
     // post request to server for sending data  URl
     private postURL = 'http://www.sharjeelkhan.ca/vease/vease-app/api/v1/request-bid';
 
-    private getURL = ' http://www.sharjeelkhan.ca/vease/vease-app/api/v1/get-service/8s7df98sf7s9df7s9d8';
+    private getURL = ' http://www.sharjeelkhan.ca/vease/vease-app/api/v1/get-service';
 
 
 
@@ -52,7 +52,7 @@ export class ServerServices_Services {
 
 
     // Getting services data from server
-    getSerices() {
+    getServices() {
         // console.log('get task called');
         const userToken = this.autheticationServices.getToken();
         var headers = new Headers();

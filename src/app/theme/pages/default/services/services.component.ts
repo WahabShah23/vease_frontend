@@ -129,7 +129,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services'];
 
-        this.serverServies_services.getSerices()
+        this.serverServies_services.getServices()
             .subscribe(
             (data) => {
                 // console.log(data.data);
