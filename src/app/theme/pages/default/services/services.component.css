@@ -10,6 +10,13 @@
     height: 90%;
    
 }
+.custom_margin_bottom{
+    margin-bottom:0px;
+}
+
+.custom_padding_left{
+    padding-left: 5px;
+}
 
 .customFilterStyle {
     background: transparent !important;
