@@ -18,12 +18,20 @@ const routes: Routes = [
                 'loadChildren': '.\/pages\/default\/services\/services.module#ServiceModule',
             },
             {
+                'path': 'order',
+                'loadChildren': '.\/pages\/default\/order\/order.module#OrderModule',
+            },
+            {
                 'path': 'orderHistory',
                 'loadChildren': '.\/pages\/default\/orderHistory\/orderHistory.module#OrderHistoryModule',
             },
             {
-                'path': 'order',
-                'loadChildren': '.\/pages\/default\/order\/order.module#OrderModule',
+                'path': 'estimatedresponse',
+                'loadChildren': '.\/pages\/default\/estimateresponse\/estimateresponse.module#EstimateResponseModule',
+            },
+            {
+                'path': 'profile',
+                'loadChildren': '.\/pages\/default\/profile\/profile.module#ProfileModule',
             },
             {
                 'path': '',

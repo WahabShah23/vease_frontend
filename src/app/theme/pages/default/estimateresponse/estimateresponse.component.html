@@ -2,7 +2,7 @@
 	<div class="d-flex align-items-center">
 		<div class="mr-auto">
 			<h3 class="m-subheader__title m-subheader__title--separator">
-				Order History
+				Estimated Response
 				<small class="fa fa-gear text-muted stats-icons" style=" margin-left: 0px">
 					<a style="cursor:pointer;">
 					</a>
@@ -23,9 +23,22 @@
 
 			<div class="form-group m-form__group" style=" display: inline-block;">
 
-				<select class="form-control m-input filterStyle customFilterStyle" [(ngModel)]="statusOption" (ngModelChange)="onSelectedValues($event)">
-					<option *ngFor="let option of orderHistoryStatusOptions" [value]="option.name">
-						{{option.name}}
+				<select class="form-control m-input filterStyle customFilterStyle">
+					<option>
+						All
+					</option>
+					<option>
+						Pending
+					</option>
+
+					<option>
+						Completed
+					</option>
+					<option>
+						Rejected
+					</option>
+					<option>
+						In-Progress
 					</option>
 				</select>
 			</div>
@@ -150,9 +163,9 @@
 		</li>
 
 		<li class="m-nav__item">
-			<a class="m-nav__link" routerLink="/orderHistory">
+			<a class="m-nav__link" routerLink="/estimatedresponse">
 				<span class="m-nav__link-text" style=" font-size: 11px;">
-					OrderHistory
+					Estimated Response
 				</span>
 			</a>
 		</li>
@@ -167,8 +180,7 @@
 
 
 	<div class="row gridView" style="padding: 0px 10px;" [style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'">
-
-		<div class="col-md-6" [hidden]="completedHidden">
+		<div class="col-md-6">
 			<div class="body organ1 serviceCard">
 				<div class="row" style="margin:0px;">
 					<div class="card-left col-lg-3" id="">
@@ -202,7 +214,7 @@
 						<h6 class="text-muted pull-left">
 							<span class="m-badge  m-badge--success m-badge--wide">Completed</span>
 						</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="changingStatusMoreDetail('Completed')" >More Details</button>
+						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
 						<div class="clearfix"></div>
 						<div class="row services-categories">
 							<div class="col-md-12 category-list">
@@ -315,7 +327,7 @@
 		</div>
 
 		<!-- New Card -->
-		<div class="col-md-6" [hidden]="disputeHidden">
+		<div class="col-md-6">
 			<div class="body organ1 serviceCard">
 				<div class="row" style="margin:0px;">
 					<div class="card-left col-lg-3" id="">
@@ -347,9 +359,9 @@
 					</div>
 					<div class="card-right col-lg-9">
 						<h6 class="text-muted pull-left">
-							<span class="m-badge m-badge--primary m-badge--wide">Dispute</span>
+							<span class="m-badge m-badge--warning m-badge--wide">In-Progress</span>
 						</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="changingStatusMoreDetail('Dispute')">More Details</button>
+						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
 						<div class="clearfix"></div>
 						<div class="row services-categories">
 							<div class="col-md-12 category-list">
@@ -428,7 +440,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6" [hidden]="pendingHidden">
+		<div class="col-md-6">
 			<div class="body organ1 serviceCard">
 				<div class="row" style="margin:0px;">
 					<div class="card-left col-lg-3" id="">
@@ -462,7 +474,7 @@
 						<h6 class="text-muted pull-left">
 							<span class="m-badge m-badge--accent m-badge--wide">Pending</span>
 						</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="changingStatusMoreDetail('Pending')">More Details</button>
+						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
 						<div class="clearfix"></div>
 						<div class="row services-categories">
 							<div class="col-md-12 category-list">
@@ -541,7 +553,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6" [hidden]="cancelledHidden">
+		<div class="col-md-6">
 			<div class="body organ1 serviceCard">
 				<div class="row" style="margin:0px;">
 					<div class="card-left col-lg-3" id="">
@@ -572,9 +584,9 @@
 					</div>
 					<div class="card-right col-lg-9">
 						<h6 class="text-muted pull-left">
-							<span class="m-badge  m-badge--danger m-badge--wide">Cancelled</span>
+							<span class="m-badge  m-badge--danger m-badge--wide">Rejected</span>
 						</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="changingStatusMoreDetail('Cancelled')">More Details</button>
+						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
 						<div class="clearfix"></div>
 						<div class="row services-categories">
 							<div class="col-md-12 category-list">
@@ -682,7 +694,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6" [hidden]="inprogressHidden">
+		<div class="col-md-6">
 			<div class="body organ1 serviceCard">
 				<div class="row" style="margin:0px;">
 					<div class="card-left col-lg-3" id="">
@@ -716,7 +728,7 @@
 						<h6 class="text-muted pull-left">
 							<span class="m-badge m-badge--warning m-badge--wide">In-Progress</span>
 						</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="changingStatusMoreDetail('InProgress')">More Details</button>
+						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
 						<div class="clearfix"></div>
 						<div class="row services-categories">
 							<div class="col-md-12 category-list">
@@ -811,7 +823,9 @@
 
 
 						<div class="form-group m-form__group">
-
+							<label>
+								Status
+							</label>
 							<select class="form-control m-input">
 								<option>
 									All
@@ -821,7 +835,7 @@
 								</option>
 
 								<option>
-									Cancelled
+									Rejected
 								</option>
 								<option>
 									Completed
@@ -829,13 +843,10 @@
 								<option>
 									In-Progress
 								</option>
-								<option>
-									Dispute
-								</option>
 							</select>
 						</div>
 
-						<div class="form-group m-form__group">
+						<!-- <div class="form-group m-form__group">
 							<label>
 								Sort By
 							</label>
@@ -858,15 +869,15 @@
 								</option>
 
 							</select>
-						</div>
+						</div> -->
 
 
-						<div class="form-group m-form__group">
+						<!-- <div class="form-group m-form__group">
 							<label>
 								Search Shop/ Business Name:
 							</label>
 							<input class="form-control" type="text">
-						</div>
+						</div> -->
 
 						<div class="form-group m-form__group">
 							<label>
@@ -890,15 +901,6 @@
 								<option>01-02PM</option>
 								<option>02-03PM</option>
 							</select>
-						</div>
-
-
-
-						<div class="form-group m-form__group">
-							<label>
-								Select Location
-							</label>
-							<input class="form-control" type="text">
 						</div>
 
 
@@ -1105,7 +1107,7 @@
 										</span>
 
 									</div>
-									<span class="m-badge  m-badge--primary m-badge--wide">Dispute</span>
+									<span class="m-badge m-badge--danger m-badge--wide">Rejected</span>
 									<!-- <a class="btn btn-default chatServiceButton" href="javascript:;">
 											<i class="la la-comments"></i> Message</a> -->
 								</div>
@@ -1432,7 +1434,7 @@
 										</span>
 
 									</div>
-									<span class="m-badge  m-badge--danger m-badge--wide">Cancelled</span>
+									<span class="m-badge  m-badge--danger m-badge--wide">Rejected</span>
 									<!-- <a class="btn btn-default chatServiceButton" href="javascript:;">
 										<i class="la la-comments"></i> Message</a> -->
 								</div>
@@ -1579,15 +1581,11 @@
 									<a class="btn btn-link" style="padding:0px;" (click)="isDisplayDetail=false;">
 										<i class="fa fa-chevron-circle-left"></i> BACK</a>
 								</div>
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 									<h5>Mont Hair Saloon</h5>
 								</div>
 
-								<div class="col-sm-2">
-									<span class="m-badge  m-badge--{{badgeStatus}} m-badge--wide">{{currentStatusForMoreDetail}}</span>
-								</div>
-
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 									<div style="float:right;">
 										<span class="fa fa-star checked"></span>
 										<span class="fa fa-star checked"></span>

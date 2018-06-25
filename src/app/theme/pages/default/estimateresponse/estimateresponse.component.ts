@@ -72,9 +72,9 @@ interface data {
 
 
 @Component({
-    selector: "app-order-history",
-    templateUrl: "./orderHistory.component.html",
-    styleUrls: ["./orderHistory.component.css"],
+    selector: "app-estimate-response",
+    templateUrl: "./estimateresponse.component.html",
+    styleUrls: ["./estimateresponse.component.css"],
     animations: [
 
 
@@ -93,7 +93,7 @@ interface data {
         )]
     // encapsulation: ViewEncapsulation.None,
 })
-export class OrderHistoryComponent implements OnInit, AfterViewInit {
+export class EstimateResponseComponent implements OnInit, AfterViewInit {
 
     @ViewChild(AgmMap) agmMap: AgmMap;
     @ViewChild('modalContent') modalContent: TemplateRef<any>;
@@ -119,55 +119,28 @@ export class OrderHistoryComponent implements OnInit, AfterViewInit {
 
 
 
-    //Select Option Code
-    orderHistoryStatusOptions: Object[];
-    statusOption: string;
-    completedHidden: boolean;
-    pendingHidden: boolean;
-    cancelledHidden: boolean;
-    inprogressHidden: boolean;
-    disputeHidden: boolean;
 
-    //More Detail Variables
-    currentStatusForMoreDetail: string;
-    badgeStatus: string;
+
 
     constructor(private _script: ScriptLoaderService, private modal: NgbModal, private serverServies_services: ServerServices_Services) {
 
     }
     reqBeautyCategories: any[];
     ngOnInit() {
-
-        //For Selection of Option Initial hideOption is false and statusOption all
-        this.statusOption = "All";
-        this.completedHidden = false;
-        this.pendingHidden = false;
-        this.cancelledHidden = false;
-        this.inprogressHidden = false;
-        this.disputeHidden = false;
-        this.orderHistoryStatusOptions = [{ name: "All" },
-        { name: "Pending" },
-        { name: "Completed" },
-        { name: "Cancelled" },
-        { name: "In-Progress" },
-        { name: "Dispute" }];
-        this.currentStatusForMoreDetail = "";
-
-
         this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services'];
 
         this.serverServies_services.getServices()
             .subscribe(
-                (data) => {
-                    // console.log(data.data);
-                    this.serData = data.data;
-                    console.log(this.serData);
-                    // console.log('this is serverData');
-                    // console.log(this.serverData);
-                    // console.log('this is interface data');
-                    // console.log(this.serData);
-                    // console.log(serData[0].price + ' ' + serData[0].publish);
-                }
+            (data) => {
+                // console.log(data.data);
+                this.serData = data.data;
+                console.log(this.serData);
+                // console.log('this is serverData');
+                // console.log(this.serverData);
+                // console.log('this is interface data');
+                // console.log(this.serData);
+                // console.log(serData[0].price + ' ' + serData[0].publish);
+            }
             );
 
 
@@ -201,72 +174,6 @@ export class OrderHistoryComponent implements OnInit, AfterViewInit {
         }, 2000);
     }
 
-    //For Selecting Value Function
-    onSelectedValues(val: any) {
-        if (val == "All") {
-            this.completedHidden = false;
-            this.pendingHidden = false;
-            this.cancelledHidden = false;
-            this.inprogressHidden = false;
-            this.disputeHidden = false;
-        } else if (val == "Completed") {
-            this.completedHidden = false;
-            this.pendingHidden = true;
-            this.cancelledHidden = true;
-            this.inprogressHidden = true;
-            this.disputeHidden = true;
-        } else if (val == "Pending") {
-            this.completedHidden = true;
-            this.pendingHidden = false;
-            this.cancelledHidden = true;
-            this.inprogressHidden = true;
-            this.disputeHidden = true;
-        } else if (val == "Dispute") {
-            this.completedHidden = true;
-            this.pendingHidden = true;
-            this.cancelledHidden = true;
-            this.inprogressHidden = true;
-            this.disputeHidden = false;
-        } else if (val == "Cancelled") {
-            this.completedHidden = true;
-            this.pendingHidden = true;
-            this.cancelledHidden = false;
-            this.inprogressHidden = true;
-            this.disputeHidden = true;
-        } else {
-            this.completedHidden = true;
-            this.pendingHidden = true;
-            this.cancelledHidden = true;
-            this.inprogressHidden = false;
-            this.disputeHidden = true;
-        }
-    }
-
-    //Changing Status of More Detail
-    changingStatusMoreDetail(value: string) {
-        this.isDisplayDetail = true;
-        if (value == "Completed") {
-            this.currentStatusForMoreDetail = 'Completed';
-            this.badgeStatus = 'success';
-        }
-        else if (value == "Pending") {
-            this.currentStatusForMoreDetail = 'Pending';
-            this.badgeStatus = 'accent';
-        }
-        else if (value == "InProgress") {
-            this.currentStatusForMoreDetail = 'In-Progress';
-            this.badgeStatus = 'warning';
-        }
-        else if (value == "Cancelled") {
-            this.currentStatusForMoreDetail = 'Cancelled';
-            this.badgeStatus = 'danger';
-        }
-        else {
-            this.currentStatusForMoreDetail = 'Dispute';
-            this.badgeStatus = 'primary';
-        }
-        console.log(value);
-    }
 
 
     changeView() {
@@ -280,62 +187,62 @@ export class OrderHistoryComponent implements OnInit, AfterViewInit {
     }
 
     //Calendar
-    /* modalData: {
-         action: string;
-         event: CalendarEvent;
-     };
- 
-     actions: CalendarEventAction[] = [
-         {
-             label: '<i class="fa fa-fw fa-pencil"></i>',
-             onClick: ({ event }: { event: CalendarEvent }): void => {
-                 // this.handleEvent('Edited', event);
-             }
-         },
-         {
-             label: '<i class="fa fa-fw fa-times"></i>',
-             onClick: ({ event }: { event: CalendarEvent }): void => {
-                 this.events = this.events.filter(iEvent => iEvent !== event);
-                 // this.handleEvent('Deleted', event);
-             }
-         }
-     ];
- 
-     refresh: Subject<any> = new Subject();
- 
-     events: CalendarEvent[] = [
-         {
-             start: subDays(startOfDay(new Date()), 1),
-             end: addDays(new Date(), 1),
-             title: 'A 3 day event',
-             color: colors.red,
-             // actions: this.actions
-         },
-         {
-             start: startOfDay(new Date()),
-             title: 'An event with no end date',
-             color: colors.yellow,
-             // actions: this.actions
-         },
-         {
-             start: subDays(endOfMonth(new Date()), 3),
-             end: addDays(endOfMonth(new Date()), 3),
-             title: 'A long event that spans 2 months',
-             color: colors.blue
-         },
-         {
-             start: addHours(startOfDay(new Date()), 2),
-             end: new Date(),
-             title: 'A draggable and resizable event',
-             color: colors.yellow/*,
-         actions: this.actions,
-         resizable: {
-           beforeStart: true,
-           afterEnd: true
-         },
-         draggable: true
-         }
-     ];*/
+   /* modalData: {
+        action: string;
+        event: CalendarEvent;
+    };
+
+    actions: CalendarEventAction[] = [
+        {
+            label: '<i class="fa fa-fw fa-pencil"></i>',
+            onClick: ({ event }: { event: CalendarEvent }): void => {
+                // this.handleEvent('Edited', event);
+            }
+        },
+        {
+            label: '<i class="fa fa-fw fa-times"></i>',
+            onClick: ({ event }: { event: CalendarEvent }): void => {
+                this.events = this.events.filter(iEvent => iEvent !== event);
+                // this.handleEvent('Deleted', event);
+            }
+        }
+    ];
+
+    refresh: Subject<any> = new Subject();
+
+    events: CalendarEvent[] = [
+        {
+            start: subDays(startOfDay(new Date()), 1),
+            end: addDays(new Date(), 1),
+            title: 'A 3 day event',
+            color: colors.red,
+            // actions: this.actions
+        },
+        {
+            start: startOfDay(new Date()),
+            title: 'An event with no end date',
+            color: colors.yellow,
+            // actions: this.actions
+        },
+        {
+            start: subDays(endOfMonth(new Date()), 3),
+            end: addDays(endOfMonth(new Date()), 3),
+            title: 'A long event that spans 2 months',
+            color: colors.blue
+        },
+        {
+            start: addHours(startOfDay(new Date()), 2),
+            end: new Date(),
+            title: 'A draggable and resizable event',
+            color: colors.yellow/*,
+        actions: this.actions,
+        resizable: {
+          beforeStart: true,
+          afterEnd: true
+        },
+        draggable: true
+        }
+    ];*/
 
     activeDayIsOpen: boolean = true;
 
@@ -422,9 +329,9 @@ export class OrderHistoryComponent implements OnInit, AfterViewInit {
             this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
             this.fileToUpload)
             .subscribe(
-                (response) => {
-                    console.log(response);
-                }
+            (response) => {
+                console.log(response);
+            }
             )
         this.requestForms.reset();
         this.fileToUpload = null;
