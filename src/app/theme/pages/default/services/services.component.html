@@ -247,7 +247,8 @@
 										</span>
 									</div>
 									<div class="col-md-3">
-										<a (click)="showMenuBottom()" class="btn btn-sm btn-default">Book </a>
+										<a class="btn btn-sm btn-default">Book </a>
+										<!-- (click)="showMenuBottom()" -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -2656,7 +2657,7 @@
 				<button class="btn btn-secondary" data-dismiss="modal" type="button">
 					Close
 				</button>
-				<button class="btn btn-primary" data-dismiss="modal" type="button" (click)="broadcastServiceRequest(recipient, serviceCategory, value, contactNumber, message )">
+				<button class="btn btn-primary" data-dismiss="modal" type="button" (click)="broadcastServiceRequest(recipient, serviceCategory,contactNumber )">
 					Submit
 				</button>
 			</div>

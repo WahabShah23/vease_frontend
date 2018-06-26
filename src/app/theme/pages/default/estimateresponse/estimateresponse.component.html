@@ -2741,7 +2741,7 @@
 						<img alt="" src="./assets/app/media/img/users/user3.jpg" />
 					</div>
 					<div class="col-md-12">
-						<mwl-calendar-month-view [viewDate]="viewDate" style="width: 100%;" [events]="events"></mwl-calendar-month-view>
+						<mwl-calendar-month-view [viewDate]="viewDate" style="width: 100%;"></mwl-calendar-month-view>
 
 						<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
 						<button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
@@ -3017,7 +3017,7 @@
 				<button class="btn btn-secondary" data-dismiss="modal" type="button">
 					Close
 				</button>
-				<button class="btn btn-primary" data-dismiss="modal" type="button" (click)="broadcastServiceRequest(recipient, serviceCategory, value, contactNumber, message )">
+				<button class="btn btn-primary" data-dismiss="modal" type="button">
 					Submit
 				</button>
 			</div>

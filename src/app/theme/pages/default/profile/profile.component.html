@@ -1,11 +1,22 @@
 <!-- BEGIN: Subheader -->
-<div class="m-subheader" appunwraptag="">
+<div class="m-subheader" style="padding-top: 10px;
+margin-bottom: -26px;">
 	<div class="d-flex align-items-center">
 		<div class="mr-auto">
-			<h3 class="m-subheader__title">
+			<h3 class="m-subheader__title m-subheader__title--separator">
 				My Profile
 			</h3>
+			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+				<!-- <li class="m-nav__item m-nav__item--home">
+                    <a routerLink="/dashboard" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li> -->
+			</ul>
 		</div>
+		<!-- <a class="btn btn-link" (click)="formHidden=!formHidden">
+            <i class="fa fa-plus"></i> Add Job</a> -->
+		<!-- <a  data-toggle="modal" data-target="#addBookingModal" class="btn btn-link"><i class="fa fa-plus"></i> Add Booking</a> -->
 		<div>
 			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover"
 			 aria-expanded="true">
@@ -25,7 +36,7 @@
 										</span>
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a class="m-nav__link" href="" ng-reflect-href="">
 											<i class="m-nav__link-icon flaticon-share"></i>
 											<span class="m-nav__link-text">
 												Activity
@@ -71,8 +82,48 @@
 		</div>
 	</div>
 </div>
+
+<div class="m-subheader breadcrumsubheader" style="
+padding-top:  0px;
+">
+	<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+		<li class="m-nav__item m-nav__item--home">
+			<a class="m-nav__link m-nav__link--icon" href="/dashboard" ng-reflect-href="#" ng-reflect-router-link="/dashboard" routerlink="/dashboard">
+				<i class="m-nav__link-icon la la-home"></i>
+			</a>
+		</li>
+
+		<li class="m-nav__separator">
+			-
+		</li>
+
+		<li class="m-nav__item">
+			<a class="m-nav__link" href="" ng-reflect-href="">
+				<span class="m-nav__link-text">
+					Settings
+				</span>
+			</a>
+		</li>
+
+		<li class="m-nav__separator">
+			-
+		</li>
+
+		<li class="m-nav__item">
+			<a class="m-nav__link" href="" ng-reflect-href="">
+				<span class="m-nav__link-text">
+					My Profile
+				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<hr class="customhr" style="margin-top: -6px;">
+
 <!-- END: Subheader -->
-<div class="m-content">
+<div class="m-content" style="padding-top: 0px;">
+
 	<div class="row">
 
 		<!-- profile Section on Left -->
@@ -87,6 +138,12 @@
 							<div class="m-card-profile__pic-wrapper">
 								<img src="./assets/app/media/img/users/user4.jpg" alt="" />
 							</div>
+
+							<a class="btn btn-brand m-btn m-btn--icon m-btn--icon-only custom-plus-setting btn-file" data-container="body" data-placement="right"
+							 data-toggle="m-tooltip" title="" data-original-title="Upload Photo jpg/png">
+								<i class="fa fa-plus"></i>
+								<input type="file" class="form-control-file" accept="image/png,  image/jpg ">
+							</a>
 						</div>
 						<div class="m-card-profile__details">
 							<span class="m-card-profile__name">
@@ -105,7 +162,7 @@
 							</span>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/profile" class="m-nav__link" (click)="changingRightTabStatus('profile')">
+							<a class="m-nav__link" (click)="changingRightTabStatus('profile')">
 								<i class="m-nav__link-icon flaticon-profile-1"></i>
 								<span class="m-nav__link-title">
 									<span class="m-nav__link-wrap">
@@ -122,7 +179,7 @@
 							</a>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/profile" class="m-nav__link" (click)="changingRightTabStatus('Security')">
+							<a class="m-nav__link" (click)="changingRightTabStatus('Security')">
 								<i class="m-nav__link-icon flaticon-share"></i>
 								<span class="m-nav__link-text">
 									Security
@@ -131,7 +188,7 @@
 						</li>
 
 						<li class="m-nav__item">
-							<a routerLink="/profile" class="m-nav__link">
+							<a href="javascript:;" class="m-nav__link chatServiceButton">
 								<i class="m-nav__link-icon flaticon-chat-1"></i>
 								<span class="m-nav__link-text">
 									Messages
@@ -140,38 +197,13 @@
 						</li>
 
 						<li class="m-nav__item">
-							<a routerLink="/profile" class="m-nav__link" (click)="changingRightTabStatus('Payment')">
+							<a class="m-nav__link" (click)="changingRightTabStatus('Payment')">
 								<i class="m-nav__link-icon fa fa-credit-card"></i>
 								<span class="m-nav__link-text">
 									Payment
 								</span>
 							</a>
 						</li>
-
-						<!-- <li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
-								<i class="m-nav__link-icon flaticon-graphic-2"></i>
-								<span class="m-nav__link-text">
-									Sales
-								</span>
-							</a>
-						</li> -->
-						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
-								<i class="m-nav__link-icon flaticon-time-3"></i>
-								<span class="m-nav__link-text">
-									Events
-								</span>
-							</a>
-						</li>
-						<!-- <li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
-								<i class="m-nav__link-icon flaticon-lifebuoy"></i>
-								<span class="m-nav__link-text">
-									Support
-								</span>
-							</a>
-						</li> -->
 					</ul>
 					<div class="m-portlet__body-separator"></div>
 					<!-- <div class="m-widget1 m-widget1--paddingless">
@@ -245,11 +277,6 @@
 							</li>
 							<li class="nav-item m-tabs__item">
 								<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
-									Messages
-								</a>
-							</li>
-							<li class="nav-item m-tabs__item">
-								<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
 									Settings
 								</a>
 							</li>
@@ -358,7 +385,7 @@
 										Full Name
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="Mark Andre">
+										<input class="form-control m-input" type="text" placeholder="Enter Full Name">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -366,7 +393,7 @@
 										Occupation
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="CTO">
+										<input class="form-control m-input" type="text" placeholder="Enter Occupation">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -374,10 +401,10 @@
 										Company Name
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="Keenthemes">
-										<span class="m-form__help">
+										<input class="form-control m-input" type="text" placeholder="Enter Company Name">
+										<!-- <span class="m-form__help">
 											If you want your invoices addressed to a company. Leave blank to use your full name.
-										</span>
+										</span> -->
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -385,7 +412,7 @@
 										Phone No.
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="+456669067890">
+										<input class="form-control m-input" type="text" placeholder="Enter Phone Number">
 									</div>
 								</div>
 								<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
@@ -401,7 +428,7 @@
 										Address
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="L-12-20 Vertex, Cybersquare">
+										<input class="form-control m-input" type="text" placeholder="Enter Address">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -409,7 +436,7 @@
 										City
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="San Francisco">
+										<input class="form-control m-input" type="text" placeholder="Enter City">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -417,7 +444,7 @@
 										State
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="California">
+										<input class="form-control m-input" type="text" placeholder="Enter State">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -425,7 +452,7 @@
 										Postcode
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="45000">
+										<input class="form-control m-input" type="text" placeholder="Enter Postcode">
 									</div>
 								</div>
 								<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
@@ -441,7 +468,7 @@
 										Linkedin
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.linkedin.com/Mark.Andre">
+										<input class="form-control m-input" type="text" placeholder="URL">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -449,7 +476,7 @@
 										Facebook
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.facebook.com/Mark.Andre">
+										<input class="form-control m-input" type="text" placeholder="URL">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -457,7 +484,7 @@
 										Twitter
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">
+										<input class="form-control m-input" type="text" placeholder="URL">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
@@ -465,7 +492,7 @@
 										Instagram
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">
+										<input class="form-control m-input" type="text" placeholder="URL">
 									</div>
 								</div>
 							</div>
@@ -487,10 +514,12 @@
 							</div>
 						</form>
 					</div>
-					<div class="tab-pane" id="m_user_profile_tab_2">
 
+					<div class="tab-pane" id="m_user_profile_tab_2">
+						<div class="m-portlet__body">
+							<h5>Permissions</h5>
+						</div>
 					</div>
-					<div class="tab-pane" id="m_user_profile_tab_3"></div>
 				</div>
 			</div>
 		</div>
@@ -719,6 +748,11 @@
 									Credit Card
 								</a>
 							</li>
+							<li class="nav-item m-tabs__item">
+								<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_payment_tab_3" role="tab">
+									Currency
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div class="m-portlet__head-tools">
@@ -818,72 +852,57 @@
 									<label class="col-2 col-form-label">
 										Methods
 									</label>
-									<div class="col-7" style="padding-top: 7px;">
-										<div class="form-check form-check-inline">
-											<span class="ng-tns-c5-12" style="width: 40px;">
-												<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand ">
-													Paypal
-													<input class="ng-tns-c5-12" type="checkbox" value="Paypal">
-													<span class="ng-tns-c5-12"></span>
-												</label>
-											</span>
-										</div>
-
-										<div class="form-check form-check-inline" style="
-										padding-left: 40px;
-									">
-											<span class="ng-tns-c5-12" style="width: 40px;">
-												<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand ">
-													Stripe
-													<input class="ng-tns-c5-12" type="checkbox" value="Paypal">
-													<span class="ng-tns-c5-12"></span>
-												</label>
-											</span>
-										</div>
-
-										<!-- <div class="form-check">
-											<input class="form-check-input" type="checkbox" id="check1">
-											<label class="form-check-label" for="check1">
-												Paypal
+									<div class="col-7">
+										<div class="m-radio-inline">
+											<label class="m-radio m-radio--solid  m-radio--brand">
+												<input name="example_3" type="radio" value="paypal"> Paypal
+												<span></span>
+											</label>
+											<label class="m-radio m-radio--solid  m-radio--brand">
+												<input name="example_3" type="radio" value="stripe"> Stripe
+												<span></span>
 											</label>
 										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="check2">
-											<label class="form-check-label" for="check2">
-												Stripe
-											</label>
-										</div> -->
-
 									</div>
 								</div>
 
 
 								<div class="form-group m-form__group row">
 									<label class="col-2 col-form-label">
-										Number
+										Card Number
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="password">
+										<input class="form-control m-input" type="number">
 									</div>
 								</div>
 
 								<div class="form-group m-form__group row">
 									<label class="col-2 col-form-label">
-										New Password
+										Expire Date
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="password">
+										<input class="form-control m-input" type="date">
 									</div>
 								</div>
 
 								<div class="form-group m-form__group row">
 									<label class="col-2 col-form-label">
-										Conform Password
+										Start Date
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="password">
+										<input class="form-control m-input" type="date">
 									</div>
 								</div>
+
+								<div class="form-group m-form__group row">
+									<label class="col-2 col-form-label">
+										CVV
+									</label>
+									<div class="col-7">
+										<input class="form-control m-input" type="text">
+									</div>
+								</div>
+
 							</div>
 							<div class="m-portlet__foot m-portlet__foot--fit">
 								<div class="m-form__actions">
@@ -913,23 +932,150 @@
 										classes.
 									</div>
 								</div>
+
 								<div class="form-group m-form__group row">
 									<label class="col-2 col-form-label">
-										Phone Number
+										Methods
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="tel">
+										<div class="m-radio-inline">
+											<label class="m-radio m-radio--solid  m-radio--brand">
+												<input name="example_4" type="radio" value="mastercard"> Master-Card
+												<span></span>
+											</label>
+											<label class="m-radio m-radio--solid  m-radio--brand">
+												<input name="example_4" type="radio" value="visa"> Visa
+												<span></span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="form-group m-form__group row">
+									<label class="col-2 col-form-label">
+										Card Number
+									</label>
+									<div class="col-7">
+										<input class="form-control m-input" type="text">
 									</div>
 								</div>
 
 								<div class="form-group m-form__group row">
 									<label class="col-2 col-form-label">
-										Email
+										Expire Date
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="email">
+										<input class="form-control m-input" type="date">
 									</div>
 								</div>
+
+								<div class="form-group m-form__group row">
+									<label class="col-2 col-form-label">
+										Start Date
+									</label>
+									<div class="col-7">
+										<input class="form-control m-input" type="date">
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row">
+									<label class="col-2 col-form-label">
+										CVV
+									</label>
+									<div class="col-7">
+										<input class="form-control m-input" type="number">
+									</div>
+								</div>
+
+							</div>
+							<div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+										<div class="col-2"></div>
+										<div class="col-7">
+											<button type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+												Save changes
+											</button>
+											&nbsp;&nbsp;
+											<button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+												Cancel
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<div class="tab-pane" id="m_payment_tab_3">
+						<form class="m-form m-form--fit m-form--label-align-right">
+							<div class="m-portlet__body">
+								<div class="form-group m-form__group m--margin-top-10 m--hide">
+									<div class="alert m-alert m-alert--default" role="alert">
+										The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional
+										classes.
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row">
+									<label class="col-2 col-form-label">
+										Methods
+									</label>
+									<div class="col-7">
+										<div class="m-radio-inline">
+											<label class="m-radio m-radio--solid  m-radio--brand">
+												<input name="example_5" type="radio" value="digital"
+												(change)="onSelectionCurrency('Digital')"> Digital
+												<span></span>
+											</label>
+											<label class="m-radio m-radio--solid  m-radio--brand">
+												<input name="example_5" type="radio" value="fiat"
+												(change)="onSelectionCurrency('Fiat')"> Fiat
+												<span></span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row" *ngIf="currencyDDLHidden">
+									<label class="col-2 col-form-label">
+										Options
+									</label>
+									<div class="col-7">
+										<select class="form-control m-input">
+											<option>
+												Bitcoin
+											</option>
+											<option>
+												Ethereum
+											</option>
+											<option>
+												Ripple
+											</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row" *ngIf="!currencyDDLHidden">
+									<label class="col-2 col-form-label">
+										Options
+									</label>
+									<div class="col-7">
+										<select class="form-control m-input">
+											<option>
+												Dollar
+											</option>
+											<option>
+												Pound
+											</option>
+											<option>
+												Euro
+											</option>
+										</select>
+									</div>
+								</div>
+
 							</div>
 							<div class="m-portlet__foot m-portlet__foot--fit">
 								<div class="m-form__actions">
