@@ -163,9 +163,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
                 '//www.amcharts.com/lib/3/plugins/export/export.min.js',
                 'assets/app/js/services.js']);
 
-
-
-
     }
 
     adjustRadiusMap() {

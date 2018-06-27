@@ -162,17 +162,6 @@
 		</li>
 
 		<li class="m-nav__item">
-			<a class="m-nav__link" routerLink="/index">
-				<span class="m-nav__link-text" style=" font-size: 11px;">
-					Dashboard
-				</span>
-			</a>
-		</li>
-		<li class="m-nav__separator">
-			-
-		</li>
-
-		<li class="m-nav__item">
 			<a class="m-nav__link" routerLink="/services">
 				<span class="m-nav__link-text" style=" font-size: 11px;">
 					Services
@@ -231,7 +220,7 @@
 								<h6 class="service-heading">Maintenance &amp; Repair</h6>
 								<div class="row service-item">
 									<div class="col-md-1">
-										<span style="width: 40px;">
+										<span style="width: 40px;" (click)="visibleSidebar4 = true">
 											<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 												<input type="checkbox" value="187">
 												<span></span>
@@ -247,7 +236,7 @@
 										</span>
 									</div>
 									<div class="col-md-3">
-										<a class="btn btn-sm btn-default">Book </a>
+										<a class="btn btn-sm btn-default" (click)="visibleSidebar4 = true">Book </a>
 										<!-- (click)="showMenuBottom()" -->
 									</div>
 									<div class="col-md-12">
@@ -4123,5 +4112,101 @@
 		</div>
 
 
+	</div>
+</div>
+
+<p-sidebar [(visible)]="visibleSidebar4" position="bottom" [baseZIndex]="10000">
+	<div class="contanier">
+		<div class="row">
+			<div class="col-md-4">
+				<button class="btn btn-info m-btn--wide" (click)="visibleSidebar4 = false" type="button">
+					Payment
+				</button>
+			</div>
+			<div class="col-md-4 text-center">
+				<button class="btn m-btn--pill btn-warning m-btn m-btn--custom" data-target="#m_modal_3" data-toggle="modal" type="button">
+					CheckOut
+				</button>
+			</div>
+			<div class="col-md-4 custom-padding-right">
+				<button class="btn btn-info m-btn--wide custom-float-right" (click)="visibleSidebar4 = false" type="button">
+					Compare
+				</button>
+			</div>
+		</div>
+	</div>
+
+
+</p-sidebar>
+
+
+<!-- checkoutmodal -->
+
+<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_3" role="dialog" tabindex="-1" style="display: none;"
+ aria-hidden="true" style="z-index: 10000000!important;">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">
+					CheckOut
+				</h5>
+				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+					<span aria-hidden="true">
+						×
+					</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+				<div class="contanier">
+					<div class="row">
+						<div class="col-md-6">
+							<h5>
+								Items
+							</h5>
+						</div>
+						<div class="col-md-3">
+							<h5>
+								Price
+							</h5>
+						</div>
+						<div class="col-md-3">
+							<h5>
+								Action
+							</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h6>
+								Oil &amp; Oil Filter Change
+							</h6>
+						</div>
+						<div class="col-md-3">
+							<h6 class="m--font-success">
+								$120.00
+							</h6>
+						</div>
+						<div class="col-md-3" style="padding-left: 40px;">
+							<i class="fa fa-trash"></i>
+						</div>
+					</div>
+
+				</div>
+
+				<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
+					<input type="checkbox"> I Agree to terms and condition
+					<span></span>
+				</label>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" data-dismiss="modal" type="button">
+					Close
+				</button>
+				<button class="btn btn-primary" type="button">
+					Save changes
+				</button>
+			</div>
+		</div>
 	</div>
 </div>

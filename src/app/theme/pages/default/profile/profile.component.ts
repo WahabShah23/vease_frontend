@@ -11,20 +11,20 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 })
 export class ProfileComponent implements OnInit {
 
-    profileSectionHidden:boolean
-    securitySectionHidden:boolean
-    paymentSectionHidden:boolean
-    currencyDDLHidden:boolean
-    
+    profileSectionHidden: boolean
+    securitySectionHidden: boolean
+    paymentSectionHidden: boolean
+    currencyDDLHidden: boolean
+
 
     constructor(private _script: ScriptLoaderService) {
 
     }
     ngOnInit() {
-        this.profileSectionHidden=false;
-        this.securitySectionHidden=true;
-        this.paymentSectionHidden=true;
-        this.currencyDDLHidden=true;
+        this.profileSectionHidden = false;
+        this.securitySectionHidden = true;
+        this.paymentSectionHidden = true;
+        this.currencyDDLHidden = true;
     }
 
     ngAfterViewInit() {
@@ -36,29 +36,28 @@ export class ProfileComponent implements OnInit {
 
     }
 
-    onSelectionCurrency(value:string){
+    onSelectionCurrency(value: string) {
 
-        if(value=="Digital"){
-            this.currencyDDLHidden=true;
-        }else{
-            this.currencyDDLHidden=false;
+        if (value == "Digital") {
+            this.currencyDDLHidden = true;
+        } else {
+            this.currencyDDLHidden = false;
         }
     }
 
-    changingRightTabStatus(value:string){
-        if(value=="profile")
-        {
-            this.profileSectionHidden=false;
-            this.securitySectionHidden=true;
-            this.paymentSectionHidden=true;
-        }else if(value=="Security"){
-            this.profileSectionHidden=true;
-            this.securitySectionHidden=false;
-            this.paymentSectionHidden=true;
-        }else{
-            this.profileSectionHidden=true;
-            this.securitySectionHidden=true;
-            this.paymentSectionHidden=false;
+    changingRightTabStatus(value: string) {
+        if (value == "profile") {
+            this.profileSectionHidden = false;
+            this.securitySectionHidden = true;
+            this.paymentSectionHidden = true;
+        } else if (value == "Security") {
+            this.profileSectionHidden = true;
+            this.securitySectionHidden = false;
+            this.paymentSectionHidden = true;
+        } else {
+            this.profileSectionHidden = true;
+            this.securitySectionHidden = true;
+            this.paymentSectionHidden = false;
         }
     }
 }

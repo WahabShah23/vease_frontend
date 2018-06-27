@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild, NgZone, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone, ElementRef, AfterViewInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
 import { MapsAPILoader } from '@agm/core';
-import { } from '@types/googlemaps';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 // import { google } from '@agm/core/services/google-maps-types';
+import { ScriptLoaderService } from '../../../../_services/script-loader.service';
 declare var $: any;
 
 @Component({
-    selector: 'app-lead',
+    selector: 'app-order',
     templateUrl: './order.component.html',
     styleUrls: ['./order.component.css', '../../../../../../node_modules/dragula/dist/dragula.css']
 
@@ -19,8 +19,38 @@ export class OrderComponent implements OnInit {
     lati: number = 51.678418;
     lng: number = 7.809007;
     formHidden = true;
+
+    //Dynamic Order Schedule Variable
+    scheduleArray: Object[];
+    RescheduleModalName: string;
+    RescheduleModalPrice: Number;
+    RescheduleModalService: string;
+
+
+
     @ViewChild('search') public searchElementRef: ElementRef;
-    constructor(private dragulaService: DragulaService, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {
+    constructor(private dragulaService: DragulaService, private _script: ScriptLoaderService, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {
+
+
+        //Dynamic Schedule Array 
+
+        this.scheduleArray = [{ name: "TrumpTheme", service: "Make Metronic Great Again", price: 2500, image: "./assets/app/media/img/client-logos/logo5.png" },
+        { name: "StarBucks", service: "Good Coffee & Snacks", price: 290, image: "./assets/app/media/img/client-logos/logo4.png" },
+        {
+            name: "Python", service: "A Programming Language", price: 17,
+            image: "./assets/app/media/img/client-logos/logo3.png"
+        },
+        {
+            name: "Green Makers", service: "Make Green Great Again", price: 2.50,
+            image: "./assets/app/media/img/client-logos/logo2.png"
+        },
+        {
+            name: "Fly Makers", service: "A lets fly Fast Language", price: 200,
+            image: "./assets/app/media/img/client-logos/logo1.png"
+        }
+        ]
+
+
 
         // dragulaService.setOptions('bag-task1', {
         //     revertOnSpill: true
@@ -45,6 +75,7 @@ export class OrderComponent implements OnInit {
     }
 
     public searchControl: FormControl;
+
 
     ngOnInit() {
 
@@ -79,7 +110,7 @@ export class OrderComponent implements OnInit {
 
 
         var text, counter = 0;
-        $(document).on('click', '#add-service-request', function() {
+        $(document).on('click', '#add-service-request', function () {
             counter = counter + 1;
             text = $(this).closest('.m-portlet__head').next().find('.m-widget4').append(`
             <div class="m-widget4__item">
@@ -106,5 +137,18 @@ export class OrderComponent implements OnInit {
         });
 
     }
+    ngAfterViewInit() {
 
+        this._script.loadScripts('app-order', ['assets/app/js/bootstrap-datetimepicker.js',
+              'assets/app/js/bootstrap-datepicker.js',
+             'assets/app/js/bootstrap-timepicker.js',]);
+    }
+
+    getDetail(name: string, price: number, service: string) {
+
+        this.RescheduleModalName = name;
+        this.RescheduleModalPrice = price;
+        this.RescheduleModalService = service;
+
+    }
 }

@@ -5,6 +5,23 @@
 .agm-map{
     height: 400px;
 }
+
+.custom-can-setting{
+    padding-left:  5px;
+    padding-right: 8px;
+}
+
+.custom-can-reschedule-setting{
+    float: right;
+    margin-right: -56px;
+}
+
+.custom-can-price-setting{
+    font-size: 1.0rem !important;
+    font-weight: 500 !important;
+    float: right !important;
+}
+
 .mcol {
     height: 100%;
 } 

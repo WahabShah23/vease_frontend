@@ -9,6 +9,7 @@ import { AgmCoreModule, AgmMap } from '@agm/core';
 import { CalendarModule } from 'angular-calendar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SidebarModule } from 'primeng/primeng';
 
 import { ServerServices_Services } from '../../../../services/serverServices.services';
 
@@ -26,7 +27,7 @@ const routes: Routes = [
 ];
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
+        CommonModule,SidebarModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
             apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
         }), NgbModule.forRoot(), FormsModule, ReactiveFormsModule
     ], exports: [
