@@ -222,7 +222,7 @@
 									<div class="col-md-1">
 										<span style="width: 40px;" (click)="visibleSidebar4 = true">
 											<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-												<input type="checkbox" value="187">
+												<input #tref type="checkbox" value="true" (change)="onCheckedUpdate($event)">
 												<span></span>
 											</label>
 										</span>
@@ -231,13 +231,17 @@
 										Oil &amp; Oil Filter Change
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$120.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a class="btn btn-sm btn-default" (click)="visibleSidebar4 = true">Book </a>
-										<!-- (click)="showMenuBottom()" -->
+
+										<span class="m--font-success" style="float: right;">
+											$120.00
+										</span>
+										<!-- <a class="btn btn-sm btn-default m-btn--icon" (click)="onBook($event.target)">Add to
+											<i class="fa fa-cart-plus"></i>
+										</a> -->
+
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -248,9 +252,9 @@
 
 								<div class="row service-item">
 									<div class="col-md-1">
-										<span style="width: 40px;">
+										<span style="width: 40px;" (click)="visibleSidebar4 = true">
 											<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-												<input type="checkbox" value="187">
+												<input type="checkbox" (change)="onCheckedUpdate($event)">
 												<span></span>
 											</label>
 										</span>
@@ -259,12 +263,18 @@
 										Spark Plugs Changing
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$60.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book</a>
+
+										<span class="m--font-success" style="float: right;">
+											$60.00
+										</span>
+
+										<!-- <a class="btn btn-sm btn-default m-btn--icon" (click)="onBook($event.target)">Add to
+											<i class="fa fa-cart-plus"></i>
+										</a> -->
+
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -285,12 +295,14 @@
 										Gearbox
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$500.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+
+										<span class="m--font-success" style="float: right;">
+											$500.00
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -303,7 +315,7 @@
 									<div class="col-md-1">
 										<span style="width: 40px;">
 											<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-												<input type="checkbox" value="187">
+												<input type="checkbox" value="187" (change)="onCheckedUpdate($event)">
 												<span></span>
 											</label>
 										</span>
@@ -312,12 +324,13 @@
 										Suspension
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$200.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+										<span class="m--font-success" style="float: right;">
+											$200.00
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -380,7 +393,7 @@
 									<div class="col-md-1">
 										<span style="width: 40px;">
 											<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-												<input type="checkbox" value="187">
+												<input type="checkbox" value="187" (change)="onCheckedUpdate($event)">
 												<span></span>
 											</label>
 										</span>
@@ -389,12 +402,13 @@
 										Hair Cutting
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$60.50
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a>
+										<span class="m--font-success" style="float: right;">
+											$60.50
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -405,7 +419,7 @@
 									<div class="col-md-1">
 										<span style="width: 40px;">
 											<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-												<input type="checkbox" value="187">
+												<input type="checkbox" value="" (change)="onCheckedUpdate($event)">
 												<span></span>
 											</label>
 										</span>
@@ -414,12 +428,13 @@
 										Fancy Cutting
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$100.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+										<span class="m--font-success" style="float:right;">
+											$100.00
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -439,12 +454,14 @@
 										Head Shaving
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$50
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+
+										<span class="m--font-success" style="float:right;">
+											$50
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -509,12 +526,14 @@
 										One Room With Bath
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$120.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a>
+
+										<span class="m--font-success" style="float:right;">
+											$120.00
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -536,12 +555,15 @@
 										Multiple Rooms With Baths
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$260
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+
+										<span class="m--font-success" style="float:right;">
+											$260
+										</span>
+
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -562,12 +584,13 @@
 										One Room Office with Bath
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$500.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book</a>
+										<span class="m--font-success" style="float:right;">
+											$500.00
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book</a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -589,12 +612,13 @@
 										Multi Room Office with Baths
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$800.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+										<span class="m--font-success" style="float:right;">
+											$800.00
+										</span>
+										<!-- <a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -662,12 +686,13 @@
 										Fever
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$60.50
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+										<span class="m--font-success" style="float:right;">
+											$60.50
+										</span>
+										<!-- <a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -687,12 +712,13 @@
 										Dental
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$100.00
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a class="btn btn-sm btn-default" data-target="#addBookingModal" data-toggle="modal">Book </a>
+										<span class="m--font-success" style="float:right;">
+											$100.00
+										</span>
+										<!-- <a class="btn btn-sm btn-default" data-target="#addBookingModal" data-toggle="modal">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -712,12 +738,13 @@
 										Overall Body
 									</div>
 									<div class="col-md-3">
-										<span class="m--font-success">
-											$200
-										</span>
+
 									</div>
 									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+										<span class="m--font-success" style="float:right;">
+											$200
+										</span>
+										<!-- <a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a> -->
 									</div>
 									<div class="col-md-12">
 										<hr>
@@ -733,6 +760,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="row justify-content-md-center servicesListForm" style="padding: 0px 10px;" [style.display]="(!isGridView && !isDisplayDetail) ? 'flex' : 'none'">
 
 		<div class="m-portlet m-portlet--full-height">
@@ -4083,10 +4111,6 @@
 									</div>
 								</div>
 
-
-
-
-
 							</div>
 
 
@@ -4119,6 +4143,7 @@
 	<div class="contanier">
 		<div class="row">
 			<div class="col-md-4">
+				<!-- *ngIf="enabledPaymentButton"  -->
 				<button class="btn btn-info m-btn--wide" (click)="visibleSidebar4 = false" type="button">
 					Payment
 				</button>
@@ -4129,7 +4154,7 @@
 				</button>
 			</div>
 			<div class="col-md-4 custom-padding-right">
-				<button class="btn btn-info m-btn--wide custom-float-right" (click)="visibleSidebar4 = false" type="button">
+				<button class="btn btn-info m-btn--wide custom-float-right" (click)="visibleSidebar4 = false" type="button" [disabled]="serviceCounter < 2">
 					Compare
 				</button>
 			</div>
@@ -4159,6 +4184,7 @@
 			<div class="modal-body">
 
 				<div class="contanier">
+
 					<div class="row">
 						<div class="col-md-6">
 							<h5>
@@ -4176,35 +4202,46 @@
 							</h5>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<h6>
-								Oil &amp; Oil Filter Change
-							</h6>
-						</div>
-						<div class="col-md-3">
-							<h6 class="m--font-success">
-								$120.00
-							</h6>
-						</div>
-						<div class="col-md-3" style="padding-left: 40px;">
-							<i class="fa fa-trash"></i>
-						</div>
-					</div>
 
+
+					<div class="row" *ngFor="let item of itemsArray; let i= index">
+						<ng-container *ngIf="deleted">
+							<div class="col-md-6">
+								<h6>
+									{{item.name}}
+								</h6>
+							</div>
+							<div class="col-md-3">
+								<h6 class="m--font-success">
+									${{item.price}}
+								</h6>
+							</div>
+							<div class="col-md-3" style="padding-left: 40px;">
+								<a (click)="onDelete(i)">
+									<i class="fa fa-trash"></i>
+								</a>
+
+							</div>
+							<div class="row" style="padding-left: 30px;">
+								<div>
+									<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
+										<input type="checkbox" (change)="onOrderNow($event)"> I Agree to terms and condition
+										<span></span>
+									</label>
+								</div>
+							</div>
+						</ng-container>
+					</div>
 				</div>
 
-				<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
-					<input type="checkbox"> I Agree to terms and condition
-					<span></span>
-				</label>
+
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-secondary" data-dismiss="modal" type="button">
 					Close
 				</button>
-				<button class="btn btn-primary" type="button">
-					Save changes
+				<button class="btn btn-primary" type="button" [disabled]="enabledOrderNowbutton">
+					Order Now
 				</button>
 			</div>
 		</div>

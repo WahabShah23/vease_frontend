@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, TemplateRef, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
@@ -95,6 +95,9 @@ interface data {
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
 
+    @ViewChild("tref", { read: ElementRef }) tref: ElementRef;
+    @ViewChild("tref1", { read: ElementRef }) tref1: ElementRef;
+    @ViewChild("tref2", { read: ElementRef }) tref2: ElementRef;
     @ViewChild(AgmMap) agmMap: AgmMap;
     @ViewChild('modalContent') modalContent: TemplateRef<any>;
     fileToUpload: File = null;
@@ -116,31 +119,39 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     serData: data;
     requestForms: FormGroup;
-
-
-
-
-
+    visibleSidebar4: boolean;
+    enabledOrderNowbutton: boolean = true;
+    checked: boolean = false;
+    serviceCounter: number = 0;
+    enabledPaymentButton: boolean = false;
+    itemsArray = [{ name: "Oil & Oil Filter Change", price: "12.00" },
+    { name: "Spark Plugs Changing", price: "60.00 " }];
+    orderButtonConter = 0;
+    deleted = true;
 
     constructor(private _script: ScriptLoaderService, private modal: NgbModal, private serverServies_services: ServerServices_Services) {
+
+        // this.itemsArray=[{name:"Oil & Oil Filter Change", price: 12.00},
+        //                  { name:"Spark Plugs Changing", price: 60.00}];
 
     }
     reqBeautyCategories: any[];
     ngOnInit() {
+
         this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services'];
 
         this.serverServies_services.getServices()
             .subscribe(
-            (data) => {
-                // console.log(data.data);
-                this.serData = data.data;
-                console.log(this.serData);
-                // console.log('this is serverData');
-                // console.log(this.serverData);
-                // console.log('this is interface data');
-                // console.log(this.serData);
-                // console.log(serData[0].price + ' ' + serData[0].publish);
-            }
+                (data) => {
+                    // console.log(data.data);
+                    this.serData = data.data;
+                    console.log(this.serData);
+                    // console.log('this is serverData');
+                    // console.log(this.serverData);
+                    // console.log('this is interface data');
+                    // console.log(this.serData);
+                    // console.log(serData[0].price + ' ' + serData[0].publish);
+                }
             );
 
 
@@ -327,9 +338,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
             this.fileToUpload)
             .subscribe(
-            (response) => {
-                console.log(response);
-            }
+                (response) => {
+                    console.log(response);
+                }
             )
         this.requestForms.reset();
         this.fileToUpload = null;
@@ -339,5 +350,52 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.fileToUpload = files.item(0);
     }
 
+
+    onCheckedUpdate(event: Event) {
+
+        if ((<HTMLInputElement>event.target).checked) {
+            this.visibleSidebar4 = true;
+            this.serviceCounter++;
+        } else {
+            this.visibleSidebar4 = false;
+            this.serviceCounter--;
+        }
+    }
+
+    onBook(element: Element) {
+
+        if (!this.tref.nativeElement.checked) {
+            this.tref.nativeElement.checked = true;
+            this.serviceCounter++;
+        }
+        console.log();
+        this.visibleSidebar4 = true;
+        this.enabledPaymentButton = true;
+        if (element.classList[2] == "btn-default") {
+            element.classList.remove("btn-default");
+            element.classList.add("btn-primary")
+        }
+    }
+
+    onOrderNow(event: Event) {
+        if ((<HTMLInputElement>event.target).checked) {
+            this.orderButtonConter++;
+        } else {
+            this.orderButtonConter--;
+        }
+
+        if (this.itemsArray.length == this.orderButtonConter) {
+            this.enabledOrderNowbutton = false;
+        } else {
+            this.enabledOrderNowbutton = true;
+        }
+    }
+
+    onDelete(value: number) {
+        this.itemsArray.splice(value,value+1);
+        if(this.orderButtonConter!=0){
+            this.orderButtonConter--;
+        }
+    }
 
 }
