@@ -4,12 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core'
 import { DragulaModule } from "ng2-dragula";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
 import { OrderComponent } from "./order.component";
-
-
+import { CreateDisputeComponent } from './createDispute/createDispute.component';
 
 const routes: Routes = [
     {
@@ -36,6 +34,7 @@ const routes: Routes = [
         RouterModule,
     ], declarations: [
         OrderComponent,
+        CreateDisputeComponent
     ],
 })
 export class OrderModule {

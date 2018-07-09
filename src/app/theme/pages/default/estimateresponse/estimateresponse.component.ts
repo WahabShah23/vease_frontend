@@ -100,10 +100,16 @@ export class EstimateResponseComponent implements OnInit, AfterViewInit {
     fileToUpload: File = null;
 
     isGridView = true;
-    viewName = "List View";
+    viewName = "Grid View";
     isDisplayDetail = false;
     viewDate: Date = new Date();
+    visibleSidebar2: boolean;
+    visibleSidebar4: boolean;
 
+
+    mainFilterHide = false;
+    isListViewHide = false;
+    isGridViewHide = true;
 
     time = { hour: 13, minute: 30 };
     meridian = true;
@@ -177,72 +183,76 @@ export class EstimateResponseComponent implements OnInit, AfterViewInit {
 
 
     changeView() {
-        this.isGridView = !this.isGridView;
-        if (this.isGridView) {
-            this.viewName = "List View";
-        }
-        else {
+
+        if (this.isListViewHide) {
+            this.isListViewHide = false
+            this.isGridViewHide = true;
             this.viewName = "Grid View";
+
+        } else {
+            this.isGridViewHide = false;
+            this.isListViewHide = true;
+            this.viewName = "List View";
         }
     }
 
     //Calendar
-   /* modalData: {
-        action: string;
-        event: CalendarEvent;
-    };
-
-    actions: CalendarEventAction[] = [
-        {
-            label: '<i class="fa fa-fw fa-pencil"></i>',
-            onClick: ({ event }: { event: CalendarEvent }): void => {
-                // this.handleEvent('Edited', event);
-            }
-        },
-        {
-            label: '<i class="fa fa-fw fa-times"></i>',
-            onClick: ({ event }: { event: CalendarEvent }): void => {
-                this.events = this.events.filter(iEvent => iEvent !== event);
-                // this.handleEvent('Deleted', event);
-            }
-        }
-    ];
-
-    refresh: Subject<any> = new Subject();
-
-    events: CalendarEvent[] = [
-        {
-            start: subDays(startOfDay(new Date()), 1),
-            end: addDays(new Date(), 1),
-            title: 'A 3 day event',
-            color: colors.red,
-            // actions: this.actions
-        },
-        {
-            start: startOfDay(new Date()),
-            title: 'An event with no end date',
-            color: colors.yellow,
-            // actions: this.actions
-        },
-        {
-            start: subDays(endOfMonth(new Date()), 3),
-            end: addDays(endOfMonth(new Date()), 3),
-            title: 'A long event that spans 2 months',
-            color: colors.blue
-        },
-        {
-            start: addHours(startOfDay(new Date()), 2),
-            end: new Date(),
-            title: 'A draggable and resizable event',
-            color: colors.yellow/*,
-        actions: this.actions,
-        resizable: {
-          beforeStart: true,
-          afterEnd: true
-        },
-        draggable: true
-        }
-    ];*/
+    /* modalData: {
+         action: string;
+         event: CalendarEvent;
+     };
+ 
+     actions: CalendarEventAction[] = [
+         {
+             label: '<i class="fa fa-fw fa-pencil"></i>',
+             onClick: ({ event }: { event: CalendarEvent }): void => {
+                 // this.handleEvent('Edited', event);
+             }
+         },
+         {
+             label: '<i class="fa fa-fw fa-times"></i>',
+             onClick: ({ event }: { event: CalendarEvent }): void => {
+                 this.events = this.events.filter(iEvent => iEvent !== event);
+                 // this.handleEvent('Deleted', event);
+             }
+         }
+     ];
+ 
+     refresh: Subject<any> = new Subject();
+ 
+     events: CalendarEvent[] = [
+         {
+             start: subDays(startOfDay(new Date()), 1),
+             end: addDays(new Date(), 1),
+             title: 'A 3 day event',
+             color: colors.red,
+             // actions: this.actions
+         },
+         {
+             start: startOfDay(new Date()),
+             title: 'An event with no end date',
+             color: colors.yellow,
+             // actions: this.actions
+         },
+         {
+             start: subDays(endOfMonth(new Date()), 3),
+             end: addDays(endOfMonth(new Date()), 3),
+             title: 'A long event that spans 2 months',
+             color: colors.blue
+         },
+         {
+             start: addHours(startOfDay(new Date()), 2),
+             end: new Date(),
+             title: 'A draggable and resizable event',
+             color: colors.yellow/*,
+         actions: this.actions,
+         resizable: {
+           beforeStart: true,
+           afterEnd: true
+         },
+         draggable: true
+         }
+     ];*/
 
     activeDayIsOpen: boolean = true;
 

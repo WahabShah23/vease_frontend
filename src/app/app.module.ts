@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme/theme.component';
 import { LayoutModule } from './theme/layouts/layout.module';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { WizardLeadForm } from './components/leadFormWizard/leadFormWizard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScriptLoaderService } from "./_services/script-loader.service";
@@ -28,7 +28,7 @@ import { CalendarModule } from 'angular-calendar';
         AuthModule,
         CalendarModule.forRoot(),
         AgmCoreModule.forRoot({
-            apiKey: 'YOUR_KEY'
+            apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
         }),
     ],
     providers: [ScriptLoaderService],

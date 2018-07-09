@@ -13,6 +13,10 @@ const routes: Routes = [
                 'path': 'index',
                 'loadChildren': '.\/pages\/default\/index\/index.module#IndexModule',
             },
+            // {
+            //     'path': 'test',
+            //     'loadChildren': '.\/pages\/default\/Test\/test.module#TestModule',
+            // },
             {
                 'path': 'services',
                 'loadChildren': '.\/pages\/default\/services\/services.module#ServiceModule',

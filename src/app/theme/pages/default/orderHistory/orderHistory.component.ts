@@ -158,16 +158,16 @@ export class OrderHistoryComponent implements OnInit, AfterViewInit {
 
         this.serverServies_services.getServices()
             .subscribe(
-                (data) => {
-                    // console.log(data.data);
-                    this.serData = data.data;
-                    console.log(this.serData);
-                    // console.log('this is serverData');
-                    // console.log(this.serverData);
-                    // console.log('this is interface data');
-                    // console.log(this.serData);
-                    // console.log(serData[0].price + ' ' + serData[0].publish);
-                }
+            (data) => {
+                // console.log(data.data);
+                this.serData = data.data;
+                console.log(this.serData);
+                // console.log('this is serverData');
+                // console.log(this.serverData);
+                // console.log('this is interface data');
+                // console.log(this.serData);
+                // console.log(serData[0].price + ' ' + serData[0].publish);
+            }
             );
 
 
@@ -422,9 +422,9 @@ export class OrderHistoryComponent implements OnInit, AfterViewInit {
             this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
             this.fileToUpload)
             .subscribe(
-                (response) => {
-                    console.log(response);
-                }
+            (response) => {
+                console.log(response);
+            }
             )
         this.requestForms.reset();
         this.fileToUpload = null;

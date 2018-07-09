@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, TemplateRef, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, TemplateRef, ElementRef, NgZone } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
-import { AgmMap } from '@agm/core';
+import { } from 'googlemaps';
+import { AgmMap, MapsAPILoader } from '@agm/core';
 import {
     startOfDay,
     endOfDay,
@@ -100,13 +101,24 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     @ViewChild("tref2", { read: ElementRef }) tref2: ElementRef;
     @ViewChild(AgmMap) agmMap: AgmMap;
     @ViewChild('modalContent') modalContent: TemplateRef<any>;
+    @ViewChild('search') public searchElementRef: ElementRef;
     fileToUpload: File = null;
 
-    isGridView = true;
-    viewName = "List View";
+    isGridView = false;
+    viewName = "Grid View";
+    isListViewHide = false;
+    isGridViewHide = true;
     isDisplayDetail = false;
     viewDate: Date = new Date();
+    paymentCheckTickHide = false;
+    isCustomer = true;
 
+
+    lang: any;
+    lat: any;
+    lati: number = 51.678418;
+    lng: number = 7.809007;
+    formHidden = true;
 
     time = { hour: 13, minute: 30 };
     meridian = true;
@@ -120,38 +132,98 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     serData: data;
     requestForms: FormGroup;
     visibleSidebar4: boolean;
+    visibleSidebar2: boolean;
     enabledOrderNowbutton: boolean = true;
     checked: boolean = false;
     serviceCounter: number = 0;
     enabledPaymentButton: boolean = false;
+    mainFilterHide = false;
     itemsArray = [{ name: "Oil & Oil Filter Change", price: "12.00" },
     { name: "Spark Plugs Changing", price: "60.00 " }];
     orderButtonConter = 0;
+    testVariable = false;
     deleted = true;
-
-    constructor(private _script: ScriptLoaderService, private modal: NgbModal, private serverServies_services: ServerServices_Services) {
+    addNewPaymentCardHide = false;
+    constructor(private _script: ScriptLoaderService, private modal: NgbModal, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private serverServies_services: ServerServices_Services) {
 
         // this.itemsArray=[{name:"Oil & Oil Filter Change", price: 12.00},
         //                  { name:"Spark Plugs Changing", price: 60.00}];
 
     }
+
     reqBeautyCategories: any[];
+    public searchControl: FormControl;
+
     ngOnInit() {
+
+        this.searchControl = new FormControl();
+        // this.mapsAPILoader.load().then(() => {
+        //     const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        //         types: ['address']
+        //     });
+        //     autocomplete.addListener('place_changed', () => {
+        //         this.ngZone.run(() => {
+        //             const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+        //             //  this.clientPlacess = place;
+        //             // console.log(this.clientCity);
+
+        //             //    for country
+        //             var address_components = autocomplete.getPlace().address_components;
+
+        //             if (place.geometry === undefined || place.geometry === null) {
+        //                 return;
+        //             }
+
+        //             this.lat = place.geometry.location.lat();
+        //             this.lang = place.geometry.location.lng();
+        //             this.lati = this.lat;
+        //             this.lng = this.lang;
+
+        //         });
+        //     });
+        // });
+
+        var text, counter = 0;
+        $(document).on('click', '#add-service-request', function() {
+            counter = counter + 1;
+            text = $(this).closest('.m-portlet__head').next().find('.m-widget4').append(`
+            <div class="m-widget4__item">
+                            <div class="m-widget4__img m-widget4__img--logo">
+                                <img src="./assets/app/media/img/client-logos/logo5.png" alt="">
+                            </div>
+                            <div class="m-widget4__info">
+								<span class="m-widget4__title">
+									New Item ` + counter + `
+								</span>
+                                <br>
+                                <span class="m-widget4__sub">
+									Make Metronic Great Again
+								</span>
+                            </div>
+                            <span class="m-widget4__ext">
+								<span class="m-widget4__number m--font-brand">
+									+$2500
+								</span>
+							</span>
+                        </div>
+        `);
+
+        });
 
         this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services'];
 
         this.serverServies_services.getServices()
             .subscribe(
-                (data) => {
-                    // console.log(data.data);
-                    this.serData = data.data;
-                    console.log(this.serData);
-                    // console.log('this is serverData');
-                    // console.log(this.serverData);
-                    // console.log('this is interface data');
-                    // console.log(this.serData);
-                    // console.log(serData[0].price + ' ' + serData[0].publish);
-                }
+            (data) => {
+                // console.log(data.data);
+                this.serData = data.data;
+                console.log(this.serData);
+                // console.log('this is serverData');
+                // console.log(this.serverData);
+                // console.log('this is interface data');
+                // console.log(this.serData);
+                // console.log(serData[0].price + ' ' + serData[0].publish);
+            }
             );
 
 
@@ -172,7 +244,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this._script.loadScripts('app-services',
             ['//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js',
                 '//www.amcharts.com/lib/3/plugins/export/export.min.js',
-                'assets/app/js/services.js']);
+                'assets/app/js/services.js', 'assets/app/js/bootstrap-datetimepicker.js',
+                'assets/app/js/bootstrap-datepicker.js',
+                'assets/app/js/bootstrap-timepicker.js',]);
 
     }
 
@@ -185,12 +259,16 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
 
     changeView() {
-        this.isGridView = !this.isGridView;
-        if (this.isGridView) {
-            this.viewName = "List View";
-        }
-        else {
+
+        if (this.isListViewHide) {
+            this.isListViewHide = false
+            this.isGridViewHide = true;
             this.viewName = "Grid View";
+
+        } else {
+            this.isGridViewHide = false;
+            this.isListViewHide = true;
+            this.viewName = "List View"
         }
     }
 
@@ -338,9 +416,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
             this.fileToUpload)
             .subscribe(
-                (response) => {
-                    console.log(response);
-                }
+            (response) => {
+                console.log(response);
+            }
             )
         this.requestForms.reset();
         this.fileToUpload = null;
@@ -392,8 +470,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
 
     onDelete(value: number) {
-        this.itemsArray.splice(value,value+1);
-        if(this.orderButtonConter!=0){
+        this.itemsArray.splice(value, value + 1);
+        if (this.orderButtonConter != 0) {
             this.orderButtonConter--;
         }
     }

@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarModule } from 'primeng/primeng';
 
+import { WizardLeadForm } from '../../../../components/leadFormWizard/leadFormWizard';
+
 import { ServerServices_Services } from '../../../../services/serverServices.services';
 
 const routes: Routes = [
@@ -27,14 +29,14 @@ const routes: Routes = [
 ];
 @NgModule({
     imports: [
-        CommonModule,SidebarModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
+        CommonModule, SidebarModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCQlMMVsJXt25cmmii1rx_Ghn0bjRRNdtc'
         }), NgbModule.forRoot(), FormsModule, ReactiveFormsModule
     ], exports: [
         NgbModule,
         HttpModule
     ], declarations: [
-        ServicesComponent
+        ServicesComponent, WizardLeadForm
     ],
     providers: [ServerServices_Services]
 })

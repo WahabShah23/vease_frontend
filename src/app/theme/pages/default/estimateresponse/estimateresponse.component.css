@@ -11,13 +11,33 @@
    
 }
 
-.customFilterStyle {
+.custom_padding_left{
+    padding-left: 0px;
+    margin-left: -10px;
+}
+
+
+.custom-main-filter{
+    background-color: #f2f3f8 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #a9a9a9 !important;
+    border-radius: 0 !important;
+    padding-left: 0!important;
+    height: 23px!important;
+    margin-left: -35px !important;
+}
+
+.custom-main-filter-focus:focus{
+   outline: none !important;
+}
+
+/* .customFilterStyle {
     background: transparent !important;
     border-bottom: 1px solid #999;
     padding-bottom: 0px;
     padding-top: 0.9px;
     margin-top: 1px;
-}
+} */
 
 .filterStyle:focus {
     border: #f2f3f8
