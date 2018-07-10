@@ -70,6 +70,9 @@ export class AuthComponent implements OnInit {
             ),
             (error => {
                 console.log(error);
+                this.showAlert('alertSignin');
+                this._alertService.error(error);
+                this.loading = false;
             })
             )
         // console.log(this.model.email + ' ' + this.model.password);
