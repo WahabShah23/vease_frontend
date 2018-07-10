@@ -13,10 +13,6 @@ const routes: Routes = [
                 'path': 'index',
                 'loadChildren': '.\/pages\/default\/index\/index.module#IndexModule',
             },
-            // {
-            //     'path': 'test',
-            //     'loadChildren': '.\/pages\/default\/Test\/test.module#TestModule',
-            // },
             {
                 'path': 'services',
                 'loadChildren': '.\/pages\/default\/services\/services.module#ServiceModule',
@@ -28,6 +24,10 @@ const routes: Routes = [
             {
                 'path': 'orderHistory',
                 'loadChildren': '.\/pages\/default\/orderHistory\/orderHistory.module#OrderHistoryModule',
+            },
+            {
+                'path': 'resolutionCentre',
+                'loadChildren': '.\/pages\/default\/resolutionCentre\/resolutionCentre.module#ResolutionCentreModule',
             },
             {
                 'path': 'estimatedresponse',
