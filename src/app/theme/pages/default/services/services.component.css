@@ -53,12 +53,33 @@
     margin-left: -10px;
 }
 
+@media (max-width: 767px){
+    .custom_padding_left{
+        margin-top: -24px;
+        padding-left: 50px;
+    }
+
+    .service-item a {
+        margin-top: -24px !important;
+    }
+
+    .card-left{
+        margin-top: 10px;
+    }
+}
+
 .customFilterStyle {
     background: transparent !important;
     border-bottom: 1px solid #999;
     padding-bottom: 0px;
     padding-top: 0.9px;
     margin-top: 1px;
+}
+
+.custom-check-box-setting{
+    height: 15px;
+    width: 15px;
+    top:-2px !important;
 }
 
 .filterStyle:focus {

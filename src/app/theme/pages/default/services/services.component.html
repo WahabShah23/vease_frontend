@@ -82,28 +82,28 @@
 										</span>
 									</li>
 
-									<li class="m-nav__item">
+									<!-- <li class="m-nav__item">
 										<a href="javascript:;" class="m-nav__link" data-target="#c_modal_createServices" data-toggle="modal">
 											<i class="m-nav__link-icon fa fa-plus"></i>
 											<span class="m-nav__link-text">
 												Request Services
 											</span>
 										</a>
-									</li>
+									</li> -->
 									<li class="m-nav__item">
 										<a href="" class="m-nav__link" (click)="formHidden=!formHidden">
-											<i class="m-nav__link-icon flaticon-chat-1"></i>
+											<i class="m-nav__link-icon fa fa-plus"></i>
 											<span class="m-nav__link-text">
-												Add Lead
+												Request Services
 											</span>
 										</a>
 									</li>
-									<li class="m-nav__separator m-nav__separator--fit"></li>
+									<!-- <li class="m-nav__separator m-nav__separator--fit"></li>
 									<li class="m-nav__item">
 										<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
 											Submit
 										</a>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</div>
@@ -2880,7 +2880,7 @@
 			<div class="tab-pane active show" id="m_tabs_5_1" role="tabpanel">
 
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-5">
 						<h5>
 							Items
 						</h5>
@@ -2890,16 +2890,21 @@
 							Price
 						</h5>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-2">
 						<h5>
 							Action
+						</h5>
+					</div>
+					<div class="col-md-2">
+						<h5>
+							Terms
 						</h5>
 					</div>
 				</div>
 
 				<div class="row" *ngFor="let item of itemsArray; let i= index">
 					<ng-container *ngIf="deleted">
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<h6>
 								{{item.name}}
 							</h6>
@@ -2909,20 +2914,25 @@
 								${{item.price}}
 							</h6>
 						</div>
-						<div class="col-md-3" style="padding-left: 40px;">
+						<div class="col-md-2" style="padding-left: 35px;">
 							<a (click)="onDelete(i)">
 								<i class="fa fa-trash"></i>
 							</a>
-
 						</div>
-						<div class="row" style="padding-left: 30px;">
+						<div class="col-md-2" style="text-align: right;">
+							<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
+								<input type="checkbox">
+								<span class="custom-check-box-setting"  data-target="#m_modal_terms" data-toggle="modal"></span>
+							</label>
+						</div>
+						<!-- <div class="row" style="padding-left: 30px;">
 							<div>
 								<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
 									<input type="checkbox" (change)="onOrderNow($event)"> I Agree to terms and condition
 									<span></span>
 								</label>
 							</div>
-						</div>
+						</div> -->
 						<hr>
 					</ng-container>
 				</div>
@@ -3120,235 +3130,146 @@
 			<div class="m-portlet__head">
 				<div class="m-portlet__head-caption">
 					<div class="m-portlet__head-title">
-						<a class="btn btn-link" style="padding:0px;" (click)="formHidden=true" style="display:  block;padding-left: 0px;margin-left: -18px;">
+						<a class="btn btn-link" style="padding:0px;" (click)="formHidden=true" style="display:  block;padding-left: 0px;margin-left: -75px;">
 							<i class="fa fa-chevron-left"></i> BACK</a>
 						<h3 class="m-portlet__head-text" style=" float:left;">
-							New Lead
+							Request a Service
 						</h3>
 					</div>
 				</div>
 				<div class="m-portlet__head-tools">
-					<ul class="m-portlet__nav">
-						<li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push"
-						 data-dropdown-toggle="hover">
-							<a class="m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill btn-secondary m-btn m-btn--label-brand"
-							 href="#" ng-reflect-href="#">
-								All
-							</a>
-							<div class="m-dropdown__wrapper">
-								<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-								<div class="m-dropdown__inner">
-									<div class="m-dropdown__body">
-										<div class="m-dropdown__content">
-											<ul class="m-nav">
-												<li class="m-nav__section m-nav__section--first">
-													<span class="m-nav__section-text">
-														Quick Actions
-													</span>
-												</li>
-												<li class="m-nav__item">
-													<a class="m-nav__link" href="" id="add-service-request" ng-reflect-href="">
-														<i class="m-nav__link-icon flaticon-add"></i>
-														<span class="m-nav__link-text">
-															Add
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__item">
-													<a class="m-nav__link" href="" ng-reflect-href="">
-														<i class="m-nav__link-icon flaticon-share"></i>
-														<span class="m-nav__link-text">
-															Activity
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__item">
-													<a class="m-nav__link" href="" ng-reflect-href="">
-														<i class="m-nav__link-icon flaticon-chat-1"></i>
-														<span class="m-nav__link-text">
-															Messages
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__item">
-													<a class="m-nav__link" href="" ng-reflect-href="">
-														<i class="m-nav__link-icon flaticon-info"></i>
-														<span class="m-nav__link-text">
-															FAQ
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__item">
-													<a class="m-nav__link" href="" ng-reflect-href="">
-														<i class="m-nav__link-icon flaticon-lifebuoy"></i>
-														<span class="m-nav__link-text">
-															Support
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__separator m-nav__separator--fit"></li>
-												<li class="m-nav__item">
-													<a class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm" href="#" ng-reflect-href="#">
-														Cancel
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
 				</div>
 			</div>
 			<div class="m-portlet__body">
-				<div class="row">
-					<div class="col-md-12">
-
-
-						<div class="m-radio-inline" style="margin-bottom:20px;">
-							<div class="form-check form-check-inline">
-								<label class="form-check-label" style="padding-right: 40px;">Client Type</label>
+				<form class="form-group">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group m-form__group">
+								<label>
+									Request Name
+								</label>
+								<input class="form-control m-input m-input--air" placeholder="Enter Request Name" type="text">
 							</div>
 
-							<label class="m-radio m-radio--solid m-radio--brand">
-								<input checked="" (change)="isCustomer=true;" name="theclientcheck" type="radio" value="2"> Customer
-								<span></span>
-							</label>
-							<label class="m-radio m-radio--solid m-radio--brand">
-								<input (change)="isCustomer=false;" name="theclientcheck" type="radio" value="2"> Company
-								<span></span>
-							</label>
+							<div class="form-group m-form__group">
+								<label>
+									Request Category
+								</label>
+								<select class="form-control m-input m-input--air">
+									<option>Facial Care</option>
+									<option>Hair Removal</option>
+									<option>Nail Care</option>
+								</select>
+							</div>
+							<div class="form-group m-form__group">
+								<label>
+									Price
+								</label>
+								<input class="form-control m-input m-input--air" placeholder="Enter Price" type="text">
+							</div>
+							<div class="form-group m-form__group">
+								<label>
+									Request Details
+								</label>
+								<textarea class="form-control m-input" placeholder="Enter Request Details Here"></textarea>
+							</div>
 						</div>
+						<div class="col-md-6">
 
-					</div>
-					<div class="col-md-6">
+							<div class="form-group m-form__group">
+								<label>
+									Contact Number
+								</label>
+								<input class="form-control m-input m-input--air" placeholder="Enter Contact Number Here" type="tel">
+							</div>
 
+							<div class="form-group m-form__group">
+								<label>
+									Select Date &amp; Time Slot1
+								</label>
+								<input class="form-control m-input m-input--air" id="m_datetimepicker_1" placeholder="Select date &amp; time" type="text">
+							</div>
 
-						<!-- <div class="form-group">
-					
-									</div> -->
+							<div class="form-group m-form__group">
+								<label>
+									Select Date &amp; Time Slot2
+								</label>
+								<input class="form-control m-input m-input--air " id="m_datetimepicker_2" placeholder="Select date &amp; time" type="text">
+							</div>
 
-						<div class="form-group" *ngIf="!isCustomer">
-							<label for="name">Name</label>
-							<input type="text" class="form-control" id="name" placeholder="ABC">
-						</div>
+							<div class="m-form__group form-group row" style="padding-left: 15px;">
+								<label class="col-form-label">
+									Publish This Is Request Online?
+								</label>
 
-						<div class="form-group">
-							<label for="source">Source</label>
-							<select class="form-control" id="source">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-
-
-
-
-						<div class="form-group" *ngIf="isCustomer">
-							<label for="firstName">First Name</label>
-							<input type="password" class="form-control" id="firstName" placeholder="Enter First Name">
-						</div>
-
-
-						<div class="form-group" *ngIf="isCustomer">
-							<label for="lastName">Last Name</label>
-							<input type="password" class="form-control" id="lastName" placeholder="Enter Last Name">
-						</div>
-
-						<div class="form-group m-form__group">
-							<label>
-								Phone Number
-							</label>
-							<div class="m-input-icon m-input-icon--left">
-								<input class="form-control m-input" placeholder="Enter Phone Number" type="tel">
-								<span class="m-input-icon__icon m-input-icon__icon--left">
-									<span>
-										<i class="fa fa-phone"></i>
-									</span>
+								<span style="margin-left: 10px;" class="m-switch m-switch--icon m-switch--primary m-switch--sm">
+									<label>
+										<input checked="checked" name="" type="checkbox">
+										<span></span>
+									</label>
 								</span>
-							</div>
-						</div>
-
-						<div class="form-group m-form__group">
-							<label>
-								Email
-							</label>
-							<div class="m-input-icon m-input-icon--left">
-								<input class="form-control m-input" placeholder="Enter Email" type="email">
-								<span class="m-input-icon__icon m-input-icon__icon--left">
-									<span>
-										<i class="fa fa-envelope"></i>
-									</span>
-								</span>
-							</div>
-						</div>
-
-						<!-- <div class="form-check">
-										<input type="checkbox" class="form-check-input" id="exampleCheck1">
-										<label class="form-check-label" for="exampleCheck1">Check me out</label>
-									</div> -->
-						<a href="https://www.google.com" *ngIf="!isCustomer">Add new contact</a>
-						<!-- <link>Add new Contact</link> -->
-						<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-
-
-					</div>
-					<div class="col-md-6">
-						<div class="form-group m-form__group">
-							<label>
-								Address
-							</label>
-							<div class="m-input-icon m-input-icon--left">
-								<!-- <input placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
-								 #search [formControl]="searchControl"> -->
-								<input class="form-control m-input" placeholder="Search for Location" type="text">
-								<span class="m-input-icon__icon m-input-icon__icon--left">
-									<span>
-										<i class="la la-map-marker"></i>
-									</span>
-								</span>
-							</div>
-						</div>
-
-						<agm-map [latitude]="lati" [longitude]="lng" style="height:300px;">
-							<agm-marker [latitude]="lati" [longitude]="lng"></agm-marker>
-						</agm-map>
-
-					</div>
-
-					<div class="col-sm-12">
-						<wizard-lead-form></wizard-lead-form>
-					</div>
-
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-2">
-								<button type="button" class="btn btn-secondary btn-sm">Cancel</button>
-								<button type="button" class="btn btn-danger btn-sm">Delete</button>
-							</div>
-
-							<div class="col-md-5 offset-md-5" style="padding-right: 30px; ">
-								<div class="row" style="float:right;">
-									<div>
-										<button type="button" class="btn btn-secondary btn-sm">Copy to Estimate</button>
-										<button type="button" class="btn btn-secondary btn-sm">Copy to Job</button>
-										<button type="button" class="btn btn-secondary btn-sm">Copy to Invoice</button>
-										<button type="button" class="btn btn-info btn-sm">Save</button>
+								<div class="row">
+									<div class="col-md-12">
+										<label>Upload Document File</label>
+										<input type="file" class="form-control-file">
 									</div>
 								</div>
 							</div>
 
 
+							<button class="btn btn-primary btn-sm custom-float-right" type="submit">
+								Submit
+							</button>
+							<button class="btn btn-secondary btn-sm custom-float-right" type="button" (click)="formHidden=true">
+								Cancel
+							</button>
+
 						</div>
 					</div>
-
-				</div>
+				</form>
 			</div>
 		</div>
 
 	</form>
 </div>
+
+
+<!-- Terms and Condition Modal -->
+
+<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_terms" role="dialog" tabindex="-1" style="display: none; z-index: 100003;" aria-hidden="true">
+		<div class="modal-dialog" role="document" style="margin-left: 25%;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">
+						Terms and Condition
+					</h5>
+					<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+						<span aria-hidden="true">
+							×
+						</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="m-scrollable m-scroller ps" data-height="200" data-scrollable="true" data-scrollbar-shown="true" style="height: 200px; overflow: hidden;">
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						</p>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						</p>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						</p>
+					<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px; height: 200px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-dismiss="modal" type="button">
+						Close
+					</button>
+					<button class="btn btn-primary" type="button">
+						Save changes
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>

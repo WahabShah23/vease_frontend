@@ -111,13 +111,13 @@ margin-top: -6px;
 ">
 
 <div class="m-content" style="padding-top: 0px">
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-5">
             <div class="form-group m-form__group">
                 <input type="text" class="form-control m-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ___________complaints ______________ -->
     <div class="row" *ngIf="complaints">
@@ -183,9 +183,9 @@ margin-top: -6px;
 
 
         <div class="col-md-5">
-            <h3 class="m-subheader__title titleComplaints titles">
+            <h5 class="m-subheader__title titleComplaints titles">
                 Dispute Table
-            </h3>
+            </h5>
             <div class="m-section">
                 <div class="m-section__content">
                     <table class="table table-striped m-table">
@@ -217,8 +217,8 @@ margin-top: -6px;
                                     Oil & Oil Filter Changing
                                 </td>
                                 <td>
-                                    <span class="m-badge m-badge--danger m-badge--wide">
-                                        Cancelled
+                                    <span class="m--font-success custom-font-weight">
+                                        Resolved
                                     </span>
                                 </td>
                             </tr>
@@ -233,8 +233,8 @@ margin-top: -6px;
                                     Fancy Cutting
                                 </td>
                                 <td>
-                                    <span class="m-badge m-badge--info m-badge--wide">
-                                        Complaint
+                                    <span class="m--font-warning custom-font-weight">
+                                        In-Progress
                                     </span>
                                 </td>
                             </tr>
@@ -246,24 +246,17 @@ margin-top: -6px;
         </div>
 
 
-        <div class="col-md-4 titleComplaints" [hidden]="!disputeRightSideActive">
+        <div class="col-md-4 titleComplaints" [hidden]="!disputeRightSideActive" style="margin-left: -40px;">
             <!-- _______scroable goes here_______ -->
             <!--Begin::Timeline 2 -->
-            <h3 class="m-subheader__title titleComplaints titles">
+            <h5 class="m-subheader__title titleComplaints titles" style="padding-left: 45px;">
                 Details / Handle Dispute
-            </h3>
+            </h5>
             <div class="m-timeline-2" style="left:2.89rem;">
                 <div class="m-timeline-2__items  m--padding-top-25 m--padding-bottom-30">
 
 
                     <div class="m-timeline-2__item job-width" [hidden]="!firstRowActive">
-                        <!-- <span class="m-timeline-2__item-time">
-                                    10:00
-                                </span> -->
-                        <div class="m-timeline-2__item-cricle">
-                            <i class="fa fa-genderless m--font-danger"></i>
-                        </div>
-
                         <div class="m-timeline-2__item-text  m--padding-top-5">
                             <div class="card-content">
                                 <div class="m-widget3__item">
@@ -297,8 +290,8 @@ margin-top: -6px;
                                             euismod tinciduntut laoreet doloremagna aliquam erat volutpat. Lorem ipsum dolor
                                             sit amet,consectetuer edipiscing elit
                                         </p>
-                                        <!-- <button type="button" class="btn btn-info card-button" data-toggle="modal" data-target="#rescheduleFormd">
-                                                    Reschedule</button> -->
+                                        <button type="button" class="btn btn-primary card-button btn-sm" data-toggle="modal" data-target="#m_modal_escalate" style="float: right;">
+                                            Escalate</button>
 
                                     </div>
                                 </div>
@@ -309,12 +302,6 @@ margin-top: -6px;
                         <!--Timeline 2 text-->
                     </div>
                     <div class="m-timeline-2__item job-width" [hidden]="!secondRowActive">
-                        <!-- <span class="m-timeline-2__item-time">
-                                        10:00
-                                    </span> -->
-                        <div class="m-timeline-2__item-cricle">
-                            <i class="fa fa-genderless m--font-danger"></i>
-                        </div>
 
                         <div class="m-timeline-2__item-text  m--padding-top-5">
                             <div class="card-content">
@@ -349,8 +336,8 @@ margin-top: -6px;
                                             euismod tinciduntut laoreet doloremagna aliquam erat volutpat. Lorem ipsum dolor
                                             sit amet,consectetuer edipiscing elit
                                         </p>
-                                        <!-- <button type="button" class="btn btn-info card-button" data-toggle="modal" data-target="#rescheduleFormd">
-                                                        Reschedule</button> -->
+                                        <button type="button" class="btn btn-primary card-button btn-sm" data-toggle="modal" data-target="#m_modal_escalate" style="float: right;">
+                                            Escalate</button>
 
                                     </div>
                                 </div>
@@ -377,15 +364,8 @@ margin-top: -6px;
                     Order Status
                 </label>
                 <select name="status" id="order_status" class="form-control m-input m-input--air">
-                    <option value="ORDERED">ORDERED</option>
-                    <option value="RECEIVED">RECEIVED</option>
-                    <option value="ASSIGNED">ASSIGNED</option>
-                    <option value="PROCESSING">PROCESSING</option>
-                    <option value="REACHED">REACHED</option>
-                    <option value="PICKEDUP">PICKEDUP</option>
-                    <option value="ARRIVED">ARRIVED</option>
-                    <option value="COMPLETED">COMPLETED</option>
-                    <option value="CANCELLED" selected="selected">CANCELLED</option>
+                    <option value="inprogress">In-Progress</option>
+                    <option value="resolved">Resolved</option>
                 </select>
             </div>
             <div class="form-group m-form__group">
@@ -446,4 +426,64 @@ margin-top: -6px;
         </div>
     </div>
 
+</div>
+
+
+<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_escalate" role="dialog" tabindex="-1" aria-hidden="true"
+    style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Escalate
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group">
+                    <div class="form-group m-form__group">
+                        <label>
+                            Date
+                        </label>
+                        <input class="form-control  m-input m-input--air" placeholder="" readonly="" value="7/13/2018" type="text">
+                    </div>
+                    <div class="form-group m-form__group">
+                        <label>
+                            Reason
+                        </label>
+                        <select class="form-control m-input m-input--air">
+                            <option>
+                                No-Response
+                            </option>
+                            <option>
+                                Late Delivery
+                            </option>
+                            <option>
+                                Low Qaulity
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label>
+                            Comments
+                        </label>
+                        <textarea class="form-control m-input m-input--air"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+                <button class="btn btn-primary" type="submit">
+                   Submit
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
