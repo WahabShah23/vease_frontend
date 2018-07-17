@@ -8,6 +8,10 @@
     margin-bottom: 5px;
 }
 
+.custom-font-weight{
+    font-weight: 500;
+}
+
 .titleComplaints {
     /* margin-left: 15px; */
     margin-bottom: 15px;

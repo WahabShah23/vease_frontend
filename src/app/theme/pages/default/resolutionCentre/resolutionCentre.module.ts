@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
 import { ResolutionCentreComponent } from './resolutionCentre.component'
+import { AgGridModule } from 'ag-grid-angular';
 
 const routes: Routes = [
     {
@@ -23,7 +24,8 @@ const routes: Routes = [
     imports: [
         CommonModule, RouterModule.forChild(routes), LayoutModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AgGridModule.withComponents([]),
     ], exports: [
         RouterModule,
     ], declarations: [
