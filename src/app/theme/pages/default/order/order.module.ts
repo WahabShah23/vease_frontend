@@ -7,35 +7,33 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
 import { OrderComponent } from "./order.component";
-import { CreateDisputeComponent } from './createDispute/createDispute.component';
 
 const routes: Routes = [
-    {
+  {
+    'path': '',
+    'component': DefaultComponent,
+    'children': [
+      {
         'path': '',
-        'component': DefaultComponent,
-        'children': [
-            {
-                'path': '',
-                'component': OrderComponent,
-            },
-        ],
-    },
+        'component': OrderComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule, DragulaModule, AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyCQlMMVsJXt25cmmii1rx_Ghn0bjRRNdtc',
-            libraries: ['places']
-        }),
-        FormsModule,
-        ReactiveFormsModule
-    ], exports: [
-        RouterModule,
-    ], declarations: [
-        OrderComponent,
-        CreateDisputeComponent
-    ],
+  imports: [
+    CommonModule, RouterModule.forChild(routes), LayoutModule, DragulaModule, AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCQlMMVsJXt25cmmii1rx_Ghn0bjRRNdtc',
+      libraries: ['places']
+    }),
+    FormsModule,
+    ReactiveFormsModule
+  ], exports: [
+    RouterModule,
+  ], declarations: [
+    OrderComponent
+  ],
 })
 export class OrderModule {
 

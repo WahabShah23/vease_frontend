@@ -16,29 +16,29 @@ import { WizardLeadForm } from '../../../../components/leadFormWizard/leadFormWi
 import { ServerServices_Services } from '../../../../services/serverServices.services';
 
 const routes: Routes = [
-    {
+  {
+    "path": "",
+    "component": DefaultComponent,
+    "children": [
+      {
         "path": "",
-        "component": DefaultComponent,
-        "children": [
-            {
-                "path": "",
-                "component": ServicesComponent
-            }
-        ]
-    }
+        "component": ServicesComponent
+      }
+    ]
+  }
 ];
 @NgModule({
-    imports: [
-        CommonModule, SidebarModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyCQlMMVsJXt25cmmii1rx_Ghn0bjRRNdtc'
-        }), NgbModule.forRoot(), FormsModule, ReactiveFormsModule
-    ], exports: [
-        NgbModule,
-        HttpModule
-    ], declarations: [
-        ServicesComponent, WizardLeadForm
-    ],
-    providers: [ServerServices_Services]
+  imports: [
+    CommonModule, SidebarModule, RouterModule.forChild(routes), CalendarModule.forRoot(), LayoutModule, AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCQlMMVsJXt25cmmii1rx_Ghn0bjRRNdtc'
+    }), NgbModule.forRoot(), FormsModule, ReactiveFormsModule
+  ], exports: [
+    NgbModule,
+    HttpModule
+  ], declarations: [
+    ServicesComponent, WizardLeadForm
+  ],
+  providers: [ServerServices_Services]
 })
 export class ServiceModule {
 

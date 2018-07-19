@@ -1,69 +1,77 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, ChangeDetectorRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
-import { AgGridNg2 } from 'ag-grid-angular';
-declare var $: any;
+import { Subscription } from 'rxjs/Subscription';
+
+import * as $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-bs4';
 
 @Component({
-    selector: 'resolution-centre',
-    templateUrl: './resolutionCentre.component.html',
-    styleUrls: ['./resolutionCentre.component.css']
+  selector: 'resolution-centre',
+  templateUrl: './resolutionCentre.component.html',
+  styleUrls: ['./resolutionCentre.component.css']
 
 })
+
 export class ResolutionCentreComponent {
 
-    @ViewChild('agGrid') agGrid: AgGridNg2;
+  firstRowActive = false;
+  secondRowActive = false;
+  disputeRightSideActive = false;
+  mainFilterHide = false;
 
-    complaints = true;
-    cardClassActive = false;
+  arrayOfDispute: Object;
 
-    firstRowActive = false;
-    secondRowActive = false;
-    disputeRightSideActive = false;
-    mainFilterHide = false;
-    enableColResize: boolean;
-    enableSorting: boolean;
-    enableFilter: boolean;
-    gridApi;
-    rowSelection = "single";
-    gridColumnApi;
+  clients: any[];
+  dataTable: any;
 
-    columnDefs = [
-        { headerName: '#', field: 'id' },
-        { headerName: 'Company', field: 'company' },
-        { headerName: 'Service', field: 'service' },
-        { headerName: 'Status', field: 'status' }
+  constructor(private _script: ScriptLoaderService, private http: HttpClient, private chRef: ChangeDetectorRef) {
+
+    this.arrayOfDispute = [
+      { id: '1', company: 'Handy Autos', service: ' Oil & Oil Filter Changing', status: 'Resolved' },
+      { id: '2', company: 'Mont Hair', service: 'Fancy Cutting', status: ' In-Progress' }
     ];
 
-    rowData = [
-        { id: '1', company: 'Handy Autos', service: ' Oil & Oil Filter Changing', status: 'Resolved' },
-        { id: '2', company: 'Mont Hair', service: 'Fancy Cutting', status: ' In-Progress' }
-    ];
+  }
 
-    constructor(private _script: ScriptLoaderService) {
+  ngOnInit() {
+    //const table: any = $('table');
+    //this.dataTable = table.DataTable();
 
+    $(document).ready(function() {
+      const table: any = $('#datatable');
+      var users = table.DataTable({
+        "dom": "t"
+      }
+      );
+      $('#customSearchBox').keyup(function() {
+        users.search($(this).val()).draw();
+      })
+    });
+
+  }
+
+
+  ngAfterViewInit() {
+
+    this._script.loadScripts('resolution-centre',
+      ['assets/app/js/services.js']);
+
+  }
+
+  activeRow(index: number) {
+
+    this.disputeRightSideActive = true;
+
+    if (index == 1) {
+      this.secondRowActive = false;
+      this.firstRowActive = true;
+    } else {
+      this.firstRowActive = false;
+      this.secondRowActive = true;
     }
 
-
-    ngAfterViewInit() {
-      
-
-        this._script.loadScripts('resolution-centre',
-            ['assets/app/js/services.js']);
-
-    }
-
-
-    test() {
-        const selectedNodes = this.agGrid.api.getSelectedNodes();
-        const selectedData = selectedNodes.map(node => node.data);
-        this.disputeRightSideActive = true;
-        if (selectedData[0].id == 1) {
-            this.secondRowActive = false;
-            this.firstRowActive = true;
-        } else {
-            this.firstRowActive = false;
-            this.secondRowActive = true;
-        }
-    }
+  }
 
 }

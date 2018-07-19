@@ -13,33 +13,33 @@ import { HrefPreventDefaultDirective } from '../../_directives/href-prevent-defa
 import { UnwrapTagDirective } from '../../_directives/unwrap-tag.directive';
 
 @NgModule({
-    declarations: [
-        DefaultComponent,
-        HeaderNavComponent,
-        AsideComponent,
-        AsideNavComponent,
-        FooterComponent,
-        QuickSidebarComponent,
-        ScrollTopComponent,
-        TooltipsComponent,
-        HrefPreventDefaultDirective,
-        UnwrapTagDirective,
-    ],
-    exports: [
-        DefaultComponent,
-        HeaderNavComponent,
-        AsideComponent,
-        AsideNavComponent,
-        FooterComponent,
-        QuickSidebarComponent,
-        ScrollTopComponent,
-        TooltipsComponent,
-        HrefPreventDefaultDirective,
-    ],
-    imports: [
-        CommonModule,
-        RouterModule,
-    ]
+  declarations: [
+    DefaultComponent,
+    HeaderNavComponent,
+    AsideComponent,
+    AsideNavComponent,
+    FooterComponent,
+    QuickSidebarComponent,
+    ScrollTopComponent,
+    TooltipsComponent,
+    HrefPreventDefaultDirective,
+    UnwrapTagDirective,
+  ],
+  exports: [
+    DefaultComponent,
+    HeaderNavComponent,
+    AsideComponent,
+    AsideNavComponent,
+    FooterComponent,
+    QuickSidebarComponent,
+    ScrollTopComponent,
+    TooltipsComponent,
+    HrefPreventDefaultDirective,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+  ]
 })
 export class LayoutModule {
 }

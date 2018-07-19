@@ -11,6 +11,12 @@
     overflow: hidden;
 }
 
+@media (max-width: 524px){
+    .media-view-right{
+        padding-right: 60px;
+    }
+}
+
 .btn-file input[type=file] {
     position: absolute;
     top: 0;

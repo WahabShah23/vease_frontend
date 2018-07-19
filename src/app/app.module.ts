@@ -15,23 +15,23 @@ import { CalendarModule } from 'angular-calendar';
 
 
 @NgModule({
-    declarations: [
-        ThemeComponent,
-        AppComponent,
-    ],
-    imports: [
-        LayoutModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        ThemeRoutingModule,
-        AuthModule,
-        CalendarModule.forRoot(),
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
-        }),
-    ],
-    providers: [ScriptLoaderService],
-    bootstrap: [AppComponent]
+  declarations: [
+    ThemeComponent,
+    AppComponent,
+  ],
+  imports: [
+    LayoutModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ThemeRoutingModule,
+    AuthModule,
+    CalendarModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg'
+    }),
+  ],
+  providers: [ScriptLoaderService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

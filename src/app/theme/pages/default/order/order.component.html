@@ -1,3 +1,4 @@
+<!-- END: Header -->
 <div class="m-subheader" style="padding-top: 10px;
 margin-bottom: -26px;">
     <div class="d-flex align-items-center">
@@ -6,93 +7,14 @@ margin-bottom: -26px;">
                 Order Page
             </h3>
             <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
-                <!-- <li class="m-nav__item m-nav__item--home">
-                    <a routerLink="/dashboard" class="m-nav__link m-nav__link--icon">
-                        <i class="m-nav__link-icon la la-home"></i>
-                    </a>
-                </li> -->
+
             </ul>
-        </div>
-        <!-- <a class="btn btn-link " (click)="formHidden=!formHidden">
-            <i class="fa fa-plus"></i> Add Job</a> -->
-        <!-- <a  data-toggle="modal" data-target="#addBookingModal" class="btn btn-link"><i class="fa fa-plus"></i> Add Booking</a> -->
-
-        <div style="padding-right:0px;" *ngIf="orderHistory">
-            <button class="btn btn-link pull-right" (click)="orderHistory=!orderHistory">
-                <i class="fa fa-plus"></i> Create Dispute
-            </button>
-        </div>
-        <div style="padding-right:0px;">
-            <button class="btn btn-link pull-right" *ngIf="!orderHistory" (click)="orderHistory=true;">
-                <i class="fa fa-chevron-left"></i> BACK </button>
-        </div>
-
-        <div>
-            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover"
-                aria-expanded="true">
-                <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
-                    <i class="la la-plus m--hide"></i>
-                    <i class="la la-ellipsis-h"></i>
-                </a>
-                <div class="m-dropdown__wrapper">
-                    <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                    <div class="m-dropdown__inner">
-                        <div class="m-dropdown__body">
-                            <div class="m-dropdown__content">
-                                <ul class="m-nav">
-                                    <li class="m-nav__section m-nav__section--first m--hide">
-                                        <span class="m-nav__section-text">
-                                            Quick Actions
-                                        </span>
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <a href="" class="m-nav__link">
-                                            <i class="m-nav__link-icon fa fa-plus"></i>
-                                            <span class="m-nav__link-text">
-                                                New Service
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <a href="" class="m-nav__link">
-                                            <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                            <span class="m-nav__link-text">
-                                                Messages
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <a href="" class="m-nav__link">
-                                            <i class="m-nav__link-icon flaticon-info"></i>
-                                            <span class="m-nav__link-text">
-                                                FAQ
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <a href="" class="m-nav__link">
-                                            <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                            <span class="m-nav__link-text">
-                                                Support
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="m-nav__separator m-nav__separator--fit"></li>
-                                    <li class="m-nav__item">
-                                        <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
-                                            Submit
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
+<!-- END: Header -->
 
+<!-- Start: Subheader -->
 <div class="m-subheader breadcrumsubheader" style="
 padding-top:  0px;
 ">
@@ -115,19 +37,17 @@ padding-top:  0px;
         </li>
     </ul>
 </div>
-
-
 <!-- END: Subheader -->
-<hr class="customhr" style="
-margin-top: -6px;
-">
+
+<hr class="customhr" style="margin-top: -6px;">
+
 <!-- Content Begins -->
 <div class="m-content" *ngIf="orderHistory">
 
     <div class="row" [hidden]="!formHidden">
 
 
-        <!--List 4 Start-->
+        <!--List 1 Start-->
         <div class="col-xl-3">
             <!--begin:: Widgets/Authors Profit-->
             <div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
@@ -234,15 +154,12 @@ margin-top: -6px;
                     </div>
                 </div>
             </div>
-            <!--&lt;!&ndash;end:: Widgets/Authors Profit&ndash;&gt;-->
-            <!--</div>-->
-            <!--</div>-->
             <!--End::Section-->
         </div>
-        <!--List 4 Ends-->
+        <!--List 1 Ends-->
 
 
-        <!--List 1 Start-->
+        <!--List 2 Start-->
         <div class="col-xl-3">
             <!--begin:: Widgets/Authors Profit-->
             <div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
@@ -347,14 +264,11 @@ margin-top: -6px;
                     </div>
                 </div>
             </div>
-            <!--&lt;!&ndash;end:: Widgets/Authors Profit&ndash;&gt;-->
-            <!--</div>-->
-            <!--</div>-->
             <!--End::Section-->
         </div>
-        <!--List 1 Ends-->
+        <!--List 2 Ends-->
 
-        <!--List 2 Start-->
+        <!--List 3 Start-->
         <div class="col-xl-3">
             <!--begin:: Widgets/Authors Profit-->
             <div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
@@ -458,14 +372,11 @@ margin-top: -6px;
                     </div>
                 </div>
             </div>
-            <!--&lt;!&ndash;end:: Widgets/Authors Profit&ndash;&gt;-->
-            <!--</div>-->
-            <!--</div>-->
             <!--End::Section-->
         </div>
-        <!--List 2 Ends-->
+        <!--List 3 Ends-->
 
-        <!--List 3 Start-->
+        <!--List 4 Start-->
         <div class="col-xl-3">
             <!--begin:: Widgets/Authors Profit-->
             <div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
@@ -580,351 +491,14 @@ margin-top: -6px;
                     </div>
                 </div>
             </div>
-            <!--&lt;!&ndash;end:: Widgets/Authors Profit&ndash;&gt;-->
-            <!--</div>-->
-            <!--</div>-->
             <!--End::Section-->
         </div>
-        <!--List 3 Ends-->
-
-
+        <!--List 4 Ends-->
     </div>
-
-</div>
-
-<div class="m-content" *ngIf="!orderHistory">
-    <create-dispute></create-dispute>
-</div>
-
-
-<div aria-labelledby="serviceModalLabel" class="modal fade" id="addServiceModal" role="dialog" tabindex="-1" style="display: none;"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    Add Service
-                </h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-
-
-                <div class="form-group m-form__group">
-                    <label for="ServiceName">
-                        Request Name:
-                    </label>
-                    <input class="form-control" id="ServiceName" type="text">
-                </div>
-
-                <div class="form-group m-form__group">
-                    <label for="ServiceDetails">
-                        Request Details:
-                    </label>
-                    <textarea class="form-control" id="ServiceDetails" rows="3"></textarea>
-                </div>
-
-                <div class="form-group m-form__group">
-                    <label for="ServiceType">
-                        Request Category:
-                    </label>
-                    <select class="form-control" id="ServiceType">
-                        <optgroup label="Beauty & Wellness">
-                            <option>Facial Care</option>
-                            <option>Hair Removal</option>
-                            <option>Nail Care</option>
-                        </optgroup>
-
-                        <optgroup label="Family & Lifestyle">
-                            <option>Event Planning</option>
-                            <option>Food amp; Catering</option>
-                            <option>Pet Services</option>
-                        </optgroup>
-
-                    </select>
-                </div>
-
-
-                <div class="form-group m-form__group">
-                    <label for="ServiceStaff">
-                        Select Your Staff:
-                    </label>
-                    <select class="form-control" id="ServiceStaff">
-
-                        <option></option>
-                        <option>My Senior Staff</option>
-                    </select>
-                </div>
-
-
-                <div class="form-group m-form__group">
-                    <label for="ServicePrice">
-                        Price:
-                    </label>
-                    <input class="form-control" id="ServicePrice" type="number">
-                </div>
-
-                <div class="form-group m-form__group">
-                    <label for="ServiceDuraton">
-                        Duration:
-                    </label>
-                    <input class="form-control" id="ServiceDuraton" type="text">
-                </div>
-
-                <div class="m-form__group form-group row">
-                    <label class="col-form-label">
-                        Publish This Is Request Online?
-                    </label>
-
-                    <span style="margin-left: 10px;" class="m-switch m-switch--icon m-switch--success">
-                        <label>
-                            <input checked="checked" name="" type="checkbox">
-                            <span></span>
-                        </label>
-                    </span>
-
-                </div>
-
-                <button class="btn-dark file-upload-btn">Upload Files</button>
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                    Close
-                </button>
-                <button class="btn btn-primary" type="button">
-                    Add Request
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div aria-labelledby="bookingModalLabel" class="modal fade" id="addBookingModal" role="dialog" tabindex="-1" style="display: none;"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    Make A Booking
-                </h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4>Booking</h4>
-                        <div class="form-group m-form__group">
-                            <label for="BookingServiceName">
-                                Service Name:
-                            </label>
-                            <input class="form-control" id="BookingServiceName" type="text">
-                        </div>
-
-
-                        <div class="form-group m-form__group">
-                            <label for="BookingStaffMember">
-                                Staff Member:
-                            </label>
-                            <input class="form-control" id="BookingStaffMember" type="text">
-                        </div>
-
-
-                        <div class="form-group m-form__group">
-                            <label for="BookingQuantity">
-                                Quantity:
-                            </label>
-                            <input class="form-control" id="BookingQuantity" type="text">
-                        </div>
-
-
-                        <div class="form-group m-form__group">
-                            <label for="BookingAmount">
-                                Amount:
-                            </label>
-                            <input class="form-control" id="BookingAmount" type="text">
-                        </div>
-
-                        <div class="form-group m-form__group row">
-                            <label class="col-12 col-form-label" for="example-datetime-local-input">
-                                Time Period
-                            </label>
-                            <div class="col-12">
-                                <input class="form-control m-input" id="example-datetime-local-input" type="datetime-local" value="2011-08-19T13:45:00">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <h4>Customer</h4>
-
-                        <div class="form-group m-form__group">
-                            <label for="bookingcustomerNameField">
-                                Name:
-                            </label>
-                            <input class="form-control" id="bookingcustomerNameField" type="text">
-                        </div>
-
-                        <div class="form-group m-form__group">
-                            <label for="bookingcustomerEmailField">
-                                Email:
-                            </label>
-                            <input class="form-control" id="bookingcustomerEmailField" type="text">
-                        </div>
-
-                        <div class="form-group m-form__group">
-                            <label for="bookingcustomerPhoneField">
-                                Phone:
-                            </label>
-                            <input class="form-control" id="bookingcustomerPhoneField" type="text">
-                        </div>
-
-                        <div class="form-group m-form__group">
-                            <label for="addressFieldBooking">
-                                Address:
-                            </label>
-
-                        </div>
-
-
-                        <div class="m-form__group form-group">
-                            <div class="m-radio-list">
-                                <label class="m-radio">
-                                    <input name="example_1" type="radio" value="1"> Payment In Person
-                                    <span></span>
-                                </label>
-                                <label class="m-radio">
-                                    <input name="example_1" type="radio" value="2"> Payment With Credit Card
-                                    <span></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                    Close
-                </button>
-                <button class="btn btn-primary" type="button">
-                    Make Booking
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="m-content m-content-nopadding">
-    <form [hidden]="formHidden">
-        <div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
-            <div class="m-portlet__head">
-                <div class="m-portlet__head-caption">
-                    <div class="m-portlet__head-title">
-                        <a class="btn btn-link" style="padding:0px;" (click)="formHidden=true" style="display:  block;padding-left: 0px; margin-top: 15px">
-                            <i class="fa fa-chevron-circle-left" style="padding-bottom: 2px;"></i> BACK</a>
-                        <h3 class="m-portlet__head-text" style=" float:left;">
-                            Dispute Form
-                        </h3>
-                    </div>
-                </div>
-                <div class="m-portlet__head-tools">
-                    <ul class="m-portlet__nav">
-                        <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push"
-                            data-dropdown-toggle="hover">
-                            <a class="m-portlet__nav-link m-dropdown__toggle dropdown-toggle btn btn--sm m-btn--pill btn-secondary m-btn m-btn--label-brand"
-                                href="#" ng-reflect-href="#">
-                                All
-                            </a>
-                            <div class="m-dropdown__wrapper">
-                                <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                                <div class="m-dropdown__inner">
-                                    <div class="m-dropdown__body">
-                                        <div class="m-dropdown__content">
-                                            <ul class="m-nav">
-                                                <li class="m-nav__section m-nav__section--first">
-                                                    <span class="m-nav__section-text">
-                                                        Quick Actions
-                                                    </span>
-                                                </li>
-                                                <li class="m-nav__item">
-                                                    <a class="m-nav__link" href="" id="add-service-request" ng-reflect-href="">
-                                                        <i class="m-nav__link-icon flaticon-add"></i>
-                                                        <span class="m-nav__link-text">
-                                                            Add
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="m-nav__item">
-                                                    <a class="m-nav__link" href="" ng-reflect-href="">
-                                                        <i class="m-nav__link-icon flaticon-share"></i>
-                                                        <span class="m-nav__link-text">
-                                                            Activity
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="m-nav__item">
-                                                    <a class="m-nav__link" href="" ng-reflect-href="">
-                                                        <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                                        <span class="m-nav__link-text">
-                                                            Messages
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="m-nav__item">
-                                                    <a class="m-nav__link" href="" ng-reflect-href="">
-                                                        <i class="m-nav__link-icon flaticon-info"></i>
-                                                        <span class="m-nav__link-text">
-                                                            FAQ
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="m-nav__item">
-                                                    <a class="m-nav__link" href="" ng-reflect-href="">
-                                                        <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                                        <span class="m-nav__link-text">
-                                                            Support
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="m-nav__separator m-nav__separator--fit"></li>
-                                                <li class="m-nav__item">
-                                                    <a class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm" href="#" ng-reflect-href="#">
-                                                        Cancel
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="m-portlet__body">
-
-            </div>
-        </div>
-    </form>
 </div>
 
 
 <!-- Reschedule Modal Here -->
-
 <div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_4" role="dialog" tabindex="-1" style="display: none;"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
@@ -1016,8 +590,9 @@ margin-top: -6px;
         </div>
     </div>
 </div>
+<!-- Reschedule Modal End -->
 
-<!-- Review Modal -->
+<!-- Review Modal start -->
 <div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_review" role="dialog" tabindex="-1" style="display: none;"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
@@ -1073,9 +648,9 @@ margin-top: -6px;
         </div>
     </div>
 </div>
+<!-- Review Modal End -->
 
-<!-- Reviewed -->
-
+<!-- Reviewed Modal Start -->
 <div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_reviewed" role="dialog" tabindex="-1" style="display: none;"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
@@ -1131,10 +706,9 @@ margin-top: -6px;
         </div>
     </div>
 </div>
+<!-- Reviewed Modal End -->
 
-
-<!-- DetailModal -->
-
+<!-- DetailModal  Start-->
 <div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_detail" role="dialog" tabindex="-1" style="display: none;"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
@@ -1259,3 +833,4 @@ margin-top: -6px;
         </div>
     </div>
 </div>
+<!-- DetailModal  End-->

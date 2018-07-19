@@ -1,3 +1,4 @@
+<!-- Begin Sub Header -->
 <div class="m-subheader" appunwraptag="" [ngClass]="{'d-none':isDisplayDetail}">
 	<div class="d-flex align-items-center">
 		<div class="mr-auto">
@@ -17,102 +18,14 @@
 			</h3>
 
 			<input type="text" class="custom-main-filter custom-main-filter-focus" *ngIf="mainFilterHide">
-
-
-			<!--<div class="form-group m-form__group" style="display:inline-block;">-->
-			<!--<select [(ngModel)]="customerType" class="form-control m-input form-control-sm" >-->
-			<!--<option value="All">-->
-			<!--All-->
-			<!--</option>-->
-			<!--<option value="Owners">-->
-			<!--Owners-->
-			<!--</option>-->
-			<!--<option value="Tenants">-->
-			<!--Tenants-->
-			<!--</option>-->
-
-			<!--</select>-->
-			<!--</div>-->
-
-
 		</div>
-
-		<!-- <div class="mr-auto">
-		
-
-		</div> -->
-		<!-- 
 		<div style="padding-right:0px;">
-			<button class="btn btn-link pull-right" data-target="#c_modal_createServices" data-toggle="modal">
-				<i class="fa fa-plus"></i> Request Services
-			</button>
-			<button class="btn btn-link " (click)="formHidden=!formHidden">
-				<i class="fa fa-plus"></i> Add Lead
-			</button>
-		</div> -->
-
-
-
-
-		<div style="padding-right:0px;">
-			<button class="btn btn-link pull-right" (click)="changeView()" [hidden]="!formHidden">
+			<button class="btn btn-link pull-right" (click)="changeView()">
 				<i class="fa" [ngClass]="{'fa-list' :   isListViewHide, 'fa-th' :isGridViewHide }"></i> {{viewName}} </button>
-
-		</div>
-
-
-		<!--<button class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  -->
-		<!--[ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>-->
-		<div>
-			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover"
-			 aria-expanded="true">
-				<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
-					<i class="la la-plus m--hide"></i>
-					<i class="la la-ellipsis-h"></i>
-				</a>
-				<div class="m-dropdown__wrapper">
-					<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-					<div class="m-dropdown__inner">
-						<div class="m-dropdown__body">
-							<div class="m-dropdown__content">
-								<ul class="m-nav">
-									<li class="m-nav__section m-nav__section--first m--hide">
-										<span class="m-nav__section-text">
-											Quick Actions
-										</span>
-									</li>
-
-									<!-- <li class="m-nav__item">
-										<a href="javascript:;" class="m-nav__link" data-target="#c_modal_createServices" data-toggle="modal">
-											<i class="m-nav__link-icon fa fa-plus"></i>
-											<span class="m-nav__link-text">
-												Request Services
-											</span>
-										</a>
-									</li> -->
-									<li class="m-nav__item">
-										<a href="" class="m-nav__link" (click)="formHidden=!formHidden">
-											<i class="m-nav__link-icon fa fa-plus"></i>
-											<span class="m-nav__link-text">
-												Request Services
-											</span>
-										</a>
-									</li>
-									<!-- <li class="m-nav__separator m-nav__separator--fit"></li>
-									<li class="m-nav__item">
-										<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
-											Submit
-										</a>
-									</li> -->
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
+
 <div class="m-subheader breadcrumb-header" style="padding-top: 5px" *ngIf="!isDisplayDetail">
 	<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 		<li class="m-nav__item m-nav__item--home">
@@ -133,6 +46,7 @@
 		</li>
 	</ul>
 </div>
+
 <hr class="customhr" *ngIf="!isDisplayDetail" />
 <!-- END: Subheader -->
 
@@ -142,6 +56,7 @@
 
 	<div class="row" [hidden]="isDisplayDetail">
 
+		<!-- Filter Section Start -->
 		<div class="col-xl-3 col-lg-4">
 			<div class="m-portlet m-portlet--full-height">
 				<div class="m-portlet__body">
@@ -261,8 +176,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- Filter Section End -->
 
-
+	    <!-- List view Section  start-->
 		<div class="col-xl-9 col-lg-8" [hidden]="isListViewHide">
 			<div class="m-portlet m-portlet--full-height">
 
@@ -694,7 +610,9 @@
 			</div>
 
 		</div>
+	    <!-- List view Section End -->
 
+	    <!-- Grid view Section Start-->
 		<div class="col-xl-9 col-lg-8" [hidden]="isGridViewHide">
 			<div class="row">
 
@@ -1244,245 +1162,13 @@
 
 			</div>
 		</div>
-
-
+	    <!-- Grid view Section End -->
 	</div>
 
 </div>
 <!-- End Section -->
 
-
-<!-- Support Ticket Modal Start-->
-<div aria-labelledby="supportModalLabel" class="modal fade show" id="c_modal_broadcast" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="supportModalLabel">
-					Broadcast Service Request
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-recipient-name">
-							Recipient:
-						</label>
-						<input class="form-control" id="broadcast-recipient-name" type="text">
-					</div>
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-category-name">
-							Service Category:
-						</label>
-						<select class="form-control" id="broadcast-category-name" type="text">
-							<option>Food</option>
-							<option>Shipping</option>
-							<option>Clothing</option>
-							<option>Games &amp; Fitness</option>
-						</select>
-					</div>
-
-
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-subcategory-name">
-							Service Sub-Category:
-						</label>
-						<select class="form-control" id="broadcast-subcategory-name" type="text">
-							<option>Sea Food</option>
-							<option>Air Cargo</option>
-							<option>Clothing</option>
-							<option>Video Games</option>
-						</select>
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-contact-number">
-							Contact Number:
-						</label>
-						<input class="form-control" id="broadcast-contact-number" type="text">
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="support-message-text">
-							Message:
-						</label>
-						<textarea class="form-control" id="support-message-text"></textarea>
-					</div>
-
-
-
-
-
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
-					Close
-				</button>
-				<button class="btn btn-primary" type="button">
-					Submit
-				</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- Support Ticket Modal Ends-->
-
-<div aria-labelledby="bookingModalLabel" class="modal fade" id="addBookingModal" role="dialog" tabindex="-1" style="display: none;"
- aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">
-					Make A Booking
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-
-				<div class="row">
-					<!-- <div class="col-md-12 calendarsUsersSelectSection">
-						<img alt="" src="./assets/app/media/img/users/user4.jpg" />
-						<img alt="" src="./assets/app/media/img/users/user2.jpg" />
-						<img alt="" src="./assets/app/media/img/users/user3.jpg" />
-					</div>
-					<div class="col-md-12">
-						<mwl-calendar-month-view [viewDate]="viewDate" style="width: 100%;" [events]="events"></mwl-calendar-month-view>
-
-						<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
-						<button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
-							Meridian - {{meridian ? "ON" : "OFF"}}
-						</button>
-						<pre style="margin-top:15px;">Selected time: {{time.hour }} : {{time.minute }}</pre>
-
-					</div> -->
-
-					<!--div class="col-md-6">
-                        <h4>Booking</h4>
-                        <div class="form-group m-form__group">
-                                <label for="BookingServiceName">
-                                    Service Name:
-                                </label>
-                                <input class="form-control" id="BookingServiceName" type="text">
-                        </div>
-
-
-                        <div class="form-group m-form__group">
-                                <label for="BookingStaffMember">
-                                    Staff Member:
-                                </label>
-                                <input class="form-control" id="BookingStaffMember" type="text">
-                            </div>
-
-
-                            <div class="form-group m-form__group">
-                                    <label for="BookingQuantity">
-                                        Quantity:
-                                    </label>
-                                    <input class="form-control" id="BookingQuantity" type="text">
-                                </div>
-
-
-                                <div class="form-group m-form__group">
-                                        <label for="BookingAmount">
-                                            Amount:
-                                        </label>
-                                        <input class="form-control" id="BookingAmount" type="text">
-                                    </div>
-
-                                    <div class="form-group m-form__group row">
-                                            <label class="col-12 col-form-label" for="example-datetime-local-input">
-                                                Time Period
-                                            </label>
-                                            <div class="col-12">
-                                                <input class="form-control m-input" id="example-datetime-local-input" type="datetime-local" value="2011-08-19T13:45:00">
-                                            </div>
-                                        </div>
-                </div>
-
-                <div class="col-md-6">
-                        <h4>Customer</h4>
-
-                        <div class="form-group m-form__group">
-                                <label for="bookingcustomerNameField">
-                                    Name:
-                                </label>
-                                <input class="form-control" id="bookingcustomerNameField" type="text">
-                            </div>
-
-                            <div class="form-group m-form__group">
-                                    <label for="bookingcustomerEmailField">
-                                        Email:
-                                    </label>
-                                    <input class="form-control" id="bookingcustomerEmailField" type="text">
-                                </div>
-
-                                <div class="form-group m-form__group">
-                                        <label for="bookingcustomerPhoneField">
-                                            Phone:
-                                        </label>
-                                        <input class="form-control" id="bookingcustomerPhoneField" type="text">
-                                    </div>
-                        
-                     <div class="form-group m-form__group">
-                            <label for="addressFieldBooking">
-                                Address:
-                            </label>
-                            <input class="form-control" id="addressFieldBooking" type="text">
-                        </div>
-
-
-                        <div class="m-form__group form-group">
-                                <div class="m-radio-list">
-                                    <label class="m-radio">
-                                        <input name="example_1" type="radio" value="1">
-                                        Payment In Person
-                                        <span></span>
-                                    </label>
-                                    <label class="m-radio">
-                                        <input name="example_1" type="radio" value="2">
-                                        Payment With Credit Card
-                                        <span></span>
-                                    </label>
-                                </div>
-                            </div>
-                </div>
-            </div-->
-
-
-
-
-
-
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" data-dismiss="modal" type="button">
-						Close
-					</button>
-					<button class="btn btn-primary" type="button">
-						Make Booking
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
+<!-- Map Modal Start -->
 <div aria-labelledby="exampleModalLabel" class="modal fade" id="radiusModal" role="dialog" tabindex="-1">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
@@ -1552,325 +1238,13 @@
 		</div>
 	</div>
 </div>
-
-<!-- Support Ticket Modal Start-->
-<div aria-labelledby="supportModalLabel" class="modal fade show" id="c_modal_broadcast" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="supportModalLabel">
-					Broadcast Service Request
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-recipient-name">
-							Recipient:
-						</label>
-						<input class="form-control" id="broadcast-recipient-name" type="text" #recipient>
-					</div>
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-category-name">
-							Service Category:
-						</label>
-						<select class="form-control" id="broadcast-category-name" type="text" #serviceCategory>
-							<option value="food">Food</option>
-							<option value="shipping">Shipping</option>
-							<option value="clothing">Clothing</option>
-							<option value="games & fitness">Games &amp; Fitness</option>
-						</select>
-					</div>
+<!-- Map Modal End -->
 
 
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-subcategory-name">
-							Service Sub-Category:
-						</label>
-						<select class="form-control" id="broadcast-subcategory-name" type="text" #serviceSubCategory>
-							<option value="sea food">Sea Food</option>
-							<option value="air cargo">Air Cargo</option>
-							<option value="clothing">Clothing</option>
-							<option value="video games">Video Games</option>
-						</select>
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-contact-number">
-							Contact Number:
-						</label>
-						<input class="form-control" id="broadcast-contact-number" type="text" #contactNumber>
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="support-message-text">
-							Message:
-						</label>
-						<textarea class="form-control" id="support-message-text" #message></textarea>
-					</div>
-
-
-
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
-					Close
-				</button>
-				<button class="btn btn-primary" data-dismiss="modal" type="button" (click)="broadcastServiceRequest(recipient, serviceCategory,contactNumber )">
-					Submit
-				</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Support Ticket Modal Ends-->
-
-
-<!-- Modals End-->
-
-<!-- <div aria-labelledby="serviceModalLabel" class="modal fade" id="addServiceModal" role="dialog" tabindex="-1" style="display: none;" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">
-						Add Service
-					</h5>
-					<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-						<span aria-hidden="true">
-							×
-						</span>
-					</button>
-				</div>
-				<div class="modal-body">
-        
-
-                      
-         <div class="form-group m-form__group">
-			<label for="ServiceName">
-				Request Name:
-			</label>
-			<input class="form-control" id="ServiceName" type="text">
-        </div>
-        
-        <div class="form-group m-form__group">
-			<label for="ServiceDetails">
-				Request Details:
-			</label>
-			<textarea class="form-control" id="ServiceDetails" rows="3"></textarea>
-        </div>
-        
-        <div class="form-group m-form__group">
-			<label for="ServiceType">
-				Request Category:
-			</label>
-			<select class="form-control" id="ServiceType">
-                <optgroup label="Beauty & Wellness">
-                <option>Facial Care</option>
-                <option>Hair Removal</option>
-                <option>Nail Care</option>
-                </optgroup>
-
-                <optgroup label="Family & Lifestyle">
-                        <option>Event Planning</option>
-                        <option>Food amp; Catering</option>
-                        <option>Pet Services</option>
-                </optgroup>
-
-             </select>
-        </div>
-        
-
-        <div class="form-group m-form__group">
-                <label for="ServiceStaff">
-                    Select Your Staff:
-                </label>
-                <select class="form-control" id="ServiceStaff">
-                    
-                    <option></option>
-                    <option>My Senior Staff</option>   
-                 </select>
-            </div>
-                    
-                    
-            <div class="form-group m-form__group">
-			<label for="ServicePrice">
-				Price:
-			</label>
-			<input class="form-control" id="ServicePrice" type="number">
-		</div>
-                    
-        <div class="form-group m-form__group">
-			<label for="ServiceDuraton">
-				Duration:
-			</label>
-			<input class="form-control" id="ServiceDuraton" type="text">
-        </div>
-
-        <div class="m-form__group form-group row">
-                <label class="col-form-label">
-                    Publish This Is Request Online?
-                </label>
-                
-                    <span style="margin-left: 10px;" class="m-switch m-switch--icon m-switch--success">
-                        <label>
-                            <input checked="checked" name="" type="checkbox">
-                            <span></span>
-                        </label>
-                    </span>
-               
-            </div>
-        
-        <button class="btn-dark file-upload-btn">Upload Files</button>
-
-
-                    
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" data-dismiss="modal" type="button">
-						Close
-					</button>
-					<button class="btn btn-primary" type="button">
-						Add Request
-					</button>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-
-<!--Create Services Modal -->
-<div aria-labelledby="supportModalLabel" class="modal fade show" id="c_modal_createServices" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<form [formGroup]="requestForms" (ngSubmit)="onSubmit()">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">
-						Request a Service
-					</h5>
-					<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-						<span aria-hidden="true">
-							×
-						</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="form-group m-form__group">
-						<label for="ServiceName">
-							Request Name:
-						</label>
-						<input class="form-control" id="ServiceName" type="text" formControlName="reqName">
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServiceDetails">
-							Request Details:
-						</label>
-						<textarea class="form-control" id="ServiceDetails" rows="3" formControlName="reqDetail"></textarea>
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServiceType">
-							Request Category:
-						</label>
-						<select class="form-control" id="ServiceType" formControlName="reqCategory">
-							<!-- <optgroup label="Beauty & Wellness"> -->
-							<option *ngFor="let category of reqBeautyCategories">{{category}}</option>
-							<!-- <option>Hair Removal</option>
-							<option>Nail Care</option>
-							</optgroup>
-							<optgroup label="Family & Lifestyle">
-									<option>Event Planning</option>
-									<option>Food amp; Catering</option>
-									<option>Pet Services</option>
-							</optgroup> -->
-						</select>
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServicePrice">
-							Price:
-						</label>
-						<input class="form-control" id="ServicePrice" type="number" formControlName="reqPrice">
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServicePrice">
-							Duration:
-						</label>
-						<input class="form-control" id="ServicePrice" type="number" formControlName="reqDuration">
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServiceDuraton">
-							Contact Number:
-						</label>
-						<input class="form-control" id="ServiceDuraton" type="text" formControlName="reqContactNumber">
-					</div>
-					<div class="m-form__group form-group row">
-						<label class="col-form-label">
-							Publish This Is Request Online?
-						</label>
-						<span style="margin-left: 10px;" class="m-switch m-switch--sm m-switch--icon m-switch--success">
-							<label>
-								<input checked="checked" name="reqIsPublish" type="checkbox" formControlName="reqIsPublish">
-								<span></span>
-							</label>
-						</span>
-					</div>
-					<label class="btn btn-default btn-file">
-						Upload File
-						<input type="file" style="display: none;" (change)="handleFileInput($event.target.files)">
-					</label>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" data-dismiss="modal" type="button">
-						Close
-					</button>
-					<button class="btn btn-primary" type="submit">
-						Add Request
-					</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</div>
-<!-- </div> -->
-
-
-
-
-
-
-
-<!-- <div class="col-xl-1 offset-xl-2 col-md-12 offset-md-2" style="padding-right:0px;">
-		<button class="btn btn-link pull-right"  data-target="#c_modal_createServices" data-toggle="modal" >
-				<i class="fa fa-plus"></i> Create Services
-		</button>
-</div>
-
-	<div class="col-xl-1 offset-xl-4 col-md-12 offset-md-0" style="padding-right:0px;">
-			<button class="btn btn-link pull-right"  data-target="#c_modal_broadcast" data-toggle="modal" >
-					<i class="fa fa-plus"></i> Broadcast
-			</button>
-	</div>
-
-	<div class="col-xl-1  col-md-12 offset-md-0" style="padding-right:0px;">
-			<button  class="btn btn-link pull-right" (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
-
-	</div> -->
-
+<!-- More Detail Content start -->
 <div class="m-content">
 	<!--Begin::Section-->
-
-
 	<div class="row gridView" style="padding: 0px 10px;" [style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'">
-
-
 		<div class="col-md-6" *ngFor="let item of serData">
 			<div class="body organ1 serviceCard">
 				<div class="row" style="margin:0px;">
@@ -2507,355 +1881,11 @@
 
 	</div>
 </div>
+<!-- More Detail Content End -->
 
-
-<!-- Down Modal -->
-<!-- <p-sidebar [(visible)]="visibleSidebar4" position="bottom" [baseZIndex]="10000">
-	<div class="contanier">
-		<div class="row">
-			<div class="col-md-4">
-				 *ngIf="enabledPaymentButton"  
-				<button class="btn btn-info m-btn--wide" (click)="visibleSidebar4 = false" type="button">
-					Payment
-				</button>
-			</div>
-			<div class="col-md-4 text-center">
-				<button class="btn m-btn--pill btn-warning m-btn m-btn--custom" data-target="#m_modal_3" data-toggle="modal" type="button">
-					CheckOut
-				</button>
-			</div>
-			<div class="col-md-4 custom-padding-right">
-				<button class="btn btn-info m-btn--wide custom-float-right" (click)="visibleSidebar4 = false" type="button" [disabled]="serviceCounter < 2">
-					Compare
-				</button>
-			</div>
-		</div>
-	</div>
-
-
-</p-sidebar> -->
-
-
-<!-- checkoutmodal -->
-
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_3" role="dialog" tabindex="-1" style="display: none;"
- aria-hidden="true" style="z-index: 10000000!important;">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">
-					CheckOut
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-
-				<div class="contanier">
-
-					<div class="row">
-						<div class="col-md-6">
-							<h5>
-								Items
-							</h5>
-						</div>
-						<div class="col-md-3">
-							<h5>
-								Price
-							</h5>
-						</div>
-						<div class="col-md-3">
-							<h5>
-								Action
-							</h5>
-						</div>
-					</div>
-
-
-					<div class="row" *ngFor="let item of itemsArray; let i= index">
-						<ng-container *ngIf="deleted">
-							<div class="col-md-6">
-								<h6>
-									{{item.name}}
-								</h6>
-							</div>
-							<div class="col-md-3">
-								<h6 class="m--font-success">
-									${{item.price}}
-								</h6>
-							</div>
-							<div class="col-md-3" style="padding-left: 40px;">
-								<a (click)="onDelete(i)">
-									<i class="fa fa-trash"></i>
-								</a>
-
-							</div>
-							<div class="row" style="padding-left: 30px;">
-								<div>
-									<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
-										<input type="checkbox" (change)="onOrderNow($event)"> I Agree to terms and condition
-										<span></span>
-									</label>
-								</div>
-							</div>
-						</ng-container>
-					</div>
-				</div>
-
-
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
-					Close
-				</button>
-				<button class="btn btn-primary" type="button" [disabled]="enabledOrderNowbutton">
-					Order Now
-				</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<!-- Right  side bar Modal -->
-
+<!-- Right side bar Modal  Start-->
 <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
-
-	<!-- <h3>Checkout Services</h3> -->
-
-
-	<!-- <div class="m-scrollable" data-scrollable="true" data-max-height="600" data-mobile-max-height="200">
-		<div class="m-list-timeline m-list-timeline--skin-light">
-			<div class="m-list-timeline__items">
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-					<span class="m-list-timeline__text">
-						Oil &amp; Oil Filter Change
-						<span class="m--font-success" style=" float: right;
-						padding-right: 40px;">
-							$120.00
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						Just now
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						Spark Plugs Changing
-						<span class="m--font-success" style=" float: right;
-						padding-right: 40px;">
-							$60.00
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System shutdown
-						<span class="m-badge m-badge--success m-badge--wide">
-							pending
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						14 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						New invoice received
-					</span>
-					<span class="m-list-timeline__time">
-						20 mins
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						DB overloaded 80%
-						<span class="m-badge m-badge--info m-badge--wide">
-							settled
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						1 hr
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						System error -
-						<a href="#" class="m-link">
-							Check
-						</a>
-					</span>
-					<span class="m-list-timeline__time">
-						2 hrs
-					</span>
-				</div>
-				<div class="m-list-timeline__item m-list-timeline__item--read">
-					<span class="m-list-timeline__badge"></span>
-					<span href="" class="m-list-timeline__text">
-						New order received
-						<span class="m-badge m-badge--danger m-badge--wide">
-							urgent
-						</span>
-					</span>
-					<span class="m-list-timeline__time">
-						7 hrs
-					</span>
-				</div>
-				<div class="m-list-timeline__item m-list-timeline__item--read">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						Production server down
-					</span>
-					<span class="m-list-timeline__time">
-						3 hrs
-					</span>
-				</div>
-				<div class="m-list-timeline__item">
-					<span class="m-list-timeline__badge"></span>
-					<span class="m-list-timeline__text">
-						Production server up
-					</span>
-					<span class="m-list-timeline__time">
-						5 hrs
-					</span>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-
 	<div>
-		<!-- <ul class="nav nav-tabs nav-fill" role="tablist">
-			<li class="nav-item">
-				<a class="nav-link active show" data-toggle="tab" href="#m_tabs_5_1" ng-reflect-href="#m_tabs_5_1">
-					CheckOut
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#m_tabs_5_2" ng-reflect-href="#m_tabs_5_2">
-					Payment
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#m_tabs_5_3" ng-reflect-href="#m_tabs_5_3">
-					Link
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link disabled" data-toggle="tab" href="#m_tabs_5_4" ng-reflect-href="#m_tabs_5_4">
-					Disabled
-				</a>
-			</li>
-		</ul> -->
-
 		<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" id="m_quick_sidebar_tabs" role="tablist">
 			<li class="nav-item m-tabs__item">
 				<a class="nav-link m-tabs__link active show custom-font-size" data-toggle="tab" href="#m_tabs_5_1" ng-reflect-href="#m_tabs_5_1"
@@ -2922,17 +1952,9 @@
 						<div class="col-md-2" style="text-align: right;">
 							<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
 								<input type="checkbox">
-								<span class="custom-check-box-setting"  data-target="#m_modal_terms" data-toggle="modal"></span>
+								<span class="custom-check-box-setting" data-target="#m_modal_terms" data-toggle="modal"></span>
 							</label>
 						</div>
-						<!-- <div class="row" style="padding-left: 30px;">
-							<div>
-								<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
-									<input type="checkbox" (change)="onOrderNow($event)"> I Agree to terms and condition
-									<span></span>
-								</label>
-							</div>
-						</div> -->
 						<hr>
 					</ng-container>
 				</div>
@@ -2991,7 +2013,6 @@
 										<span style="padding-left: 15px;">Master-Card</span>
 									</div>
 									<div class="col-md-4" style="text-align: right;">
-										<!-- <i class="fa fa-check" style="padding-top:15px;"></i> -->
 									</div>
 								</div>
 								<div class="row">
@@ -3014,7 +2035,6 @@
 										<span style="padding-left: 15px;">Paypal</span>
 									</div>
 									<div class="col-md-4" style="text-align: right;">
-										<!-- <i class="fa fa-check" style="padding-top:15px;"></i> -->
 									</div>
 								</div>
 								<div class="row">
@@ -3037,7 +2057,7 @@
 										<span style="padding-left: 15px;">Visa</span>
 									</div>
 									<div class="col-md-4" style="text-align: right;">
-										<!-- <i class="fa fa-check" style="padding-top:15px;"></i> -->
+									
 									</div>
 								</div>
 								<div class="row">
@@ -3056,15 +2076,6 @@
 					<button class="btn btn-primary" style="float:right; margin-top: 10px;">Done</button>
 
 				</div>
-
-				<!-- <div class="row">
-					<div class="col-md-12">
-						<button class="btn btn-link pull-left">
-							<i class="fa fa-plus" ></i> Add new Card
-						</button>
-						<button class="btn btn-primary pull-right">Done</button>
-					</div>
-				</div> -->
 
 				<!-- Add new Payment Methonds -->
 				<form *ngIf="addNewPaymentCardHide">
@@ -3113,19 +2124,15 @@
 				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
 				dummy text ever since the 1500s, when an unknown printer took a galley of type and
-
 			</div>
-
 		</div>
-
 	</div>
-
-
 </p-sidebar>
+<!-- Right side bar Modal  End-->
 
 
+<!-- Request Content Start  -->
 <div class="m-content m-content-nopadding" style="margin-top: -45px;" [hidden]="formHidden">
-	<form>
 		<div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
 			<div class="m-portlet__head">
 				<div class="m-portlet__head-caption">
@@ -3198,20 +2205,20 @@
 							</div>
 
 							<div class="m-form__group form-group row" style="padding-left: 15px;">
-								<label class="col-form-label">
+								<label>
 									Publish This Is Request Online?
 								</label>
 
-								<span style="margin-left: 10px;" class="m-switch m-switch--icon m-switch--primary m-switch--sm">
-									<label>
-										<input checked="checked" name="" type="checkbox">
-										<span></span>
+								<span class="m-switch m-switch--icon m-switch--primary m-switch--sm" style="margin-left: 10px; margin-top:-3px;">
+									<label class="ng-tns-c2-2">
+										<input class="ng-tns-c2-2" checked="checked" name="" type="checkbox">
+										<span class="ng-tns-c2-2"></span>
 									</label>
 								</span>
 								<div class="row">
 									<div class="col-md-12">
-										<label>Upload Document File</label>
-										<input type="file" class="form-control-file">
+										<label class="ng-tns-c2-2">Upload Document File</label>
+										<input class="form-control-file" type="file">
 									</div>
 								</div>
 							</div>
@@ -3229,47 +2236,66 @@
 				</form>
 			</div>
 		</div>
-
-	</form>
 </div>
+<!-- Request Content End  -->
 
 
-<!-- Terms and Condition Modal -->
-
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_terms" role="dialog" tabindex="-1" style="display: none; z-index: 100003;" aria-hidden="true">
-		<div class="modal-dialog" role="document" style="margin-left: 25%;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">
-						Terms and Condition
-					</h5>
-					<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-						<span aria-hidden="true">
-							×
-						</span>
-					</button>
+<!-- Terms and Condition Modal Start -->
+<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_terms" role="dialog" tabindex="-1" style="display: none; z-index: 100003;"
+ aria-hidden="true">
+	<div class="modal-dialog" role="document" style="margin-left: 25%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">
+					Terms and Condition
+				</h5>
+				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+					<span aria-hidden="true">
+						×
+					</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="m-scrollable m-scroller ps" data-height="200" data-scrollable="true" data-scrollbar-shown="true" style="height: 200px; overflow: hidden;">
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+						text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+						It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+						with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</p>
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+						text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+						It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+						with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</p>
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+						text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+						It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+						with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</p>
+					<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+						<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+					</div>
+					<div class="ps__rail-y" style="top: 0px; right: 4px; height: 200px;">
+						<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+					</div>
 				</div>
-				<div class="modal-body">
-					<div class="m-scrollable m-scroller ps" data-height="200" data-scrollable="true" data-scrollbar-shown="true" style="height: 200px; overflow: hidden;">
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-						</p>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-						</p>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-						</p>
-					<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px; height: 200px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" data-dismiss="modal" type="button">
-						Close
-					</button>
-					<button class="btn btn-primary" type="button">
-						Save changes
-					</button>
-				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" data-dismiss="modal" type="button">
+					Close
+				</button>
+				<button class="btn btn-primary" type="button">
+					Save changes
+				</button>
 			</div>
 		</div>
 	</div>
+</div>
+<!-- Terms and Condition Modal End -->
+

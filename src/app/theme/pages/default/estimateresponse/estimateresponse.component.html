@@ -1,37 +1,22 @@
+<!-- Start SubHeader -->
 <div class="m-subheader" appunwraptag="" [ngClass]="{'d-none':isDisplayDetail}">
 	<div class="d-flex align-items-center">
 		<div class="mr-auto">
 			<h3 class="m-subheader__title">
 				Estimated Response
-				<small style="margin-left: 0px; padding-right: 3px; ">
-					<a style="cursor:pointer;">
-						<i class="fa fa-gear text-muted stats-icons" style=" margin-left: 0px"></i>
-					</a>
-				</small>
-
-
 				<small class="fa fa-search text-muted stats-icons" style=" margin-left: 0px" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
 					<a style="cursor:pointer;">
 					</a>
 				</small>
 			</h3>
-
 			<input type="text" class="custom-main-filter custom-main-filter-focus" *ngIf="mainFilterHide">
-
-
 		</div>
-
-
 
 		<div style="padding-right:0px;">
-			<button class="btn btn-link pull-right" (click)="changeView()">
+			<button class="btn btn-link pull-right" (click)="changeView()" [hidden]="!formHidden">
 				<i class="fa" [ngClass]="{'fa-list' : isListViewHide , 'fa-th' :isGridViewHide  }"></i> {{viewName}} </button>
-
 		</div>
 
-
-		<!--<button class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  -->
-		<!--[ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>-->
 		<div>
 			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover"
 			 aria-expanded="true">
@@ -52,25 +37,11 @@
 									</li>
 
 									<li class="m-nav__item">
-										<a href="javascript:;" class="m-nav__link">
-											<i class="m-nav__link-icon fa fa-gear"></i>
-											<span class="m-nav__link-text">
-												Settings
-											</span>
-										</a>
-									</li>
-									<!-- 	<li class="m-nav__item">
 										<a href="" class="m-nav__link" (click)="formHidden=!formHidden">
-											<i class="m-nav__link-icon flaticon-chat-1"></i>
+											<i class="m-nav__link-icon fa fa-plus"></i>
 											<span class="m-nav__link-text">
-												Add Lead
+												Request Services
 											</span>
-										</a>
-									</li> -->
-									<li class="m-nav__separator m-nav__separator--fit"></li>
-									<li class="m-nav__item">
-										<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
-											Submit
 										</a>
 									</li>
 								</ul>
@@ -82,6 +53,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="m-subheader breadcrumb-header" style="padding-top: 5px" *ngIf="!isDisplayDetail">
 	<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 		<li class="m-nav__item m-nav__item--home">
@@ -101,14 +73,16 @@
 			</a>
 		</li>
 	</ul>
+
 </div>
+
 <hr class="customhr" *ngIf="!isDisplayDetail" />
 <!-- END: Subheader -->
 
+<!-- start Content -->
+<div class="m-content" [hidden]="!formHidden">
 
-<div class="m-content" [hidden]="isDisplayDetail">
-
-	<div class="row">
+	<div class="row" [hidden]="isDisplayDetail">
 
 		<div class="col-xl-3 col-lg-4">
 			<div class="m-portlet m-portlet--full-height">
@@ -230,7 +204,6 @@
 			</div>
 		</div>
 
-
 		<div class="col-xl-9 col-lg-8" [hidden]="isListViewHide">
 			<div class="m-portlet m-portlet--full-height">
 
@@ -274,11 +247,11 @@
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Maintenance &amp; Repair</h6>
 												<div class="row service-item">
-													<div class="col-md-6">
+													<div class="col-md-6 col-sm-6">
 														Oil &amp; Oil Filter Change
 													</div>
-													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+													<div class="col-md-3 col-sm-6 offset-md-3">
+														<span class="m--font-success" style="float: right;">
 															$120.00
 														</span>
 													</div>
@@ -294,7 +267,7 @@
 														Spark Plugs Changing
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$60.00
 														</span>
 													</div>
@@ -309,38 +282,28 @@
 														Gearbox
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$500.00
 														</span>
 													</div>
 													<div class="col-md-12">
 														<hr>
 													</div>
-
 												</div>
-
-
 												<div class="row service-item">
 													<div class="col-md-6">
 														Suspension
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$200.00
 														</span>
 													</div>
 													<div class="col-md-12">
 														<hr>
 													</div>
-
 												</div>
-
 											</div>
-
-
-
-
-
 										</div>
 									</div>
 								</div>
@@ -384,7 +347,7 @@
 														Hair Cutting
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$60.50
 														</span>
 													</div>
@@ -398,7 +361,7 @@
 														Fancy Cutting
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$100.00
 														</span>
 													</div>
@@ -412,7 +375,7 @@
 														Head Shaving
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$50
 														</span>
 													</div>
@@ -466,7 +429,7 @@
 														Fever
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;" >
+														<span class="m--font-success" style="float: right;">
 															$60.50
 														</span>
 													</div>
@@ -480,7 +443,7 @@
 														Dental
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$100.00
 														</span>
 													</div>
@@ -494,7 +457,7 @@
 														Overall Body
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$200
 														</span>
 													</div>
@@ -546,7 +509,7 @@
 														One Room With Bath
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$120.00
 														</span>
 													</div>
@@ -562,7 +525,7 @@
 														Multiple Rooms With Baths
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$260
 														</span>
 													</div>
@@ -577,7 +540,7 @@
 														One Room Office with Bath
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$500.00
 														</span>
 													</div>
@@ -593,18 +556,15 @@
 														Multi Room Office with Baths
 													</div>
 													<div class="col-md-3 offset-md-3">
-														<span class="m--font-success"  style="float: right;">
+														<span class="m--font-success" style="float: right;">
 															$800.00
 														</span>
 													</div>
 													<div class="col-md-12">
 														<hr>
 													</div>
-
 												</div>
-
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -614,7 +574,6 @@
 					<!-- admin code end here -->
 				</div>
 			</div>
-
 		</div>
 
 		<div class="col-xl-9 col-lg-8" [hidden]="isGridViewHide">
@@ -676,7 +635,7 @@
 											</div>
 											<div class="col-md-3">
 
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$120.00
 												</span>
 
@@ -749,7 +708,7 @@
 											<div class="col-md-1">
 												<span style="width: 40px;">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-														<input type="checkbox" value="187" >
+														<input type="checkbox" value="187">
 														<span></span>
 													</label>
 												</span>
@@ -828,7 +787,7 @@
 
 											</div>
 											<div class="col-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$60.50
 												</span>
 											</div>
@@ -855,7 +814,7 @@
 											</div>
 
 											<div class="col-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$100.00
 												</span>
 											</div>
@@ -876,17 +835,17 @@
 											<div class="col-md-5 custom_padding_left">
 												Head Shaving
 											</div>
-											
+
 											<div class="col-md-3">
 
 											</div>
 
 											<div class="col-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$50
 												</span>
 											</div>
-											
+
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -951,7 +910,7 @@
 												One Room With Bath
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$120.00
 												</span>
 											</div>
@@ -975,7 +934,7 @@
 												Multiple Rooms With Baths
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$260
 												</span>
 											</div>
@@ -998,7 +957,7 @@
 												One Room Office with Bath
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$500.00
 												</span>
 											</div>
@@ -1022,7 +981,7 @@
 												Multi Room Office with Baths
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$800.00
 												</span>
 											</div>
@@ -1093,7 +1052,7 @@
 												Fever
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$60.50
 												</span>
 											</div>
@@ -1115,7 +1074,7 @@
 												Dental
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$100.00
 												</span>
 											</div>
@@ -1137,7 +1096,7 @@
 												Overall Body
 											</div>
 											<div class="col-md-3 offset-md-3">
-												<span class="m--font-success"  style="float: right;">
+												<span class="m--font-success" style="float: right;">
 													$200
 												</span>
 											</div>
@@ -1157,743 +1116,12 @@
 
 			</div>
 		</div>
-	</div>
-
-</div>
-
-<!-- Support Ticket Modal Start-->
-<div aria-labelledby="supportModalLabel" class="modal fade show" id="c_modal_broadcast" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="supportModalLabel">
-					Broadcast Service Request
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-recipient-name">
-							Recipient:
-						</label>
-						<input class="form-control" id="broadcast-recipient-name" type="text">
-					</div>
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-category-name">
-							Service Category:
-						</label>
-						<select class="form-control" id="broadcast-category-name" type="text">
-							<option>Food</option>
-							<option>Shipping</option>
-							<option>Clothing</option>
-							<option>Games &amp; Fitness</option>
-						</select>
-					</div>
-
-
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-subcategory-name">
-							Service Sub-Category:
-						</label>
-						<select class="form-control" id="broadcast-subcategory-name" type="text">
-							<option>Sea Food</option>
-							<option>Air Cargo</option>
-							<option>Clothing</option>
-							<option>Video Games</option>
-						</select>
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-contact-number">
-							Contact Number:
-						</label>
-						<input class="form-control" id="broadcast-contact-number" type="text">
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="support-message-text">
-							Message:
-						</label>
-						<textarea class="form-control" id="support-message-text"></textarea>
-					</div>
-
-
-
-
-
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
-					Close
-				</button>
-				<button class="btn btn-primary" type="button">
-					Submit
-				</button>
-			</div>
-		</div>
+	
 	</div>
 </div>
+<!-- End Content -->
 
-<!-- Support Ticket Modal Ends-->
-
-
-
-
-<div aria-labelledby="bookingModalLabel" class="modal fade" id="addBookingModal" role="dialog" tabindex="-1" style="display: none;"
- aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">
-					Make A Booking
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-
-				<div class="row">
-					<div class="col-md-12 calendarsUsersSelectSection">
-						<img alt="" src="./assets/app/media/img/users/user4.jpg" />
-						<img alt="" src="./assets/app/media/img/users/user2.jpg" />
-						<img alt="" src="./assets/app/media/img/users/user3.jpg" />
-					</div>
-					<div class="col-md-12">
-						<mwl-calendar-month-view [viewDate]="viewDate" style="width: 100%;"></mwl-calendar-month-view>
-
-						<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
-						<button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
-							Meridian - {{meridian ? "ON" : "OFF"}}
-						</button>
-						<pre style="margin-top:15px;">Selected time: {{time.hour }} : {{time.minute }}</pre>
-
-					</div>
-
-					<!--div class="col-md-6">
-							<h4>Booking</h4>
-							<div class="form-group m-form__group">
-									<label for="BookingServiceName">
-										Service Name:
-									</label>
-									<input class="form-control" id="BookingServiceName" type="text">
-							</div>
-	
-	
-							<div class="form-group m-form__group">
-									<label for="BookingStaffMember">
-										Staff Member:
-									</label>
-									<input class="form-control" id="BookingStaffMember" type="text">
-								</div>
-	
-	
-								<div class="form-group m-form__group">
-										<label for="BookingQuantity">
-											Quantity:
-										</label>
-										<input class="form-control" id="BookingQuantity" type="text">
-									</div>
-	
-	
-									<div class="form-group m-form__group">
-											<label for="BookingAmount">
-												Amount:
-											</label>
-											<input class="form-control" id="BookingAmount" type="text">
-										</div>
-	
-										<div class="form-group m-form__group row">
-												<label class="col-12 col-form-label" for="example-datetime-local-input">
-													Time Period
-												</label>
-												<div class="col-12">
-													<input class="form-control m-input" id="example-datetime-local-input" type="datetime-local" value="2011-08-19T13:45:00">
-												</div>
-											</div>
-					</div>
-	
-					<div class="col-md-6">
-							<h4>Customer</h4>
-	
-							<div class="form-group m-form__group">
-									<label for="bookingcustomerNameField">
-										Name:
-									</label>
-									<input class="form-control" id="bookingcustomerNameField" type="text">
-								</div>
-	
-								<div class="form-group m-form__group">
-										<label for="bookingcustomerEmailField">
-											Email:
-										</label>
-										<input class="form-control" id="bookingcustomerEmailField" type="text">
-									</div>
-	
-									<div class="form-group m-form__group">
-											<label for="bookingcustomerPhoneField">
-												Phone:
-											</label>
-											<input class="form-control" id="bookingcustomerPhoneField" type="text">
-										</div>
-							
-						 <div class="form-group m-form__group">
-								<label for="addressFieldBooking">
-									Address:
-								</label>
-								<input class="form-control" id="addressFieldBooking" type="text">
-							</div>
-	
-	
-							<div class="m-form__group form-group">
-									<div class="m-radio-list">
-										<label class="m-radio">
-											<input name="example_1" type="radio" value="1">
-											Payment In Person
-											<span></span>
-										</label>
-										<label class="m-radio">
-											<input name="example_1" type="radio" value="2">
-											Payment With Credit Card
-											<span></span>
-										</label>
-									</div>
-								</div>
-					</div>
-				</div-->
-
-
-
-
-
-
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" data-dismiss="modal" type="button">
-						Close
-					</button>
-					<button class="btn btn-primary" type="button">
-						Make Booking
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="radiusModal" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">
-					Service Provider Radius Adjustment
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<agm-map [latitude]="43.589045" [longitude]="-79.64412" [zoom]="10" #AgmMap>
-					<agm-marker [latitude]="43.589045" [longitude]="-79.64412">
-						<agm-info-window>
-							<strong>Category</strong>: Food
-							<br>
-							<strong>Subcategory</strong>: Seafood
-							<br>
-							<strong>Name</strong>: Mississaga Sea Restaraunt
-							<br>
-							<strong>Contact</strong>: 019182010
-						</agm-info-window>
-					</agm-marker>
-
-					<agm-marker [latitude]="43.758931" [longitude]="-79.398645">
-						<agm-info-window>
-							<strong>Category</strong>: Games
-							<br>
-							<strong>Subcategory</strong>: Video
-							<br>
-							<strong>Name</strong>: North York Fun Games
-							<br>
-							<strong>Contact</strong>: 019182010
-						</agm-info-window>
-					</agm-marker>
-
-					<agm-marker [latitude]="43.677718" [longitude]="-79.62482">
-						<agm-info-window>
-							<strong>Category</strong>: Shipping
-							<br>
-							<strong>Subcategory</strong>: Luggage
-							<br>
-							<strong>Name</strong>: Mississaga International Airport Cargo
-							<br>
-							<strong>Contact</strong>: 019182010
-						</agm-info-window>
-					</agm-marker>
-
-
-					<agm-circle [latitude]="43.677718" [longitude]="-79.62482" [radius]="15000" [fillColor]="'lightgreen'" [circleDraggable]="true"
-					 [editable]="true">
-					</agm-circle>
-				</agm-map>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-primary" data-dismiss="modal" type="button">
-					Save Changes
-				</button>
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
-					Close
-				</button>
-
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-<!-- Support Ticket Modal Start-->
-<div aria-labelledby="supportModalLabel" class="modal fade show" id="c_modal_broadcast" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="supportModalLabel">
-					Broadcast Service Request
-				</h5>
-				<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-					<span aria-hidden="true">
-						×
-					</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-recipient-name">
-							Recipient:
-						</label>
-						<input class="form-control" id="broadcast-recipient-name" type="text" #recipient>
-					</div>
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-category-name">
-							Service Category:
-						</label>
-						<select class="form-control" id="broadcast-category-name" type="text" #serviceCategory>
-							<option value="food">Food</option>
-							<option value="shipping">Shipping</option>
-							<option value="clothing">Clothing</option>
-							<option value="games & fitness">Games &amp; Fitness</option>
-						</select>
-					</div>
-
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-subcategory-name">
-							Service Sub-Category:
-						</label>
-						<select class="form-control" id="broadcast-subcategory-name" type="text" #serviceSubCategory>
-							<option value="sea food">Sea Food</option>
-							<option value="air cargo">Air Cargo</option>
-							<option value="clothing">Clothing</option>
-							<option value="video games">Video Games</option>
-						</select>
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="broadcast-contact-number">
-							Contact Number:
-						</label>
-						<input class="form-control" id="broadcast-contact-number" type="text" #contactNumber>
-					</div>
-
-
-					<div class="form-group">
-						<label class="form-control-label" for="support-message-text">
-							Message:
-						</label>
-						<textarea class="form-control" id="support-message-text" #message></textarea>
-					</div>
-
-
-
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
-					Close
-				</button>
-				<button class="btn btn-primary" data-dismiss="modal" type="button">
-					Submit
-				</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Support Ticket Modal Ends-->
-
-<!-- Modals End-->
-
-<!-- <div aria-labelledby="serviceModalLabel" class="modal fade" id="addServiceModal" role="dialog" tabindex="-1" style="display: none;" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">
-							Add Service
-						</h5>
-						<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-							<span aria-hidden="true">
-								×
-							</span>
-						</button>
-					</div>
-					<div class="modal-body">
-			
-	
-						  
-			 <div class="form-group m-form__group">
-				<label for="ServiceName">
-					Request Name:
-				</label>
-				<input class="form-control" id="ServiceName" type="text">
-			</div>
-			
-			<div class="form-group m-form__group">
-				<label for="ServiceDetails">
-					Request Details:
-				</label>
-				<textarea class="form-control" id="ServiceDetails" rows="3"></textarea>
-			</div>
-			
-			<div class="form-group m-form__group">
-				<label for="ServiceType">
-					Request Category:
-				</label>
-				<select class="form-control" id="ServiceType">
-					<optgroup label="Beauty & Wellness">
-					<option>Facial Care</option>
-					<option>Hair Removal</option>
-					<option>Nail Care</option>
-					</optgroup>
-	
-					<optgroup label="Family & Lifestyle">
-							<option>Event Planning</option>
-							<option>Food amp; Catering</option>
-							<option>Pet Services</option>
-					</optgroup>
-	
-				 </select>
-			</div>
-			
-	
-			<div class="form-group m-form__group">
-					<label for="ServiceStaff">
-						Select Your Staff:
-					</label>
-					<select class="form-control" id="ServiceStaff">
-						
-						<option></option>
-						<option>My Senior Staff</option>   
-					 </select>
-				</div>
-						
-						
-				<div class="form-group m-form__group">
-				<label for="ServicePrice">
-					Price:
-				</label>
-				<input class="form-control" id="ServicePrice" type="number">
-			</div>
-						
-			<div class="form-group m-form__group">
-				<label for="ServiceDuraton">
-					Duration:
-				</label>
-				<input class="form-control" id="ServiceDuraton" type="text">
-			</div>
-	
-			<div class="m-form__group form-group row">
-					<label class="col-form-label">
-						Publish This Is Request Online?
-					</label>
-					
-						<span style="margin-left: 10px;" class="m-switch m-switch--icon m-switch--success">
-							<label>
-								<input checked="checked" name="" type="checkbox">
-								<span></span>
-							</label>
-						</span>
-				   
-				</div>
-			
-			<button class="btn-dark file-upload-btn">Upload Files</button>
-	
-	
-						
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-secondary" data-dismiss="modal" type="button">
-							Close
-						</button>
-						<button class="btn btn-primary" type="button">
-							Add Request
-						</button>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-
-<!--Create Services Modal -->
-<!-- <div aria-labelledby="supportModalLabel" class="modal fade show" id="c_modal_createServices" role="dialog" tabindex="-1">
-	<div class="modal-dialog modal-lg" role="document">
-		<form [formGroup]="requestForms" (ngSubmit)="onSubmit()">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">
-						Request a Service
-					</h5>
-					<button aria-label="Close" class="close" data-dismiss="modal" type="button">
-						<span aria-hidden="true">
-							×
-						</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="form-group m-form__group">
-						<label for="ServiceName">
-							Request Name:
-						</label>
-						<input class="form-control" id="ServiceName" type="text" formControlName="reqName">
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServiceDetails">
-							Request Details:
-						</label>
-						<textarea class="form-control" id="ServiceDetails" rows="3" formControlName="reqDetail"></textarea>
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServiceType">
-							Request Category:
-						</label>
-						<select class="form-control" id="ServiceType" formControlName="reqCategory">
-							<optgroup label="Beauty & Wellness">
-							<option *ngFor="let category of reqBeautyCategories">{{category}}</option>
-							 <option>Hair Removal</option>
-								<option>Nail Care</option>
-								</optgroup>
-								<optgroup label="Family & Lifestyle">
-										<option>Event Planning</option>
-										<option>Food amp; Catering</option>
-										<option>Pet Services</option>
-								</optgroup> -->
-<!-- </select>
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServicePrice">
-							Price:
-						</label>
-						<input class="form-control" id="ServicePrice" type="number" formControlName="reqPrice">
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServicePrice">
-							Duration:
-						</label>
-						<input class="form-control" id="ServicePrice" type="number" formControlName="reqDuration">
-					</div>
-					<div class="form-group m-form__group">
-						<label for="ServiceDuraton">
-							Contact Number:
-						</label>
-						<input class="form-control" id="ServiceDuraton" type="text" formControlName="reqContactNumber">
-					</div>
-					<div class="m-form__group form-group row">
-						<label class="col-form-label">
-							Publish This Is Request Online?
-						</label>
-						<span style="margin-left: 10px;" class="m-switch m-switch--sm m-switch--icon m-switch--success">
-							<label>
-								<input checked="checked" name="reqIsPublish" type="checkbox" formControlName="reqIsPublish">
-								<span></span>
-							</label>
-						</span>
-					</div>
-					<label class="btn btn-default btn-file">
-						Upload File
-						<input type="file" style="display: none;" (change)="handleFileInput($event.target.files)">
-					</label>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" data-dismiss="modal" type="button">
-						Close
-					</button>
-					<button class="btn btn-primary" type="submit">
-						Add Request
-					</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</div> -->
-<!-- </div> -->
-
-
-
-
-
-
-
-<!-- <div class="col-xl-1 offset-xl-2 col-md-12 offset-md-2" style="padding-right:0px;">
-			<button class="btn btn-link pull-right"  data-target="#c_modal_createServices" data-toggle="modal" >
-					<i class="fa fa-plus"></i> Create Services
-			</button>
-	</div>
-	
-		<div class="col-xl-1 offset-xl-4 col-md-12 offset-md-0" style="padding-right:0px;">
-				<button class="btn btn-link pull-right"  data-target="#c_modal_broadcast" data-toggle="modal" >
-						<i class="fa fa-plus"></i> Broadcast
-				</button>
-		</div>
-	
-		<div class="col-xl-1  col-md-12 offset-md-0" style="padding-right:0px;">
-				<button  class="btn btn-link pull-right" (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
-	
-		</div> -->
-
-<div class="m-content">
-	<!--Begin::Section-->
-
-
-	<div class="row gridView" style="padding: 0px 10px;" [style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'">
-
-
-		<div class="col-md-6" *ngFor="let item of serData">
-			<div class="body organ1 serviceCard">
-				<div class="row" style="margin:0px;">
-					<div class="card-left col-lg-3" id="">
-						<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-							<input class="chkboxes" type="checkbox">
-							<span></span>
-						</label>
-
-						<div class="row onepersonrow">
-
-							<div class="col-md-12">
-								<img class="personimage" src="./assets/demo/demo3/media/img/doctor.jpg">
-								<p class="personname">{{item.name}}</p>
-								<p class="persontype">{{item.latitude}}</p>
-							</div>
-						</div>
-
-
-
-						<p class="personappartmentno">
-							<i class="fa fa-clock-o"></i> 6:00 - 23:00</p>
-						<p class="personbuildingname">
-							<i class="fa fa-money"></i> $60 - $200</p>
-						<p class="personaddress">
-							<i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-						<!-- <a class="btn btn-default chatServiceButton" href="javascript:;">
-							<i class="la la-comments"></i> Message</a> -->
-
-					</div>
-					<div class="card-right col-lg-9">
-						<h6 class="text-muted pull-left">
-							<i class="fa fa-cog"></i> {{item.details}}</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
-						<div class="clearfix"></div>
-						<div class="row services-categories">
-							<div class="col-md-12 category-list">
-								<h6 class="service-heading">{{item.longitude}}</h6>
-								<div class="row service-item">
-									<div class="col-md-6">
-										{{item.location}}
-									</div>
-									<div class="col-md-3">
-										<span class="m--font-success">
-											${{item.publish}}.50
-										</span>
-									</div>
-									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">{{item.created_at}} </a>
-									</div>
-									<div class="col-md-12">
-										<hr>
-									</div>
-
-								</div>
-								<div class="row service-item">
-									<div class="col-md-6">
-										{{item.name}}
-									</div>
-									<div class="col-md-3">
-										<span class="m--font-success">
-											${{item.price}}.00
-										</span>
-									</div>
-									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">{{item.category_id}} </a>
-									</div>
-									<div class="col-md-12">
-										<hr>
-									</div>
-
-								</div>
-								<div class="row service-item">
-									<div class="col-md-6">
-										{{item.staff}}
-									</div>
-									<div class="col-md-3">
-										<span class="m--font-success">
-											${{item.status}}
-										</span>
-									</div>
-									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">{{item.duration}} </a>
-									</div>
-									<div class="col-md-12">
-										<hr>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
+<!-- More Detail Content start -->
 <div class="m-content">
 	<!--Begin::Section-->
 
@@ -2537,3 +1765,112 @@
 
 	</div>
 </div>
+<!-- More Detail Content End -->
+
+<!-- Request Service Content start -->
+<div class="m-content m-content-nopadding" style="margin-top: -70px;" [hidden]="formHidden">
+	<div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<a class="btn btn-link" style="padding:0px;" (click)="formHidden=true" style="display:  block;padding-left: 0px;margin-left: -75px;">
+						<i class="fa fa-chevron-left"></i> BACK</a>
+					<h3 class="m-portlet__head-text" style=" float:left;">
+						Request a Service
+					</h3>
+				</div>
+			</div>
+			<div class="m-portlet__head-tools">
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<form class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group m-form__group">
+							<label>
+								Request Name
+							</label>
+							<input class="form-control m-input m-input--air" placeholder="Enter Request Name" type="text">
+						</div>
+
+						<div class="form-group m-form__group">
+							<label>
+								Request Category
+							</label>
+							<select class="form-control m-input m-input--air">
+								<option>Facial Care</option>
+								<option>Hair Removal</option>
+								<option>Nail Care</option>
+							</select>
+						</div>
+						<div class="form-group m-form__group">
+							<label>
+								Price
+							</label>
+							<input class="form-control m-input m-input--air" placeholder="Enter Price" type="text">
+						</div>
+						<div class="form-group m-form__group">
+							<label>
+								Request Details
+							</label>
+							<textarea class="form-control m-input" placeholder="Enter Request Details Here"></textarea>
+						</div>
+					</div>
+					<div class="col-md-6">
+
+						<div class="form-group m-form__group">
+							<label>
+								Contact Number
+							</label>
+							<input class="form-control m-input m-input--air" placeholder="Enter Contact Number Here" type="tel">
+						</div>
+
+						<div class="form-group m-form__group">
+							<label>
+								Select Date &amp; Time Slot1
+							</label>
+							<input class="form-control m-input m-input--air" id="m_datetimepicker_1" placeholder="Select date &amp; time" type="text">
+						</div>
+
+						<div class="form-group m-form__group">
+							<label>
+								Select Date &amp; Time Slot2
+							</label>
+							<input class="form-control m-input m-input--air " id="m_datetimepicker_2" placeholder="Select date &amp; time" type="text">
+						</div>
+
+						<div class="m-form__group form-group row" style="padding-left: 15px;">
+							<label>
+								Publish This Is Request Online?
+							</label>
+
+							<span class="m-switch m-switch--icon m-switch--primary m-switch--sm" style="margin-left: 10px; margin-top:-3px;">
+								<label class="ng-tns-c2-2">
+									<input class="ng-tns-c2-2" checked="checked" name="" type="checkbox">
+									<span class="ng-tns-c2-2"></span>
+								</label>
+							</span>
+							<div class="row">
+								<div class="col-md-12">
+									<label class="ng-tns-c2-2">Upload Document File</label>
+									<input class="form-control-file" type="file">
+								</div>
+							</div>
+						</div>
+
+
+						<button class="btn btn-primary btn-sm custom-float-right" type="submit">
+							Submit
+						</button>
+						<button class="btn btn-secondary btn-sm custom-float-right" type="button" (click)="formHidden=true">
+							Cancel
+						</button>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Request Service Content End -->

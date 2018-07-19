@@ -11,9 +11,24 @@
    
 }
 
+.custom-float-right{
+    float: right;
+}
+
 .custom_padding_left{
     padding-left: 0px;
     margin-left: -10px;
+}
+
+@media (max-width: 767px){
+    .custom_padding_left{
+        margin-top: -33px;
+        padding-left: 50px;
+    }
+
+    .card-left{
+        margin-top: 10px;
+    }
 }
 
 
