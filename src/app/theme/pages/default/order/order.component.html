@@ -1,6 +1,5 @@
 <!-- END: Header -->
-<div class="m-subheader" style="padding-top: 10px;
-margin-bottom: -26px;">
+<div class="m-subheader  m--padding-top-10" style="margin-bottom: -26px;">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
             <h3 class="m-subheader__title m-subheader__title--separator">
@@ -15,9 +14,7 @@ margin-bottom: -26px;">
 <!-- END: Header -->
 
 <!-- Start: Subheader -->
-<div class="m-subheader breadcrumsubheader" style="
-padding-top:  0px;
-">
+<div class="m-subheader breadcrumsubheader" style="padding-top:  0px;">
     <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
         <li class="m-nav__item m-nav__item--home">
             <a class="m-nav__link m-nav__link--icon" href="/dashboard" ng-reflect-href="#" ng-reflect-router-link="/dashboard" routerlink="/dashboard">
@@ -514,13 +511,13 @@ padding-top:  0px;
                 </button>
             </div>
             <div class="modal-body">
-                <label class="m--font-danger" style="font-weight: 500" (click)="showNoteHide == false ? showNoteHide = true : showNoteHide = false ">
+                <label class="m--font-danger custom-font-weight" (click)="showNoteHide == false ? showNoteHide = true : showNoteHide = false ">
                     Note:
                 </label>
-                <label style="font-weight: 500" *ngIf="showNoteHide">
+                <label class="custom-font-weight" *ngIf="showNoteHide">
                     To Reschedule After 27
                     <sup>th</sup> June you have pay
-                    <span class="m--font-danger" style="font-weight: 500">$10</span> extra
+                    <span class="m--font-danger custom-font-weight">$10</span> extra
                 </label>
                 <form>
                     <div class="form-group m-form__group">
@@ -593,7 +590,7 @@ padding-top:  0px;
 <!-- Reschedule Modal End -->
 
 <!-- Review Modal start -->
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_review" role="dialog" tabindex="-1" style="display: none;"
+<div aria-labelledby="exampleModalLabel" class="modal fade custom-display" id="m_modal_review" role="dialog" tabindex="-1"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
@@ -608,14 +605,6 @@ padding-top:  0px;
                 </button>
             </div>
             <div class="modal-body">
-                <!-- <label class="m--font-danger" style="font-weight: 500" (click)="showNoteHide == false ? showNoteHide = true : showNoteHide = false ">
-                    Note:
-                </label>
-                <label style="font-weight: 500" *ngIf="showNoteHide">
-                    To Reschedule After 27
-                    <sup>th</sup> June you have pay
-                    <span class="m--font-danger" style="font-weight: 500">$10</span> extra
-                </label> -->
                 <form>
                     <div class="form-group m-form__group">
                         <label>
@@ -627,7 +616,7 @@ padding-top:  0px;
                         <label>
                             Review
                         </label>
-                        <div style="float:right;">
+                        <div class="custom-float-right">
                             <span class="fa fa-star checked-hover"></span>
                             <span class="fa fa-star checked-hover"></span>
                             <span class="fa fa-star checked-hover"></span>
@@ -651,7 +640,7 @@ padding-top:  0px;
 <!-- Review Modal End -->
 
 <!-- Reviewed Modal Start -->
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_reviewed" role="dialog" tabindex="-1" style="display: none;"
+<div aria-labelledby="exampleModalLabel" class="modal fade custom-display" id="m_modal_reviewed" role="dialog" tabindex="-1"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
@@ -666,14 +655,6 @@ padding-top:  0px;
                 </button>
             </div>
             <div class="modal-body">
-                <!-- <label class="m--font-danger" style="font-weight: 500" (click)="showNoteHide == false ? showNoteHide = true : showNoteHide = false ">
-                    Note:
-                </label>
-                <label style="font-weight: 500" *ngIf="showNoteHide">
-                    To Reschedule After 27
-                    <sup>th</sup> June you have pay
-                    <span class="m--font-danger" style="font-weight: 500">$10</span> extra
-                </label> -->
                 <form>
                     <div class="form-group m-form__group">
                         <label>
@@ -685,7 +666,7 @@ padding-top:  0px;
                         <label>
                             Review
                         </label>
-                        <div style="float:right;">
+                        <div class="custom-float-right">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -709,7 +690,7 @@ padding-top:  0px;
 <!-- Reviewed Modal End -->
 
 <!-- DetailModal  Start-->
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_detail" role="dialog" tabindex="-1" style="display: none;"
+<div aria-labelledby="exampleModalLabel" class="modal fade custom-display" id="m_modal_detail" role="dialog" tabindex="-1"
     aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
@@ -724,7 +705,7 @@ padding-top:  0px;
                 </button>
             </div>
             <div class="modal-body">
-                <label class="m--font-danger" style="font-weight: 500">
+                <label class="m--font-danger custom-font-weight">
                     *Choose Below Option Accordingly
                 </label>
                 <div class="m-radio-inline">
@@ -741,11 +722,6 @@ padding-top:  0px;
                         <span></span>
                     </label>
                 </div>
-                <!-- <label style="font-weight: 500">
-                    The Service is Schedule on 7/3/2018 at 5pm
-                </label> -->
-
-
                 <form>
                     <div class="form-group m-form__group" style="margin-top: -15px;">
                         <br>
@@ -769,15 +745,15 @@ padding-top:  0px;
                     <div class="form-group m-form__group">
 
                         <div class="m-radio-inline">
-                            <span class="m--font-danger" style="font-weight: 500">
+                            <span class="m--font-danger custom-font-weight">
                                 *Choose
                             </span>
                             <span style="padding-left: 60px;">
-                                <label class="m-radio m-radio--solid  m-radio--brand" style="text-align: center;">
+                                <label class="m-radio m-radio--solid  m-radio--brand custom-align-center">
                                     <input name="example_4" type="radio" value="accept" (change)="dateTimeHide=false">Accept
                                     <span></span>
                                 </label>
-                                <label class="m-radio m-radio--solid  m-radio--brand" style="text-align: center;">
+                                <label class="m-radio m-radio--solid  m-radio--brand custom-align-center">
                                     <input name="example_4" type="radio" value="reschudle" (change)="dateTimeHide=true"> Reschedule
                                     <span></span>
                                 </label>
@@ -822,7 +798,7 @@ padding-top:  0px;
 
                 </form>
             </div>
-            <div class="modal-footer" style="padding-top: 10px;">
+            <div class="modal-footer m--padding-top-10">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">
                     Cancel
                 </button>

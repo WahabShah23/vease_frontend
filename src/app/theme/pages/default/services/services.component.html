@@ -4,14 +4,14 @@
 		<div class="mr-auto">
 			<h3 class="m-subheader__title">
 				Services
-				<small style="margin-left: 0px; padding-right: 3px; ">
+				<small class="custom-small-header-setting">
 					<a (click)="adjustRadiusMap()" id="adjustRadius" style="cursor:pointer;">
-						<i class="fa fa-map-marker text-muted stats-icons" style=" margin-left: 0px"></i>
+						<i class="fa fa-map-marker text-muted stats-icons custom-margin-left-zero"></i>
 					</a>
 				</small>
 
 
-				<small class="fa fa-search text-muted stats-icons" style=" margin-left: 0px" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
+				<small class="fa fa-search text-muted stats-icons custom-margin-left-zero" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
 					<a style="cursor:pointer;">
 					</a>
 				</small>
@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-<div class="m-subheader breadcrumb-header" style="padding-top: 5px" *ngIf="!isDisplayDetail">
+<div class="m-subheader breadcrumb-header m--padding-top-5" *ngIf="!isDisplayDetail">
 	<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 		<li class="m-nav__item m-nav__item--home">
 			<a class="m-nav__link m-nav__link--icon" routerLink="/index" ng-reflect-href="#">
@@ -178,7 +178,7 @@
 		</div>
 		<!-- Filter Section End -->
 
-	    <!-- List view Section  start-->
+		<!-- List view Section  start-->
 		<div class="col-xl-9 col-lg-8" [hidden]="isListViewHide">
 			<div class="m-portlet m-portlet--full-height">
 
@@ -610,9 +610,9 @@
 			</div>
 
 		</div>
-	    <!-- List view Section End -->
+		<!-- List view Section End -->
 
-	    <!-- Grid view Section Start-->
+		<!-- Grid view Section Start-->
 		<div class="col-xl-9 col-lg-8" [hidden]="isGridViewHide">
 			<div class="row">
 
@@ -649,14 +649,14 @@
 							<div class="card-right col-lg-9">
 								<h6 class="text-muted pull-left">
 									<i class="fa fa-cog"></i> Service Details</h6>
-								<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
+								<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
 								<div class="clearfix"></div>
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
 										<h6 class="service-heading">Maintenance &amp; Repair</h6>
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;" (click)="visibleSidebar2 = true">
+												<span class="custom-width" (click)="visibleSidebar2 = true">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input #tref type="checkbox" value="true" (change)="onCheckedUpdate($event)">
 														<span></span>
@@ -683,7 +683,7 @@
 
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;" (click)="visibleSidebar4 = true">
+												<span class="custom-width" (click)="visibleSidebar4 = true">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" (change)="onCheckedUpdate($event)">
 														<span></span>
@@ -709,7 +709,7 @@
 
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;">
+												<span class="custom-width">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" value="187">
 														<span></span>
@@ -736,7 +736,7 @@
 
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;">
+												<span class="custom-width">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" value="187" (change)="onCheckedUpdate($event)">
 														<span></span>
@@ -767,7 +767,7 @@
 
 				<div class="col-md-12">
 					<div class="body organ1 serviceCard">
-						<div class="row" style="margin:0px;">
+						<div class="row custom-margin-zero">
 							<div class="card-left col-lg-3" id="">
 								<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
 									<input class="chkboxes" type="checkbox">
@@ -798,14 +798,14 @@
 							<div class="card-right col-lg-9">
 								<h6 class="text-muted pull-left">
 									<i class="fa fa-cog"></i> Service Details</h6>
-								<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
+								<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
 								<div class="clearfix"></div>
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
 										<h6 class="service-heading">Hair</h6>
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;">
+												<span class="custom-width">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" value="187">
 														<span></span>
@@ -830,7 +830,7 @@
 										</div>
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;">
+												<span class="custom-width">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" value="187">
 														<span></span>
@@ -855,7 +855,7 @@
 										</div>
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span style="width: 40px;">
+												<span class="custom-width">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" value="187">
 														<span></span>
@@ -888,7 +888,7 @@
 
 				<div class="col-md-12">
 					<div class="body organ1 serviceCard">
-						<div class="row" style="margin:0px;">
+						<div class="row custom-margin-zero">
 							<div class="card-left col-lg-3" id="">
 								<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
 									<input class="chkboxes" type="checkbox">
@@ -1162,7 +1162,7 @@
 
 			</div>
 		</div>
-	    <!-- Grid view Section End -->
+		<!-- Grid view Section End -->
 	</div>
 
 </div>
@@ -1247,7 +1247,7 @@
 	<div class="row gridView" style="padding: 0px 10px;" [style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'">
 		<div class="col-md-6" *ngFor="let item of serData">
 			<div class="body organ1 serviceCard">
-				<div class="row" style="margin:0px;">
+				<div class="row custom-margin-zero">
 					<div class="card-left col-lg-3" id="">
 						<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
 							<input class="chkboxes" type="checkbox">
@@ -1278,7 +1278,7 @@
 					<div class="card-right col-lg-9">
 						<h6 class="text-muted pull-left">
 							<i class="fa fa-cog"></i> {{item.details}}</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
+						<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
 						<div class="clearfix"></div>
 						<div class="row services-categories">
 							<div class="col-md-12 category-list">
@@ -1361,7 +1361,7 @@
 								</div>
 
 								<div class="col-sm-4">
-									<div style="float:right;">
+									<div class="custom-float-right">
 										<span class="fa fa-star checked"></span>
 										<span class="fa fa-star checked"></span>
 										<span class="fa fa-star checked"></span>
@@ -1418,7 +1418,7 @@
 									<p style="text-align:justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
 										dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
 										specimen book.</p>
-									<p style="text-indent:30px; text-align:justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+									<p class="custom-p-setting">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
 										dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
 										specimen book.</p>
 
@@ -1427,7 +1427,7 @@
 								<div class="col-md-4">
 									<h6>Our Location</h6>
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92498.95348880148!2d-79.67291636729688!3d43.573377843540406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b413479f4223d%3A0x1d127700539ada46!2sSky+Zone+Trampoline+Park!5e0!3m2!1sen!2s!4v1526534566346"
-									 frameborder="0" style="border:0; width:100%; height:250px;" allowfullscreen></iframe>
+									 frameborder="0" class="custom-iframe-setting" allowfullscreen></iframe>
 								</div>
 
 
@@ -1583,7 +1583,7 @@
 										<div class="col-md-4">
 											<div class="m-widget26" style="width:140px;">
 
-												<div class="m-widget26__chart" style="height:90px; width: 220px;">
+												<div class="m-widget26__chart" class="custom-above-canvas">
 													<canvas id="m_chart_quick_stats_form2"></canvas>
 												</div>
 												<div class="m-widget26__number">
@@ -1600,7 +1600,7 @@
 										<div class="col-md-4">
 											<div class="m-widget26">
 
-												<div class="m-widget26__chart" style="height:90px; width: 220px;">
+												<div class="m-widget26__chart custom-above-canvas">
 													<canvas id="m_chart_quick_stats_form3"></canvas>
 												</div>
 												<div class="m-widget26__number">
@@ -1616,7 +1616,7 @@
 										<div class="col-md-4">
 											<div class="m-widget26">
 
-												<div class="m-widget26__chart" style="height:90px; width: 220px;">
+												<div class="m-widget26__chart custom-above-canvas">
 													<canvas id="m_chart_quick_stats_form4"></canvas>
 												</div>
 												<div class="m-widget26__number">
@@ -1633,7 +1633,7 @@
 										<div class="col-md-4">
 											<div class="m-widget26">
 
-												<div class="m-widget26__chart" style="height:90px; width: 220px;">
+												<div class="m-widget26__chart custom-above-canvas">
 													<canvas id="m_chart_quick_stats_form5"></canvas>
 												</div>
 												<div class="m-widget26__number">
@@ -1649,7 +1649,7 @@
 										<div class="col-md-4">
 											<div class="m-widget26">
 
-												<div class="m-widget26__chart" style="height:90px; width: 220px;">
+												<div class="m-widget26__chart custom-above-canvas">
 													<canvas id="m_chart_quick_stats_form6"></canvas>
 												</div>
 												<div class="m-widget26__number">
@@ -1665,7 +1665,7 @@
 										<div class="col-md-4">
 											<div class="m-widget26">
 
-												<div class="m-widget26__chart" style="height:90px; width: 220px;">
+												<div class="m-widget26__chart custom-above-canvas">
 													<canvas id="m_chart_quick_stats_form7"></canvas>
 												</div>
 												<div class="m-widget26__number">
@@ -1765,7 +1765,7 @@
 										</div>
 
 										<div class="col-sm-5">
-											<button class="btn btn-default pull-right" style="margin-bottom: 15px;">Write A Review</button>
+											<button class="btn btn-default pull-right m--margin-bottom-15">Write A Review</button>
 										</div>
 									</div>
 									<div class="row TheReview">
@@ -1781,7 +1781,7 @@
 										</div>
 
 										<div class="col-md-2 ReviewStars">
-											<div style="float:right;">
+											<div class="custom-float-right">
 												<span class="fa fa-star checked"></span>
 												<span _ class="fa fa-star checked"></span>
 												<span class="fa fa-star checked"></span>
@@ -1809,7 +1809,7 @@
 										</div>
 
 										<div class="col-md-2 ReviewStars">
-											<div style="float:right;">
+											<div class="custom-float-right">
 												<span class="fa fa-star checked"></span>
 												<span _ class="fa fa-star checked"></span>
 												<span class="fa fa-star checked"></span>
@@ -1838,7 +1838,7 @@
 										</div>
 
 										<div class="col-md-2 ReviewStars">
-											<div style="float:right;">
+											<div class="custom-float-right">
 												<span class="fa fa-star checked"></span>
 												<span _ class="fa fa-star checked"></span>
 												<span class="fa fa-star checked"></span>
@@ -1944,7 +1944,7 @@
 								${{item.price}}
 							</h6>
 						</div>
-						<div class="col-md-2" style="padding-left: 35px;">
+						<div class="col-md-2 m--padding-left-35">
 							<a (click)="onDelete(i)">
 								<i class="fa fa-trash"></i>
 							</a>
@@ -1964,9 +1964,8 @@
 			<div class="tab-pane" id="m_tabs_5_2" role="tabpanel">
 				<div class="row">
 					<div class="col-md-6">
-						<button class="btn btn-link pull-left" style="padding-top:0px; padding-left:0px;" (click)="addNewPaymentCardHide = false"
-						 *ngIf="addNewPaymentCardHide">
-							<i class="fa fa-angle-left" style="padding-right:5px; padding-bottom: 3px;"></i>BACK
+						<button class="btn btn-link pull-left custom-padding-left-top-zero" (click)="addNewPaymentCardHide = false" *ngIf="addNewPaymentCardHide">
+							<i class="fa fa-angle-left m--padding-right-5" style=" padding-bottom: 3px;"></i>BACK
 						</button>
 
 					</div>
@@ -1984,16 +1983,16 @@
 								<div class="row">
 									<div class="col-md-8">
 										<img src="./assets/demo/demo3/media/img/americanexpress.png">
-										<span style="padding-left: 15px;">American Express</span>
+										<span class="m--padding-left-15">American Express</span>
 									</div>
-									<div class="col-md-4 custom-color">
-										<i class="fa fa-check" style="padding-top:15px;" *ngIf="paymentCheckTickHide"></i>
+									<div class="col-md-4 custom-color m--padding-top-15">
+										<i class="fa fa-check" *ngIf="paymentCheckTickHide"></i>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12" style="text-align: right;">
 										<img class=" personimage custom-border-radius" src="./assets/demo/demo3/media/img/men1.jpg">
-										<span style="font-weight: 400; font-size: 12px;">
+										<span class="custom-card-owner-setting">
 											Niaz Khan Card
 										</span>
 
@@ -2010,7 +2009,7 @@
 								<div class="row">
 									<div class="col-md-8">
 										<img src="./assets/demo/demo3/media/img/mastercard.png">
-										<span style="padding-left: 15px;">Master-Card</span>
+										<span class="m--padding-left-15">Master-Card</span>
 									</div>
 									<div class="col-md-4" style="text-align: right;">
 									</div>
@@ -2018,7 +2017,7 @@
 								<div class="row">
 									<div class="col-md-12" style="text-align: right;">
 										<img class=" personimage custom-border-radius" src="./assets/demo/demo3/media/img/men1.jpg">
-										<span style="font-weight: 400; font-size: 12px;">
+										<span class="custom-card-owner-setting">
 											Niaz Khan Card
 										</span>
 
@@ -2032,7 +2031,7 @@
 								<div class="row">
 									<div class="col-md-8">
 										<img src="./assets/demo/demo3/media/img/paypal.png">
-										<span style="padding-left: 15px;">Paypal</span>
+										<span class="m--padding-left-15">Paypal</span>
 									</div>
 									<div class="col-md-4" style="text-align: right;">
 									</div>
@@ -2040,7 +2039,7 @@
 								<div class="row">
 									<div class="col-md-12" style="text-align: right;">
 										<img class=" personimage custom-border-radius" src="./assets/demo/demo3/media/img/men2.jpg">
-										<span style="font-weight: 400; font-size: 12px;">
+										<span class="custom-card-owner-setting">
 											Sharjeel khan Card
 										</span>
 
@@ -2054,16 +2053,16 @@
 								<div class="row">
 									<div class="col-md-8">
 										<img src="./assets/demo/demo3/media/img/visa.png">
-										<span style="padding-left: 15px;">Visa</span>
+										<span class="m--padding-left-15">Visa</span>
 									</div>
 									<div class="col-md-4" style="text-align: right;">
-									
+
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12" style="text-align: right;">
 										<img class=" personimage custom-border-radius" src="./assets/demo/demo3/media/img/men1.jpg">
-										<span style="font-weight: 400; font-size: 12px;">
+										<span class="custom-card-owner-setting">
 											Niaz Khan Card
 										</span>
 
@@ -2073,7 +2072,7 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn btn-primary" style="float:right; margin-top: 10px;">Done</button>
+					<button class="btn btn-primary custom-float-right m--margin-top-10">Done</button>
 
 				</div>
 
@@ -2105,7 +2104,7 @@
 						</label>
 						<input class="form-control m-input m-input--square" placeholder="Enter Expire Date" type="date">
 					</div>
-					<button class="btn btn-primary " style="float:right;">Submit</button>
+					<button class="btn btn-primary custom-float-right ">Submit</button>
 				</form>
 
 
@@ -2131,117 +2130,8 @@
 <!-- Right side bar Modal  End-->
 
 
-<!-- Request Content Start  -->
-<div class="m-content m-content-nopadding" style="margin-top: -45px;" [hidden]="formHidden">
-		<div class="m-portlet m-portlet--bordered-semi m-portlet--full-height">
-			<div class="m-portlet__head">
-				<div class="m-portlet__head-caption">
-					<div class="m-portlet__head-title">
-						<a class="btn btn-link" style="padding:0px;" (click)="formHidden=true" style="display:  block;padding-left: 0px;margin-left: -75px;">
-							<i class="fa fa-chevron-left"></i> BACK</a>
-						<h3 class="m-portlet__head-text" style=" float:left;">
-							Request a Service
-						</h3>
-					</div>
-				</div>
-				<div class="m-portlet__head-tools">
-				</div>
-			</div>
-			<div class="m-portlet__body">
-				<form class="form-group">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group m-form__group">
-								<label>
-									Request Name
-								</label>
-								<input class="form-control m-input m-input--air" placeholder="Enter Request Name" type="text">
-							</div>
-
-							<div class="form-group m-form__group">
-								<label>
-									Request Category
-								</label>
-								<select class="form-control m-input m-input--air">
-									<option>Facial Care</option>
-									<option>Hair Removal</option>
-									<option>Nail Care</option>
-								</select>
-							</div>
-							<div class="form-group m-form__group">
-								<label>
-									Price
-								</label>
-								<input class="form-control m-input m-input--air" placeholder="Enter Price" type="text">
-							</div>
-							<div class="form-group m-form__group">
-								<label>
-									Request Details
-								</label>
-								<textarea class="form-control m-input" placeholder="Enter Request Details Here"></textarea>
-							</div>
-						</div>
-						<div class="col-md-6">
-
-							<div class="form-group m-form__group">
-								<label>
-									Contact Number
-								</label>
-								<input class="form-control m-input m-input--air" placeholder="Enter Contact Number Here" type="tel">
-							</div>
-
-							<div class="form-group m-form__group">
-								<label>
-									Select Date &amp; Time Slot1
-								</label>
-								<input class="form-control m-input m-input--air" id="m_datetimepicker_1" placeholder="Select date &amp; time" type="text">
-							</div>
-
-							<div class="form-group m-form__group">
-								<label>
-									Select Date &amp; Time Slot2
-								</label>
-								<input class="form-control m-input m-input--air " id="m_datetimepicker_2" placeholder="Select date &amp; time" type="text">
-							</div>
-
-							<div class="m-form__group form-group row" style="padding-left: 15px;">
-								<label>
-									Publish This Is Request Online?
-								</label>
-
-								<span class="m-switch m-switch--icon m-switch--primary m-switch--sm" style="margin-left: 10px; margin-top:-3px;">
-									<label class="ng-tns-c2-2">
-										<input class="ng-tns-c2-2" checked="checked" name="" type="checkbox">
-										<span class="ng-tns-c2-2"></span>
-									</label>
-								</span>
-								<div class="row">
-									<div class="col-md-12">
-										<label class="ng-tns-c2-2">Upload Document File</label>
-										<input class="form-control-file" type="file">
-									</div>
-								</div>
-							</div>
-
-
-							<button class="btn btn-primary btn-sm custom-float-right" type="submit">
-								Submit
-							</button>
-							<button class="btn btn-secondary btn-sm custom-float-right" type="button" (click)="formHidden=true">
-								Cancel
-							</button>
-
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-</div>
-<!-- Request Content End  -->
-
-
 <!-- Terms and Condition Modal Start -->
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_terms" role="dialog" tabindex="-1" style="display: none; z-index: 100003;"
+<div aria-labelledby="exampleModalLabel" class="modal fade custom-terms-main-div" id="m_modal_terms" role="dialog" tabindex="-1"
  aria-hidden="true">
 	<div class="modal-dialog" role="document" style="margin-left: 25%;">
 		<div class="modal-content">
@@ -2256,7 +2146,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<div class="m-scrollable m-scroller ps" data-height="200" data-scrollable="true" data-scrollbar-shown="true" style="height: 200px; overflow: hidden;">
+				<div class="m-scrollable m-scroller ps cutom-terms-modal-body" data-height="200" data-scrollable="true" data-scrollbar-shown="true">
 					<p>
 						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
 						text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -2278,11 +2168,11 @@
 						It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
 						with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 					</p>
-					<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
-						<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+					<div class="ps__rail-x custom-rail-x">
+						<div class="ps__thumb-x custom-thumb-x" tabindex="0"></div>
 					</div>
-					<div class="ps__rail-y" style="top: 0px; right: 4px; height: 200px;">
-						<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+					<div class="ps__rail-y custom-rail-y">
+						<div class="ps__thumb-y custom-thumb-y" tabindex="0"></div>
 					</div>
 				</div>
 			</div>
@@ -2298,4 +2188,3 @@
 	</div>
 </div>
 <!-- Terms and Condition Modal End -->
-

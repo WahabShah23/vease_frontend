@@ -1,13 +1,12 @@
 <!-- Begin SubHeader -->
-<div class="m-subheader" style="padding-top: 10px;
-margin-bottom: -26px;">
+<div class="m-subheader m--padding-top-10" style="margin-bottom: -26px;">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
             <h3 class="m-subheader__title">
                 Resolution Centre
 
-                <small class="fa fa-search text-muted stats-icons" style=" margin-left: 0px; font-size: 10px;" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
-                    <a style="cursor:pointer;">
+                <small class="fa fa-search text-muted stats-icons custom-small-header" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
+                    <a class="custom-cursor">
                     </a>
                 </small>
 
@@ -19,7 +18,7 @@ margin-bottom: -26px;">
     </div>
 </div>
 
-<div class="m-subheader breadcrumsubheader" style="padding-top:  15px;">
+<div class="m-subheader breadcrumsubheader m--padding-top-15">
     <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
         <li class="m-nav__item m-nav__item--home">
             <a class="m-nav__link m-nav__link--icon" href="/dashboard" ng-reflect-href="#" ng-reflect-router-link="/dashboard" routerlink="/dashboard">
@@ -80,7 +79,7 @@ margin-bottom: -26px;">
         <div class="col-md-4 titleComplaints" [hidden]="!disputeRightSideActive" style="margin-left: -40px;">
             <!-- _______scroable goes here_______ -->
             <!--Begin::Timeline 2 -->
-            <h5 class="m-subheader__title titleComplaints titles" style="padding-left: 45px;">
+            <h5 class="m-subheader__title titleComplaints titles m--padding-left-45">
                 Details / Handle Dispute
             </h5>
             <div class="m-timeline-2" style="left:2.89rem;">
@@ -97,21 +96,20 @@ margin-bottom: -26px;">
                                             <span>
                                                 Handy Autos
                                             </span>
-                                            <span style="float: right;">
+                                            <span class="custom-float-right">
                                                 <a class="btn btn-default btn-sm chatServiceButton custom-messege-button" href="javascript:;">
                                                     <i class="la la-comments"></i> Message</a>
                                             </span>
+
+
                                         </div>
                                         <div class="m-widget3__info">
                                             <br>
-
                                             <p class="card-job-title purple">Maintenance & Repair
-                                                <span class="card-job-pay m-link m--font-bolder m-widget4__number" style="float: right;">
+                                                <span class="card-job-pay m-link m--font-bolder m-widget4__number custom-float-right">
                                                     $120.00
                                                 </span>
                                             </p>
-
-
                                         </div>
                                     </div>
                                     <div class="m-widget3__body">
@@ -121,7 +119,7 @@ margin-bottom: -26px;">
                                             euismod tinciduntut laoreet doloremagna aliquam erat volutpat. Lorem ipsum dolor
                                             sit amet,consectetuer edipiscing elit
                                         </p>
-                                        <button type="button" class="btn btn-primary card-button btn-sm" data-toggle="modal" data-target="#m_modal_escalate" style="float: right;">
+                                        <button type="button" class="btn btn-primary card-button btn-sm custom-float-right" data-toggle="modal" data-target="#m_modal_escalate">
                                             Escalate</button>
 
                                     </div>
@@ -143,21 +141,18 @@ margin-bottom: -26px;">
                                             <span>
                                                 Mont Hair
                                             </span>
-                                            <span style="float: right;">
+                                            <span class="custom-float-right">
                                                 <a class="btn btn-default btn-sm chatServiceButton custom-messege-button" href="javascript:;">
                                                     <i class="la la-comments"></i> Message</a>
                                             </span>
                                         </div>
                                         <div class="m-widget3__info">
                                             <br>
-
                                             <p class="card-job-title purple">Fancy Cutting
-                                                <span class="card-job-pay m-link m--font-bolder m-widget4__number" style="float: right;">
+                                                <span class="card-job-pay m-link m--font-bolder m-widget4__number custom-float-right">
                                                     $100.00
                                                 </span>
                                             </p>
-
-
                                         </div>
                                     </div>
                                     <div class="m-widget3__body">
@@ -167,7 +162,7 @@ margin-bottom: -26px;">
                                             euismod tinciduntut laoreet doloremagna aliquam erat volutpat. Lorem ipsum dolor
                                             sit amet,consectetuer edipiscing elit
                                         </p>
-                                        <button type="button" class="btn btn-primary card-button btn-sm" data-toggle="modal" data-target="#m_modal_escalate" style="float: right;">
+                                        <button type="button" class="btn btn-primary card-button btn-sm custom-float-right" data-toggle="modal" data-target="#m_modal_escalate">
                                             Escalate</button>
 
                                     </div>
@@ -187,7 +182,7 @@ margin-bottom: -26px;">
             <!--End: TimeLine Scrolable-->
         </div>
         <div class="col-md-3" [hidden]="!disputeRightSideActive">
-            <label class="m--font-danger" style="font-weight: 500; margin-top: 100px;">
+            <label class="m--font-danger custom-label-setting">
                 <span>*Choose Below Option Accordingly</span>
             </label>
             <div class="form-group m-form__group">
@@ -223,8 +218,8 @@ margin-bottom: -26px;">
 
 
 <!-- Escalate Modal Start Here -->
-<div aria-labelledby="exampleModalLabel" class="modal fade" id="m_modal_escalate" role="dialog" tabindex="-1" aria-hidden="true"
-    style="display: none;">
+<div aria-labelledby="exampleModalLabel" class="modal fade custom-display" id="m_modal_escalate" role="dialog" tabindex="-1"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

@@ -1,9 +1,18 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, TemplateRef, ElementRef, NgZone } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Helpers } from '../../../../helpers';
-import { ScriptLoaderService } from '../../../../_services/script-loader.service';
-import { } from 'googlemaps';
-import { AgmMap, MapsAPILoader } from '@agm/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ViewChild,
+  AfterViewInit,
+  TemplateRef,
+  ElementRef,
+  NgZone
+} from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Helpers } from "../../../../helpers";
+import { ScriptLoaderService } from "../../../../_services/script-loader.service";
+import {} from "googlemaps";
+import { AgmMap, MapsAPILoader } from "@agm/core";
 import {
   startOfDay,
   endOfDay,
@@ -13,14 +22,14 @@ import {
   isSameDay,
   isSameMonth,
   addHours
-} from 'date-fns';
+} from "date-fns";
 
-import { Subject } from 'rxjs';
+import { Subject } from "rxjs";
 import {
   CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent
-} from 'angular-calendar';
+} from "angular-calendar";
 
 import {
   trigger,
@@ -28,27 +37,26 @@ import {
   style,
   animate,
   transition
-} from '@angular/animations';
+} from "@angular/animations";
 
-import { ServerServices_Services } from '../../../../services/serverServices.services';
+import { ServerServices_Services } from "../../../../services/serverServices.services";
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 // serverServices for posting the data to server
 
 const colors: any = {
   red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
+    primary: "#ad2121",
+    secondary: "#FAE3E3"
   },
   blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
+    primary: "#1e90ff",
+    secondary: "#D1E8FF"
   },
   yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+    primary: "#e3bc08",
+    secondary: "#FDF1BA"
   }
 };
 
@@ -69,39 +77,39 @@ interface data {
   updated_at: string;
 }
 
-
-
-
 @Component({
   selector: "app-services",
   templateUrl: "./services.component.html",
   styleUrls: ["./services.component.css"],
   animations: [
+    trigger("fade", [
+      state(
+        "void",
+        style({
+          transform: "scale(0)",
+          height: "60px",
+          position: "absolute",
+          top: "17%"
+        })
+      ),
 
+      transition("void => *", [animate(350, style({ transform: "scale(1)" }))]),
 
-    trigger('fade',
-      [
-        state('void', style({ transform: 'scale(0)', height: '60px', position: 'absolute', top: '17%' })),
-
-        transition('void => *', [
-          animate(350, style({ transform: 'scale(1)' }))
-        ]),
-
-        transition('* => void', [
-          animate(400)
-        ]),
-      ]
-    )]
+      transition("* => void", [animate(400)])
+    ])
+  ]
   // encapsulation: ViewEncapsulation.None,
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
-
-  @ViewChild("tref", { read: ElementRef }) tref: ElementRef;
-  @ViewChild("tref1", { read: ElementRef }) tref1: ElementRef;
-  @ViewChild("tref2", { read: ElementRef }) tref2: ElementRef;
+  @ViewChild("tref", { read: ElementRef })
+  tref: ElementRef;
+  @ViewChild("tref1", { read: ElementRef })
+  tref1: ElementRef;
+  @ViewChild("tref2", { read: ElementRef })
+  tref2: ElementRef;
   @ViewChild(AgmMap) agmMap: AgmMap;
-  @ViewChild('modalContent') modalContent: TemplateRef<any>;
-  @ViewChild('search') public searchElementRef: ElementRef;
+  @ViewChild("modalContent") modalContent: TemplateRef<any>;
+  @ViewChild("search") public searchElementRef: ElementRef;
   fileToUpload: File = null;
 
   isGridView = false;
@@ -112,7 +120,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   viewDate: Date = new Date();
   paymentCheckTickHide = false;
   isCustomer = true;
-
 
   lang: any;
   lat: any;
@@ -138,24 +145,29 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   serviceCounter: number = 0;
   enabledPaymentButton: boolean = false;
   mainFilterHide = false;
-  itemsArray = [{ name: "Oil & Oil Filter Change", price: "12.00" },
-  { name: "Spark Plugs Changing", price: "60.00 " }];
+  itemsArray = [
+    { name: "Oil & Oil Filter Change", price: "12.00" },
+    { name: "Spark Plugs Changing", price: "60.00 " }
+  ];
   orderButtonConter = 0;
   testVariable = false;
   deleted = true;
   addNewPaymentCardHide = false;
-  constructor(private _script: ScriptLoaderService, private modal: NgbModal, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private serverServies_services: ServerServices_Services) {
-
+  constructor(
+    private _script: ScriptLoaderService,
+    private modal: NgbModal,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone,
+    private serverServies_services: ServerServices_Services
+  ) {
     // this.itemsArray=[{name:"Oil & Oil Filter Change", price: 12.00},
     //                  { name:"Spark Plugs Changing", price: 60.00}];
-
   }
 
   reqBeautyCategories: any[];
   public searchControl: FormControl;
 
   ngOnInit() {
-
     this.searchControl = new FormControl();
     // this.mapsAPILoader.load().then(() => {
     //     const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
@@ -183,17 +195,25 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     //     });
     // });
 
-    var text, counter = 0;
-    $(document).on('click', '#add-service-request', function() {
+    var text,
+      counter = 0;
+    $(document).on("click", "#add-service-request", function() {
       counter = counter + 1;
-      text = $(this).closest('.m-portlet__head').next().find('.m-widget4').append(`
+      text = $(this)
+        .closest(".m-portlet__head")
+        .next()
+        .find(".m-widget4")
+        .append(
+          `
             <div class="m-widget4__item">
                             <div class="m-widget4__img m-widget4__img--logo">
                                 <img src="./assets/app/media/img/client-logos/logo5.png" alt="">
                             </div>
                             <div class="m-widget4__info">
 								<span class="m-widget4__title">
-									New Item ` + counter + `
+									New Item ` +
+            counter +
+            `
 								</span>
                                 <br>
                                 <span class="m-widget4__sub">
@@ -206,48 +226,50 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 								</span>
 							</span>
                         </div>
-        `);
-
+        `
+        );
     });
 
-    this.reqBeautyCategories = ['Facial Care', 'Hair Removal', 'Nail Care', 'Event Planning', 'Food & Cattring', 'Pet Services'];
+    this.reqBeautyCategories = [
+      "Facial Care",
+      "Hair Removal",
+      "Nail Care",
+      "Event Planning",
+      "Food & Cattring",
+      "Pet Services"
+    ];
 
-    this.serverServies_services.getServices()
-      .subscribe(
-      (data) => {
-        // console.log(data.data);
-        this.serData = data.data;
-        console.log(this.serData);
-        // console.log('this is serverData');
-        // console.log(this.serverData);
-        // console.log('this is interface data');
-        // console.log(this.serData);
-        // console.log(serData[0].price + ' ' + serData[0].publish);
-      }
-      );
-
+    this.serverServies_services.getServices().subscribe(data => {
+      // console.log(data.data);
+      this.serData = data.data;
+      console.log(this.serData);
+      // console.log('this is serverData');
+      // console.log(this.serverData);
+      // console.log('this is interface data');
+      // console.log(this.serData);
+      // console.log(serData[0].price + ' ' + serData[0].publish);
+    });
 
     this.requestForms = new FormGroup({
-      'reqName': new FormControl(null, Validators.required),
-      'reqDetail': new FormControl(null, Validators.required),
-      'reqCategory': new FormControl('Facial Care', Validators.required),
-      'reqPrice': new FormControl(null, Validators.required),
-      'reqDuration': new FormControl(null, Validators.required),
-      'reqContactNumber': new FormControl(null, Validators.required),
-      'reqIsPublish': new FormControl(true)
+      reqName: new FormControl(null, Validators.required),
+      reqDetail: new FormControl(null, Validators.required),
+      reqCategory: new FormControl("Facial Care", Validators.required),
+      reqPrice: new FormControl(null, Validators.required),
+      reqDuration: new FormControl(null, Validators.required),
+      reqContactNumber: new FormControl(null, Validators.required),
+      reqIsPublish: new FormControl(true)
     });
   }
 
-
   ngAfterViewInit() {
-
-    this._script.loadScripts('app-services',
-      ['//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js',
-        '//www.amcharts.com/lib/3/plugins/export/export.min.js',
-        'assets/app/js/services.js', 'assets/app/js/bootstrap-datetimepicker.js',
-        'assets/app/js/bootstrap-datepicker.js',
-        'assets/app/js/bootstrap-timepicker.js',]);
-
+    this._script.loadScripts("app-services", [
+      "//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js",
+      "//www.amcharts.com/lib/3/plugins/export/export.min.js",
+      "assets/app/js/services.js",
+      "assets/app/js/bootstrap-datetimepicker.js",
+      "assets/app/js/bootstrap-datepicker.js",
+      "assets/app/js/bootstrap-timepicker.js"
+    ]);
   }
 
   adjustRadiusMap() {
@@ -256,19 +278,15 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }, 2000);
   }
 
-
-
   changeView() {
-
     if (this.isListViewHide) {
-      this.isListViewHide = false
+      this.isListViewHide = false;
       this.isGridViewHide = true;
       this.viewName = "Grid View";
-
     } else {
       this.isGridViewHide = false;
       this.isListViewHide = true;
-      this.viewName = "List View"
+      this.viewName = "List View";
     }
   }
 
@@ -300,27 +318,28 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
+      title: "A 3 day event",
+      color: colors.red
       // actions: this.actions
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
+      title: "An event with no end date",
+      color: colors.yellow
       // actions: this.actions
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
+      title: "A long event that spans 2 months",
       color: colors.blue
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: new Date(),
-      title: 'A draggable and resizable event',
-      color: colors.yellow/*,
+      title: "A draggable and resizable event",
+      color:
+        colors.yellow /*,
         actions: this.actions,
         resizable: {
           beforeStart: true,
@@ -332,30 +351,27 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
   activeDayIsOpen: boolean = true;
 
-
-
   /*
-   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-     if (isSameMonth(date, this.viewDate)) {
-         if (
-           (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-           events.length === 0
-         ) {
-           this.activeDayIsOpen = false;
-         } else {
-           this.activeDayIsOpen = true;
-           this.viewDate = date;
+     dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+       if (isSameMonth(date, this.viewDate)) {
+           if (
+             (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+             events.length === 0
+           ) {
+             this.activeDayIsOpen = false;
+           } else {
+             this.activeDayIsOpen = true;
+             this.viewDate = date;
+           }
          }
        }
-     }
-     handleEvent(action: string, event: CalendarEvent): void {
-       this.modalData = { event, action };
-       this.modal.open(this.modalContent, { size: 'lg' });
-     }
-*/
+       handleEvent(action: string, event: CalendarEvent): void {
+         this.modalData = { event, action };
+         this.modal.open(this.modalContent, { size: 'lg' });
+       }
+ */
 
   //Calendar Ends
-
 
   // seding data to serve
   // submitServices(name, details, value, staff, price, duration, location, latitude, longitude, publish) {
@@ -391,17 +407,12 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   //     )
   // }
 
-
   broadcastServiceRequest(recipient, serviceCategory, contactNumber) {
-
-
-
-
     // After the data submission empty all input fields....
-    recipient.value = '';
-    serviceCategory.value = '';
+    recipient.value = "";
+    serviceCategory.value = "";
     // value = '';
-    contactNumber.value = '';
+    contactNumber.value = "";
     // message = '';
   }
 
@@ -410,16 +421,20 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     //             this.requestForms.value.reqCategory, this.requestForms.value.reqPrice,
     //             this.requestForms.value.reqDuration, this.requestForms.value.reqContactNumber,
     //             this.requestForms.value.reqIsPublish, this.fileToUpload);
-    this.serverServies_services.storeRequests(this.requestForms.value.reqName,
-      this.requestForms.value.reqDetail, this.requestForms.value.reqCategory,
-      this.requestForms.value.reqPrice, this.requestForms.value.reqDuration,
-      this.requestForms.value.reqContactNumber, this.requestForms.value.reqIsPublish,
-      this.fileToUpload)
-      .subscribe(
-      (response) => {
-        console.log(response);
-      }
+    this.serverServies_services
+      .storeRequests(
+        this.requestForms.value.reqName,
+        this.requestForms.value.reqDetail,
+        this.requestForms.value.reqCategory,
+        this.requestForms.value.reqPrice,
+        this.requestForms.value.reqDuration,
+        this.requestForms.value.reqContactNumber,
+        this.requestForms.value.reqIsPublish,
+        this.fileToUpload
       )
+      .subscribe(response => {
+        console.log(response);
+      });
     this.requestForms.reset();
     this.fileToUpload = null;
   }
@@ -428,9 +443,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     this.fileToUpload = files.item(0);
   }
 
-
   onCheckedUpdate(event: Event) {
-
     if ((<HTMLInputElement>event.target).checked) {
       this.visibleSidebar4 = true;
       this.serviceCounter++;
@@ -441,7 +454,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   }
 
   onBook(element: Element) {
-
     if (!this.tref.nativeElement.checked) {
       this.tref.nativeElement.checked = true;
       this.serviceCounter++;
@@ -451,7 +463,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     this.enabledPaymentButton = true;
     if (element.classList[2] == "btn-default") {
       element.classList.remove("btn-default");
-      element.classList.add("btn-primary")
+      element.classList.add("btn-primary");
     }
   }
 
@@ -475,5 +487,4 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       this.orderButtonConter--;
     }
   }
-
 }
