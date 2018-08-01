@@ -222,86 +222,121 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Maintenance &amp; Repair</h6>
-												<div class="row service-item">
-													<div class="col-md-6">
-														Oil &amp; Oil Filter Change
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$120.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
-												</div>
 
 
 												<div class="row service-item">
-													<div class="col-md-6">
-														Spark Plugs Changing
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$60.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
+														<div class="col-md-1">
+															<span class="custom-width" >
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input #tref type="checkbox" value="true" (change)="onCheckedUpdate($event)">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Oil &amp; Oil Filter Change
+															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"></i>
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$120.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 												</div>
+			
 
 												<div class="row service-item">
-													<div class="col-md-6">
-														Gearbox
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$500.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
+														<div class="col-md-1">
+															<span class="custom-width" (click)="visibleSidebar4 = true">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" (change)="onCheckedUpdate($event)">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Spark Plugs Changing
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$60.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 												</div>
-
-
+			
 												<div class="row service-item">
-													<div class="col-md-6">
-														Suspension
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$200.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
+														<div class="col-md-1">
+															<span class="custom-width">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Gearbox
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$500.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 												</div>
+			
+			
+												<div class="row service-item">
+														<div class="col-md-1">
+															<span class="custom-width">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187" (change)="onCheckedUpdate($event)">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Suspension
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$200.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+												</div>
+
+												<div class="row">
+														<div class="col-md-12">
+															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+														</div>
+												</div>  
 
 											</div>
-
-
-
-
-
 										</div>
 									</div>
 								</div>
@@ -341,57 +376,92 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Hair</h6>
-												<div class="row service-item">
-													<div class="col-md-6">
-														Hair Cutting
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$60.50
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
 
-												</div>
 												<div class="row service-item">
-													<div class="col-md-6">
-														Fancy Cutting
+														<div class="col-md-1">
+															<span class="custom-width">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Hair Cutting
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$60.50
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$100.00
-														</span>
+													
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span class="custom-width">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Fancy Cutting
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$100.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+			
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span class="custom-width">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Head Shaving
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$50
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
+			
+													<div class="row">
+														<div class="col-md-12">
+															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+														</div>
+													</div>  
 
-												</div>
-												<div class="row service-item">
-													<div class="col-md-6">
-														Head Shaving
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$50
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
 
-												</div>
 											</div>
 										</div>
 									</div>
@@ -433,57 +503,91 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Checkup Services</h6>
-												<div class="row service-item">
-													<div class="col-md-6">
-														Fever
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$60.50
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
 
-												</div>
 												<div class="row service-item">
-													<div class="col-md-6">
-														Dental
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Fever
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$60.50
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$100.00
-														</span>
+			
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Dental
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$100.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a class="btn btn-sm btn-default" data-target="#addBookingModal" data-toggle="modal">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+			
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Overall Body
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$200
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
+			
+													<div class="row">
+														<div class="col-md-12">
+															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+														</div>
+													</div> 
 
-												</div>
-												<div class="row service-item">
-													<div class="col-md-6">
-														Overall Body
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$200
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
-												</div>
 											</div>
 										</div>
 									</div>
@@ -523,79 +627,118 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Room Cleaning</h6>
-												<div class="row service-item">
-													<div class="col-md-6">
-														One Room With Bath
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$120.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
-												</div>
-
 
 												<div class="row service-item">
-													<div class="col-md-6">
-														Multiple Rooms With Baths
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															One Room With Bath
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$120.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$260
-														</span>
+			
+			
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Multiple Rooms With Baths
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$260
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
+			
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															One Room Office with Bath
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$500.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-													<div class="col-md-12">
-														<hr>
+			
+			
+													<div class="row service-item">
+														<div class="col-md-1">
+															<span style="width: 40px;">
+																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
+																	<input type="checkbox" value="187">
+																	<span></span>
+																</label>
+															</span>
+														</div>
+														<div class="col-md-7 custom_padding_left">
+															Multi Room Office with Baths
+														</div>
+														<div class="col-md-4">
+															<span class="m--font-success custom-float-right">
+																$800.00
+															</span>
+														</div>
+														<!-- <div class="col-md-3">
+															<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
+														</div> -->
+														<div class="col-md-12">
+															<hr>
+														</div>
+			
 													</div>
-
-												</div>
-
-												<div class="row service-item">
-													<div class="col-md-6">
-														One Room Office with Bath
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$500.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
-												</div>
-
-
-												<div class="row service-item">
-													<div class="col-md-6">
-														Multi Room Office with Baths
-													</div>
-													<div class="col-md-3">
-														<span class="m--font-success">
-															$800.00
-														</span>
-													</div>
-													<div class="col-md-3">
-														<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book</a>
-													</div>
-													<div class="col-md-12">
-														<hr>
-													</div>
-
-												</div>
+			
+													<div class="row">
+														<div class="col-md-12">
+															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+														</div>
+													</div>  
 
 											</div>
 
@@ -654,26 +797,28 @@
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
 										<h6 class="service-heading">Maintenance &amp; Repair</h6>
+
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span class="custom-width" (click)="visibleSidebar2 = true">
+												<span class="custom-width" >
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input #tref type="checkbox" value="true" (change)="onCheckedUpdate($event)">
 														<span></span>
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Oil &amp; Oil Filter Change
+												<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"></i>
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$120.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -690,17 +835,17 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Spark Plugs Changing
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$60.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -716,17 +861,17 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Gearbox
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$500.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -743,21 +888,28 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Suspension
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$200.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 										</div>
+
+										<div class="row">
+											<div class="col-md-12">
+												<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+											</div>
+										</div>  
+
 									</div>
 								</div>
 							</div>
@@ -803,6 +955,7 @@
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
 										<h6 class="service-heading">Hair</h6>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span class="custom-width">
@@ -812,22 +965,23 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Hair Cutting
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$60.50
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span class="custom-width">
@@ -837,22 +991,23 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Fancy Cutting
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$100.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span class="custom-width">
@@ -862,22 +1017,29 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Head Shaving
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$50
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
+
+										<div class="row">
+											<div class="col-md-12">
+												<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+											</div>
+										</div>  
+
 									</div>
 								</div>
 
@@ -923,6 +1085,7 @@
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
 										<h6 class="service-heading">Room Cleaning</h6>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span style="width: 40px;">
@@ -932,17 +1095,17 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												One Room With Bath
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$120.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -959,17 +1122,17 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Multiple Rooms With Baths
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$260
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -985,17 +1148,17 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												One Room Office with Bath
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$500.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-default">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
@@ -1012,27 +1175,31 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Multi Room Office with Baths
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$800.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a data-toggle="modal" data-target="#addBookingModal" class="btn btn-sm btn-primary">Book</a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
 
+										<div class="row">
+											<div class="col-md-12">
+												<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+											</div>
+										</div>  
+
 									</div>
-
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -1076,6 +1243,7 @@
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
 										<h6 class="service-heading">Checkup Services</h6>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span style="width: 40px;">
@@ -1085,22 +1253,23 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Fever
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$60.50
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span style="width: 40px;">
@@ -1110,22 +1279,23 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Dental
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$100.00
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a class="btn btn-sm btn-default" data-target="#addBookingModal" data-toggle="modal">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
+
 										<div class="row service-item">
 											<div class="col-md-1">
 												<span style="width: 40px;">
@@ -1135,26 +1305,31 @@
 													</label>
 												</span>
 											</div>
-											<div class="col-md-5 custom_padding_left">
+											<div class="col-md-7 custom_padding_left">
 												Overall Body
 											</div>
-											<div class="col-md-3">
-												<span class="m--font-success">
+											<div class="col-md-4">
+												<span class="m--font-success custom-float-right">
 													$200
 												</span>
 											</div>
-											<div class="col-md-3">
+											<!-- <div class="col-md-3">
 												<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">Book </a>
-											</div>
+											</div> -->
 											<div class="col-md-12">
 												<hr>
 											</div>
 
 										</div>
+
+										<div class="row">
+											<div class="col-md-12">
+												<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+											</div>
+										</div> 
+
 									</div>
 								</div>
-
-
 							</div>
 						</div>
 					</div>
@@ -1884,8 +2059,9 @@
 <!-- More Detail Content End -->
 
 <!-- Right side bar Modal  Start-->
-<p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
+<p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000" >
 	<div>
+		
 		<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" id="m_quick_sidebar_tabs" role="tablist">
 			<li class="nav-item m-tabs__item">
 				<a class="nav-link m-tabs__link active show custom-font-size" data-toggle="tab" href="#m_tabs_5_1" ng-reflect-href="#m_tabs_5_1"
@@ -1907,57 +2083,112 @@
 
 
 		<div class="tab-content">
-			<div class="tab-pane active show" id="m_tabs_5_1" role="tabpanel">
 
-				<div class="row">
-					<div class="col-md-5">
-						<h5>
-							Items
-						</h5>
-					</div>
-					<div class="col-md-3">
-						<h5>
-							Price
-						</h5>
-					</div>
-					<div class="col-md-2">
-						<h5>
-							Action
-						</h5>
-					</div>
-					<div class="col-md-2">
-						<h5>
-							Terms
-						</h5>
-					</div>
-				</div>
+			<div class="tab-pane active show" id="m_tabs_5_1" role="tabpanel" >
+				
+			   <h4 style="color:#716aca">Handy Autos
+				<br class="add-line-break">
 
-				<div class="row" *ngFor="let item of itemsArray; let i= index">
-					<ng-container *ngIf="deleted">
-						<div class="col-md-5">
-							<h6>
-								{{item.name}}
-							</h6>
-						</div>
-						<div class="col-md-3">
-							<h6 class="m--font-success">
-								${{item.price}}
-							</h6>
-						</div>
-						<div class="col-md-2 m--padding-left-35">
+				 <span class="custom-float-right custom-top--four custom-pointer"><a data-target="#m_modal_terms" data-toggle="modal" style="font-size:small;">Terms and Conditions</a></span>
+
+				 <label class="m-checkbox custom-float-right m-checkbox--air m-checkbox--state-brand custom-margin-right--10"  title="CheckBox For Company Terms And Conditions" >
+					<input type="checkbox">
+					<span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle="modal"></span>
+				</label>
+
+			   </h4>
+
+			   <table class="table table-hover">
+					<thead>
+					  <tr>
+						<th scope="col">Items</th>
+						<th scope="col">Price</th>
+						<th scope="col" class="text-center">Discard</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr *ngFor="let item of itemsArray; let i= index">
+						<ng-container *ngIf="deleted">
+						<th scope="row" >{{item.name}}</th>
+						<td>${{item.price}}</td>
+						<td class="text-center">
 							<a (click)="onDelete(i)">
 								<i class="fa fa-trash"></i>
 							</a>
-						</div>
-						<div class="col-md-2" style="text-align: right;">
-							<label class="m-checkbox m-checkbox--air m-checkbox--state-brand">
-								<input type="checkbox">
-								<span class="custom-check-box-setting" data-target="#m_modal_terms" data-toggle="modal"></span>
-							</label>
-						</div>
-						<hr>
-					</ng-container>
-				</div>
+						</td>
+					   </ng-container>
+					  </tr>
+					</tbody>
+				  </table>
+
+				  <div class="col text-right">
+						<div class="btn-group">
+								<button class="btn btn-success btn-md dropdown-toggle custom-payment-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select Payment Method">
+								  Payment
+								</button>
+								<div class="dropdown-menu">
+										<a class="dropdown-item custom-drop-down-style" href="#">Master-Card</a>
+										<a class="dropdown-item custom-drop-down-style" href="#">American Express</a>
+										<a class="dropdown-item custom-drop-down-style" href="#">Pay-Pal</a>
+										<a class="dropdown-item custom-drop-down-style" href="#">Custom- Method</a>
+										<!-- <div class="dropdown-divider"></div> -->
+									  </div>
+							  </div>
+				  </div>
+				
+				  <h4 style="color:#716aca; margin-top: 15px;">Mont Hair
+					 
+					 <br class="add-line-break">
+						
+					 <span class="custom-float-right custom-top--four custom-pointer"><a data-target="#m_modal_terms" data-toggle="modal" style="font-size:small;">Terms and Conditions</a></span>
+
+
+					 <label class="m-checkbox custom-float-right m-checkbox--air m-checkbox--state-brand custom-margin-right--10"  title="CheckBox For Company Terms And Conditions" >
+						<input type="checkbox">
+						<span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle="modal"></span>
+					</label>
+
+				   </h4>
+	
+				   <table class="table table-hover">
+						<thead>
+						  <tr>
+							<th scope="col">Items</th>
+							<th scope="col">Price</th>
+							<th scope="col" class="text-center">Discard</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr *ngFor="let item of itemsArray2; let i= index">
+							<ng-container *ngIf="deleted">
+							<th scope="row">{{item.name}}</th>
+							<td>${{item.price}}</td>
+							<td class="text-center">
+								<a (click)="onDelete1(i)">
+									<i class="fa fa-trash"></i>
+								</a>
+							</td>
+						   </ng-container>
+						  </tr>
+						</tbody>
+					  </table>
+	
+					  <div class="col text-right">
+							<div class="btn-group">
+									<button class="btn btn-success btn-md dropdown-toggle custom-payment-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select Payment Method">
+									  Payment
+									</button>
+									<div class="dropdown-menu">
+											<a class="dropdown-item custom-drop-down-style" href="#">Master-Card</a>
+											<a class="dropdown-item custom-drop-down-style" href="#">American Express</a>
+											<a class="dropdown-item custom-drop-down-style" href="#">Pay-Pal</a>
+											<a class="dropdown-item custom-drop-down-style" href="#">Custom- Method</a>
+											<!-- <div class="dropdown-divider"></div> -->
+										  </div>
+								  </div>
+					  </div>
+
+				
 
 			</div>
 
@@ -1975,6 +2206,8 @@
 						</button>
 					</div>
 				</div>
+
+
 				<!-- Payment Cards -->
 				<div class="m-demo__preview" *ngIf="!addNewPaymentCardHide">
 					<div class="m-stack m-stack--hor m-stack--general m-stack--demo" style="height: 400px">
@@ -2107,8 +2340,6 @@
 					<button class="btn btn-primary custom-float-right ">Submit</button>
 				</form>
 
-
-
 			</div>
 
 			<div class="tab-pane" id="m_tabs_5_3" role="tabpanel">
@@ -2124,6 +2355,7 @@
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
 				dummy text ever since the 1500s, when an unknown printer took a galley of type and
 			</div>
+
 		</div>
 	</div>
 </p-sidebar>
@@ -2177,14 +2409,38 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal" type="button">
+				<!-- <button class="btn btn-secondary" data-dismiss="modal" type="button">
 					Close
-				</button>
-				<button class="btn btn-primary" type="button">
-					Save changes
+				</button> -->
+				<button class="btn btn-primary"  data-dismiss="modal" type="button">
+					OK
 				</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- Terms and Condition Modal End -->
+  
+  <!-- Info Modal Start Here -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Service Information</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <h4>Handy Autos</h4>
+		  <h6>Oil and Filter Change <span class="custom-float-right m--font-success">$120.00</span></h6>
+		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veritatis eum laboriosam velit, voluptatibus doloremque fuga minima natus impedit sint nam, quos vero eveniet accusamus at distinctio quisquam rerum in.</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+		  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+		</div>
+	  </div>
+	</div>
+  </div>
+    <!-- Info Modal End Here-->
