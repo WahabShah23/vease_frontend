@@ -569,3 +569,44 @@ textarea.ng-invalid.ng-touched {
     display: inline;
   }
 }
+
+
+.custom-first-paragraph {
+  text-align: right;
+  font-weight: 500;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.5);
+  padding-top: 10px; */
+}
+
+.custom-coupon-setting{
+  float: left;
+  margin-top: 10px;
+  border-bottom: 1px dashed !important;
+  border: transparent;
+}
+
+.custom-apply-link{
+  float: left;
+  margin-top: 8px;
+  margin-left: 5px;
+}
+
+.custom-coupon-setting:focus{
+    outline: none !important;
+}
+
+.custom-theme-default{
+  color: #716aca;
+}
+
+
+.custom-card-shadow{
+  padding: 6px;
+  box-shadow: 1px 2px 7px 2px rgba(0,0,0,0.2)
+}
+
+.custom-p2-setting{
+  text-align: right;
+  font-weight: 500;
+  margin-top: -10px;
+}

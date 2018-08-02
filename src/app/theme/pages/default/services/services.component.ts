@@ -130,6 +130,18 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     //Info Modal variable End here
 
+    //Right Side Bar variables Start
+
+    proceedCounter = 0;
+    activePaymentTab : boolean;
+    moreCheck = false;
+    coupon1check = false;
+    coupon2check = false;
+    coupon3check = false;
+    
+
+    //Right Side Bar variables End
+
     lang: any;
     lat: any;
     lati: number = 51.678418;
@@ -510,10 +522,18 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         }
     }
 
-    updateInfoModal(company, price, title){
+    updateInfoModal(company:string, price:string, title:string){
         this.companyInfoTitle = company;
         this.priceInfoTitle=price
         this.serviceInfoTitle=title
+    }
+
+    showProceedButton(event: Event){
+        if((<HTMLInputElement>event.target).checked){
+            this.proceedCounter ++;
+        }else{
+            this.proceedCounter --;
+        }
     }
 
 }
