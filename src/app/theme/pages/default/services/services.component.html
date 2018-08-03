@@ -2148,19 +2148,19 @@
 		
 		<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" id="m_quick_sidebar_tabs" role="tablist">
 			<li class="nav-item m-tabs__item">
-				<a class="nav-link m-tabs__link active show custom-font-size" data-toggle="tab" href="#m_tabs_5_1" ng-reflect-href="#m_tabs_5_1"
-				 aria-selected="true" [ngClass]="{ 'active' : !activePaymentTab}" (click)="activePaymentTab = false" >
+				<a class="nav-link m-tabs__link active show custom-font-size" data-toggle="tab" href="" 
+				 aria-selected="true" [ngClass]="{ 'active' : activeItemTab}" (click)="activeTab('items')" >
 					Items-List
 				</a>
 			</li>
-			<li class="nav-item m-tabs__item">
-				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href="#m_tabs_5_2" ng-reflect-href="#m_tabs_5_2" aria-selected="false"  [ngClass]="{ 'active' : activePaymentTab}" >
+			<li class="nav-item m-tabs__item" *ngIf="proceedCounter > 0 ">
+				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href=""  aria-selected="false" (click)="activeTab('payment')"  [ngClass]="{ 'active' : activePaymentTab}" >
 					Payment
 				</a>
 			</li>
-			<li class="nav-item m-tabs__item">
-				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href="#m_tabs_5_3" ng-reflect-href="#m_tabs_5_3" aria-selected="false">
-					More
+			<li class="nav-item m-tabs__item" *ngIf="proceedCounter > 0 ">
+				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href="" ng-reflect-href="#m_tabs_5_3" aria-selected="false" (click)="activeTab('more')" [ngClass]="{ 'active' : activeMoreTab}">
+					Confirmation
 				</a>
 			</li> 
 		</ul> 
@@ -2168,8 +2168,8 @@
 
 		<div class="tab-content">
 
-			<div class="tab-pane active show" id="m_tabs_5_1" role="tabpanel"  [ngClass]="{ 'active' : !activePaymentTab, 
-			'show':  !activePaymentTab }">
+			<div class="tab-pane active show" id="m_tabs_5_1" role="tabpanel"  [ngClass]="{ 'active' : activeItemTab, 
+			'show':  activeItemTab }">
 
 				<p><span style="color: red;">Note:</span> To proceed to next step you must accept terms and conditions</p>
 				
@@ -2184,56 +2184,65 @@
 						<span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle="modal"></span>
 					</label>
 	
-				   </h4>
+				</h4>
 	
 				   <table class="table table-hover">
 						<thead>
 						  <tr>
-							<th scope="col">Items</th>
-							<th scope="col">Price</th>
-							<th scope="col" class="text-center">Discard</th>
+						    <th scope="col" class="text-center"></th>
+							<th scope="col"  class="col-md-6">Items</th>
+							<th scope="col" >Price</th>
+							
 						  </tr>
 						</thead>
 						<tbody>
 						  <tr *ngFor="let item of itemsArray; let i= index">
 							<ng-container *ngIf="deleted">
-							<th scope="row" >{{item.name}}</th>
-							<td>${{item.price}}</td>
-							<td class="text-center">
+							<td class="text-center custom-pointer">
 								<a (click)="onDelete(i)">
-									<i class="fa fa-trash"></i>
+									<i class="fa fa-trash" style="color: #f5516c;"></i>
 								</a>
 							</td>
+							<th scope="row" >{{item.name}}</th>
+							<td >${{item.price}}</td>
+							
 						   </ng-container>
 						  </tr>
 						</tbody>
-					  </table>
+					</table>
 
-					  <hr style="border: 1px solid rgba(0,0,0,0.5);
-					  width: 55%;">
+					  <hr class="custom-hr-style">
 
 					  <p class="custom-first-paragraph"> 
 						<input type="text" placeholder="Enter Coupon For Items" class="custom-coupon-setting" *ngIf="coupon1check">
 
 					<button class="btn btn-link btn-sm custom-apply-link" (click)="coupon1check = false" *ngIf="coupon1check">Apply</button> 
 					
-					<button class="btn btn-link btn-sm custom-apply-link" (click)="coupon1check = true" *ngIf="!coupon1check">Coupon</button>
-						 <span class="text-muted"> Sub Total:</span>
-						 <span class="custom-theme-default"> $72.00</span>
+					<button class="btn btn-link btn-sm custom-apply-link" (click)="coupon1check = true" *ngIf="!coupon1check" style="margin-top: 20px;">Coupon</button>
+						 <span class="text-muted" style="margin-right: 32px;"> Sub Total</span>
+						 <span class="text-muted" style="margin-right: 8px;"> : $72.00</span>
 					  </p>
 	
 						<p class="custom-p2-setting" style="margin-bottom: 20px;">
 						
-						<span style="margin-right: 4px;" class="text-muted"> Discount:</span>
-						<span class="custom-theme-default text-muted" style="margin-right: 15px;"> 40%</span>
+						<span class="text-muted" style="margin-right: 32px;"> Tax(10%) </span>
+						<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $10</span>
 				  
 					  </p>
 
-					  <p style="text-align: right;
-					  margin-top: -17px;">
-						<span style="margin-top: -15px;
-						font-weight: bold;;" > Total:</span>
-						<span class="custom-theme-default" style="margin-right:33px;     font-weight: bold;">$47.7</span>
+					  <p style="    text-align: right;
+					  font-weight: 500;
+					  margin-top: -15px;">
+						
+							<span class="text-muted">Discount(40%)</span>
+							<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $40</span>
+					  
+					   </p>
+
+
+					  <p style="text-align: right; font-weight: bold;">
+						<span style=" margin-right: 4.4rem;" > Total</span>
+						<span class="custom-theme-default" style="margin-right:12px;"> : $47.7</span>
 					  </p>
 	
 			   </div>
@@ -2257,30 +2266,60 @@
 					  <table class="table table-hover">
 						   <thead>
 							 <tr>
-							   <th scope="col">Items</th>
+								<th scope="col" class="text-center"></th>
+							   <th scope="col" class="col-md-6">Items</th>
 							   <th scope="col">Price</th>
-							   <th scope="col" class="text-center">Discard</th>
 							 </tr>
 						   </thead>
 						   <tbody>
 							 <tr *ngFor="let item of itemsArray2; let i= index">
 							   <ng-container *ngIf="deleted">
-							   <th scope="row">{{item.name}}</th>
+								<td class="text-center custom-pointer">
+									<a (click)="onDelete(i)">
+										<i class="fa fa-trash" style="color: #f5516c;"></i>
+									</a>
+								</td>
+							   <th scope="row" >{{item.name}}</th>
 							   <td>${{item.price}}</td>
-							   <td class="text-center">
-								   <a (click)="onDelete1(i)">
-									   <i class="fa fa-trash"></i>
-								   </a>
-							   </td>
 							  </ng-container>
 							 </tr>
 						   </tbody>
 						 </table>
 						
-					   <hr style="border: 1px solid rgba(0,0,0,0.5);
-					   width: 55%;">
+					   <hr class="custom-hr-style">
 
-					   <p class="custom-first-paragraph"> 
+						 <!-- <div class="row">
+							 <div class="col-md-12 text-right">
+								<p>
+									<span class="text-muted"> Sub Total:</span>
+									<span class="custom-theme-default text-muted"> $150.00</span>	
+								</p>
+							 </div>
+
+							 <div class="col-md-12 text-right">
+									<p>
+										<span class="text-muted"> Sub Total:</span>
+										<span class="custom-theme-default text-muted"> $150.00</span>	
+									</p>
+							  </div>
+
+							  <div class="col-md-12 text-right">
+									<p>
+										<span class="text-muted"> Sub Total:</span>
+										<span class="custom-theme-default text-muted"> $150.00</span>	
+									</p>
+							  </div>
+
+							  <div class="col-md-12 text-right">
+									<p>
+										<span class="text-muted"> Sub Total:</span>
+										<span class="custom-theme-default text-muted"> $150.00</span>	
+									</p>
+							  </div>
+								 
+						 </div> -->
+
+					   <!-- <p class="custom-first-paragraph"> 
 						<input type="text" placeholder="Enter Coupon For Items" class="custom-coupon-setting" *ngIf="coupon2check">
 
 						<button class="btn btn-link btn-sm custom-apply-link" (click)="coupon2check = false" *ngIf="coupon2check">Apply</button> 
@@ -2302,7 +2341,41 @@
 						 <span style="margin-top: -15px;
 						 font-weight: bold;;" > Total:</span>
 						 <span class="custom-theme-default" style="margin-right:40px;     font-weight: bold;">$120</span>
+					   </p>  -->
+
+
+					   <p class="custom-first-paragraph"> 
+						<input type="text" placeholder="Enter Coupon For Items" class="custom-coupon-setting" *ngIf="coupon2check">
+
+					<button class="btn btn-link btn-sm custom-apply-link" (click)="coupon2check = false" *ngIf="coupon2check">Apply</button> 
+					
+					<button class="btn btn-link btn-sm custom-apply-link" style="margin-top: 20px;"(click)="coupon2check = true" *ngIf="!coupon2check">Coupon</button>
+						 <span class="text-muted" style="margin-right: 32px;"> Sub Total</span>
+						 <span class="text-muted" style="margin-right: 8px;"> : $150.0</span>
+					  </p>
+	
+						<p class="custom-p2-setting" style="margin-bottom: 20px;">
+						
+						<span class="text-muted" style="margin-right: 32px;"> Tax(10%) </span>
+						<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $10</span>
+				  
+					  </p>
+
+					  <p style="    text-align: right;
+					  font-weight: 500;
+					  margin-top: -15px;">
+						
+							<span class="text-muted">Discount(40%)</span>
+							<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $40</span>
+					  
 					   </p>
+
+
+					  <p style="text-align: right; font-weight: bold;">
+						<span style=" margin-right: 4.4rem;" > Total</span>
+						<span class="custom-theme-default" style="margin-right:12px;"> : $54.7</span>
+					  </p>
+	
 
 				  </div>
 
@@ -2317,20 +2390,20 @@
 						
 						<button class="btn btn-link btn-sm custom-apply-link" (click)="coupon3check = true" *ngIf="!coupon3check">Coupon</button>
 	
-						 <span> Total Price:</span>
-						 <span class="custom-theme-default"> $167.7</span>
+						 <span style="margin-right: 20px;font-weight: bold;"> Total Price </span>
+						 <span class="custom-theme-default" style="font-weight: bold;"> : $102.4</span>
 					  </p> 
 	
-					  <p class="custom-p2-setting">
+					  <p class="custom-p2-setting" style="font-weight: bold;">
 				  
-						<span>Total Discount:</span>
-						<span class="custom-theme-default"> 64%</span>
+						<span style="margin-right: -2px">Total Discount </span>
+						<span class="custom-theme-default" style="margin-right: 16px;"> : 64%</span>
 				  
 					  </p>
 
 					  <div class="col text-right">
-						<button *ngIf="proceedCounter > 0 "type="button" class="btn btn-primary"
-							 href="#m_tabs_5_2" ng-reflect-href="#m_tabs_5_2" aria-selected="false" data-toggle="tab" (click)="activePaymentTab = true ">Proceed</button>
+						<button *ngIf="proceedCounter > 0 " type="button" class="btn btn-primary"
+							(click)="activeTab('payment')">Proceed</button>
 
 					</div>
 				  </div>
@@ -2453,7 +2526,7 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn btn-primary custom-float-right m--margin-top-10">Done</button>
+					<button class="btn btn-primary custom-float-right m--margin-top-10" (click)="activeTab('more')">Proceed</button>
 
 				</div>
 
@@ -2490,10 +2563,62 @@
 
 			</div>
 
-			<div class="tab-pane" id="m_tabs_5_3" role="tabpanel">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-				text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+			<div class="tab-pane" id="m_tabs_5_3" role="tabpanel" [ngClass]="{ 'active' : activeMoreTab, 
+			'show':  activeMoreTab }">
+
+				<div class="col" *ngIf="!orderNowCheck">
+						<h4>Confirmation</h4>
+
+						<div class="custom-card-shadow">
+							<h4 style="color:#716aca">Handy Autos
+								<br class="add-line-break">
+							</h4>
+				
+							<table class="table table-hover">
+									<thead>
+									  <tr>
+										
+										<th scope="col"  class="col-md-6">Items</th>
+										<th scope="col" >Price</th>
+										
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr *ngFor="let item of itemsArray; let i= index">
+										<th scope="row" >{{item.name}}</th>
+										<td >${{item.price}}</td>
+									  </tr>
+									</tbody>
+							</table>
+
+							<hr class="custom-hr-style">
+
+							<p class="text-right" style="font-weight:bold;">
+						 		<span> Total Price : </span>
+						 		<span class="custom-theme-default" style="margin-right: 8px;"> $72.00</span>	
+							</p>
+
+
+						</div>
+
+
+						<p class="text-right" style="margin-top:15px;">Are your sure to place order ?</p>
+		
+						<button class="btn btn-primary custom-float-right" (click)="orderNowCheck = true">Order Now</button>
+						<button class="btn btn-danger custom-float-right" (click)="visibleSidebar2 = false" >Cancel</button>
+	
+				</div>
+
+				<div class="col text-center" *ngIf="orderNowCheck">
+						<h4>Congratulations</h4>
+						<div class="text-center">
+							<img src="./assets/demo/demo3/media/img/confetti.png" class="rounded" alt="..." style="width:15%;">
+						  </div>
+						<p>Your Order Has Been Successfully Placed</p>
+		
+						<button class="btn btn-primary" (click)="thanksUpdate()" >Return</button>
+				</div>
+
 			</div>
 
 			<div class="tab-pane" id="m_tabs_5_4" role="tabpanel">

@@ -133,11 +133,14 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     //Right Side Bar variables Start
 
     proceedCounter = 0;
-    activePaymentTab : boolean;
+    activePaymentTab = false;
+    activeItemTab = true;
+    activeMoreTab = false;
     moreCheck = false;
     coupon1check = false;
     coupon2check = false;
     coupon3check = false;
+    orderNowCheck=false;
     
 
     //Right Side Bar variables End
@@ -532,8 +535,40 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         if((<HTMLInputElement>event.target).checked){
             this.proceedCounter ++;
         }else{
+            if(this.proceedCounter == 0){
+                return;
+            }
             this.proceedCounter --;
         }
+    }
+
+    activeTab(value: string){
+        if(value == "items"){
+            this.activePaymentTab = false;
+            this.activeItemTab = true;
+            this.activeMoreTab = false;
+        }else if(value == "payment"){
+            this.activePaymentTab = true;
+            this.activeItemTab = false;
+            this.activeMoreTab = false;
+        }else{
+            this.activePaymentTab = false;
+            this.activeItemTab = false;
+            this.activeMoreTab = true;
+        }
+    }
+
+    thanksUpdate(){
+       this.visibleSidebar2 = false
+       this.proceedCounter = 0;
+       this.activePaymentTab = false;
+       this.activeItemTab = true;
+       this.activeMoreTab = false;
+       this.moreCheck = false;
+       this.coupon1check = false;
+       this.coupon2check = false;
+       this.coupon3check = false;
+       this.orderNowCheck=false;
     }
 
 }

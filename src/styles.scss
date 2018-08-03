@@ -7,4 +7,11 @@
 
 .ui-sidebar-right{
     width: 35%;
+    overflow: auto;
+}
+
+@media (max-width:595px){
+    .ui-sidebar-right {
+        width: 70% !important;
+    }
 }

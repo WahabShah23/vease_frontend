@@ -188,6 +188,10 @@
   cursor: pointer;
 }
 
+.custom-margin-right-forty{
+  margin-right: 40px;
+}
+
 .custom-margin-right--10{
   margin-right: -10px;
 }
@@ -609,4 +613,9 @@ textarea.ng-invalid.ng-touched {
   text-align: right;
   font-weight: 500;
   margin-top: -10px;
+}
+
+.custom-hr-style{
+  border: 1px solid rgba(0,0,0,0.5);
+  width: 55%;
 }
