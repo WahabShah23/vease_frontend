@@ -121,6 +121,15 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     paymentCheckTickHide = false;
     isCustomer = true;
 
+    //Card Button Setting start
+
+    counterBook = 0 ;
+    disabledBook = true;
+    activeBook = false;
+
+    //card Button Setting end
+
+
 
     //Info Modal variable Start here
 
@@ -141,7 +150,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     coupon2check = false;
     coupon3check = false;
     orderNowCheck=false;
-    
+    hideTermsModal = true;
+    hideTermsModal1 = true;
 
     //Right Side Bar variables End
 
@@ -534,13 +544,46 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     showProceedButton(event: Event){
         if((<HTMLInputElement>event.target).checked){
             this.proceedCounter ++;
+            this.hideTermsModal1=false;
         }else{
+            this.hideTermsModal1=true;
             if(this.proceedCounter == 0){
                 return;
             }
             this.proceedCounter --;
         }
     }
+
+    showProceedButton1(event: Event){
+        if((<HTMLInputElement>event.target).checked){
+            this.proceedCounter ++;
+            this.hideTermsModal = false;
+        }else{
+            this.hideTermsModal = true;
+            if(this.proceedCounter == 0){
+                return;
+            }
+            this.proceedCounter --;
+        }
+    }
+
+    showBookButton(event: Event){
+        if((<HTMLInputElement>event.target).checked){
+            this.counterBook ++;
+            this.activeBook = true;
+            this.disabledBook = false;
+        }else{
+            if(this.counterBook <= 1){
+                this.activeBook = false;
+                this.disabledBook = true;
+            }
+            if(this.counterBook == 0){
+                return;
+            }
+            this.counterBook -- ;
+        }
+    }
+
 
     activeTab(value: string){
         if(value == "items"){
@@ -557,6 +600,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             this.activeMoreTab = true;
         }
     }
+
 
     thanksUpdate(){
        this.visibleSidebar2 = false

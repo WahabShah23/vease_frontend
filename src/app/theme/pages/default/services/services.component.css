@@ -192,6 +192,11 @@
   margin-right: 40px;
 }
 
+.custom-hover-change-color:hover{
+  color: #716aca;
+  font-weight: bold;
+}
+
 .custom-margin-right--10{
   margin-right: -10px;
 }

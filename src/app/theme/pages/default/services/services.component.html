@@ -221,23 +221,28 @@
 									<div class="m-widget3__body">
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
-												<h6 class="service-heading">Maintenance &amp; Repair</h6>
+												<h6 class="service-heading">Maintenance &amp; Repair
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+												</h6>
 
 
 												<div class="row service-item">
 														<div class="col-md-1">
 															<span class="custom-width" >
 																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-																	<input #tref type="checkbox" value="true" (change)="onCheckedUpdate($event)">
+																	<input type="checkbox" value="true" (change)="showBookButton($event)">
 																	<span></span>
 																</label>
 															</span>
 														</div>
 														<div class="col-md-7 custom_padding_left">
-															Oil &amp; Oil Filter Change
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
+															<!-- <i class="fa fa-info-circle custom-pointer custom-info-setting" style="margin-right: 10px;" data-toggle="modal" data-target="#infoModal"
 															(click)="updateInfoModal('Handy Autos', '$120.00','Oil & Oil Filter Change' )" 
-															></i>
+															></i> -->
+															<span data-toggle="modal" data-target="#infoModal"
+															(click)="updateInfoModal('Handy Autos', '$120.00','Oil & Oil Filter Change' )" class="custom-pointer custom-hover-change-color">
+																	Oil &amp; Oil Filter Change
+															</span>
 														</div>
 														<div class="col-md-4">
 															<span class="m--font-success custom-float-right">
@@ -258,16 +263,16 @@
 														<div class="col-md-1">
 															<span class="custom-width" (click)="visibleSidebar4 = true">
 																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-																	<input type="checkbox" (change)="onCheckedUpdate($event)">
+																	<input type="checkbox" (change)="showBookButton($event)">
 																	<span></span>
 																</label>
 															</span>
 														</div>
 														<div class="col-md-7 custom_padding_left">
+															<span  data-toggle="modal" data-target="#infoModal"
+															(click)="updateInfoModal('Handy Autos', '$60.00','Spark Plugs Changing' )" class="custom-pointer custom-hover-change-color" title="click for more detail">
 															Spark Plugs Changing
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
-															(click)="updateInfoModal('Handy Autos', '$60.00','Spark Plugs Changing' )" 
-															></i>
+															</span>
 														</div>
 														<div class="col-md-4">
 															<span class="m--font-success custom-float-right">
@@ -287,16 +292,16 @@
 														<div class="col-md-1">
 															<span class="custom-width">
 																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-																	<input type="checkbox" value="187">
+																	<input type="checkbox" value="187" (click)="showBookButton($event)">
 																	<span></span>
 																</label>
 															</span>
 														</div>
 														<div class="col-md-7 custom_padding_left">
-															Gearbox
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
-															(click)="updateInfoModal('Handy Autos', '$500.00','Gearbox' )" 
-															></i>
+																<!-- <i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
+																(click)="updateInfoModal('Handy Autos', '$500.00','Gearbox' )" 
+																></i> -->
+															    Gearbox
 														</div>
 														<div class="col-md-4">
 															<span class="m--font-success custom-float-right">
@@ -317,16 +322,16 @@
 														<div class="col-md-1">
 															<span class="custom-width">
 																<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
-																	<input type="checkbox" value="187" (change)="onCheckedUpdate($event)">
+																	<input type="checkbox" value="187"(click)="showBookButton($event)">
 																	<span></span>
 																</label>
 															</span>
 														</div>
 														<div class="col-md-7 custom_padding_left">
+																<!-- <i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
+																(click)="updateInfoModal('Handy Autos', '$200.00','Suspension' )" 
+																></i> -->
 															Suspension
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
-															(click)="updateInfoModal('Handy Autos', '$200.00','Suspension' )" 
-															></i>
 														</div>
 														<div class="col-md-4">
 															<span class="m--font-success custom-float-right">
@@ -343,7 +348,8 @@
 
 												<div class="row">
 														<div class="col-md-12">
-															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button">Book</a>
+															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button" 
+															[ngClass]="{'active': activeBook, 'disabled': disabledBook}">Book</a>
 														</div>
 												</div>  
 
@@ -386,7 +392,9 @@
 									<div class="m-widget3__body">
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
-												<h6 class="service-heading">Hair</h6>
+												<h6 class="service-heading">Hair
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+												</h6>
 
 												<div class="row service-item">
 														<div class="col-md-1">
@@ -397,13 +405,18 @@
 																</label>
 															</span>
 														</div>
-														<div class="col-md-7 custom_padding_left">
+														<div class="col-md-4 custom_padding_left">
 															Hair Cutting
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
-															(click)="updateInfoModal('Mont Hair', '$60.50','Hair Cutting' )" 
-															></i>
+															
 														</div>
-														<div class="col-md-4">
+
+														<div class="col-md-2">
+																<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
+																(click)="updateInfoModal('Mont Hair', '$60.50','Hair Cutting' )" 
+																></i>
+
+														</div>
+														<div class="col-md-5">
 															<span class="m--font-success custom-float-right">
 																$60.50
 															</span>
@@ -426,13 +439,16 @@
 																</label>
 															</span>
 														</div>
-														<div class="col-md-7 custom_padding_left">
+														<div class="col-md-4 custom_padding_left">
 															Fancy Cutting
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
-															(click)="updateInfoModal('Mont hair', '$100.00','Hair Cutting' )" 
-															></i>
+															
 														</div>
-														<div class="col-md-4">
+														<div  class="col-md-2">
+																<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
+																(click)="updateInfoModal('Mont hair', '$100.00','Hair Cutting' )" 
+																></i>
+														</div>
+														<div class="col-md-5">
 															<span class="m--font-success custom-float-right">
 																$100.00
 															</span>
@@ -455,13 +471,16 @@
 																</label>
 															</span>
 														</div>
-														<div class="col-md-7 custom_padding_left">
+														<div class="col-md-4 custom_padding_left">
 															Head Shaving
-															<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
-															(click)="updateInfoModal('Mont Hair', '$50','Head Shaving' )" 
-															></i>
+															
 														</div>
-														<div class="col-md-4">
+														<div class="col-md-2">
+																<i class="fa fa-info-circle custom-pointer custom-info-setting" data-toggle="modal" data-target="#infoModal"
+																(click)="updateInfoModal('Mont Hair', '$50','Head Shaving' )" 
+																></i>
+														</div>
+														<div class="col-md-5">
 															<span class="m--font-success custom-float-right">
 																$50
 															</span>
@@ -522,7 +541,9 @@
 									<div class="m-widget3__body">
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
-												<h6 class="service-heading">Checkup Services</h6>
+												<h6 class="service-heading">Checkup Services
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+												</h6>
 
 												<div class="row service-item">
 														<div class="col-md-1">
@@ -655,7 +676,9 @@
 									<div class="m-widget3__body">
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
-												<h6 class="service-heading">Room Cleaning</h6>
+												<h6 class="service-heading">Room Cleaning
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+												</h6>
 
 												<div class="row service-item">
 														<div class="col-md-1">
@@ -1605,8 +1628,10 @@
 
 	<div @fade class="row detailSection" *ngIf="isDisplayDetail">
 		<div class="col-md-12">
-			<div class="m-portlet">
-				<div class="m-portlet__body" style="margin-top: -20px;">
+			<div class="m-portlet" style=" margin-left: -30px;
+			margin-right: -30px;
+			margin-top: -50px;">
+				<div class="m-portlet__body">
 					<div class="row">
 
 						<div class="col-sm-12">
@@ -2180,8 +2205,9 @@
 					 <span class="custom-float-right custom-top--four custom-pointer"><a data-target="#m_modal_terms" data-toggle="modal" style="font-size:small;">Terms and Conditions</a></span>
 	
 					 <label class="m-checkbox custom-float-right m-checkbox--air m-checkbox--state-brand custom-margin-right--10"  title="CheckBox For Company Terms And Conditions" >
-						<input type="checkbox" (click)="showProceedButton($event)">
-						<span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle="modal"></span>
+						<input type="checkbox" (click)="showProceedButton1($event)">
+						<span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle ="modal" [hidden]="!hideTermsModal"></span>
+						<span class="custom-check-box-setting " [hidden]="hideTermsModal"></span>
 					</label>
 	
 				</h4>
@@ -2258,7 +2284,8 @@
    
 						<label class="m-checkbox custom-float-right m-checkbox--air m-checkbox--state-brand custom-margin-right--10"  title="CheckBox For Company Terms And Conditions" >
 						   <input type="checkbox" (click)="showProceedButton($event)">
-						   <span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle="modal"></span>
+						   <span class="custom-check-box-setting " data-target="#m_modal_terms" data-toggle ="modal" [hidden]="!hideTermsModal1"></span>
+						   <span class="custom-check-box-setting " [hidden]="hideTermsModal1"></span>
 					   </label>
    
 					  </h4>
