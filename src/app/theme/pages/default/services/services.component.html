@@ -4,11 +4,11 @@
 		<div class="mr-auto">
 			<h3 class="m-subheader__title">
 				Services
-				<small class="custom-small-header-setting">
+				<!-- <small class="custom-small-header-setting">
 					<a (click)="adjustRadiusMap()" id="adjustRadius" style="cursor:pointer;">
 						<i class="fa fa-map-marker text-muted stats-icons custom-margin-left-zero"></i>
 					</a>
-				</small>
+				</small> -->
 
 
 				<small class="fa fa-search text-muted stats-icons custom-margin-left-zero" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
@@ -20,8 +20,15 @@
 			<input type="text" class="custom-main-filter custom-main-filter-focus" *ngIf="mainFilterHide">
 		</div>
 		<div style="padding-right:0px;">
-			<button class="btn btn-link pull-right" (click)="changeView()">
+			   <span (click)="isMapDetail=false;">
+			   <button class="btn btn-link pull-right" (click)="changeView()">
 				<i class="fa" [ngClass]="{'fa-list' :   isListViewHide, 'fa-th' :isGridViewHide }"></i> {{viewName}} </button>
+			   </span>
+				
+				<button class="btn btn-link  pull-right" (click)="isMapDetail=true;">
+						<i class="fa fa-map-marker" style="padding-right: 2px;
+						margin-top: -1px;"></i>Map View</button>
+				
 		</div>
 	</div>
 </div>
@@ -52,7 +59,7 @@
 
 
 <!--Begin::Section-->
-<div class="m-content" [hidden]="!formHidden">
+<div class="m-content" [hidden] = "isMapDetail">
 
 	<div class="row" [hidden]="isDisplayDetail">
 
@@ -1526,106 +1533,6 @@
 <!-- More Detail Content start -->
 <div class="m-content">
 	<!--Begin::Section-->
-	<div class="row gridView" style="padding: 0px 10px;" [style.display]="(isGridView && !isDisplayDetail) ? 'flex' : 'none'">
-		<div class="col-md-6" *ngFor="let item of serData">
-			<div class="body organ1 serviceCard">
-				<div class="row custom-margin-zero">
-					<div class="card-left col-lg-3" id="">
-						<label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-							<input class="chkboxes" type="checkbox">
-							<span></span>
-						</label>
-
-						<div class="row onepersonrow">
-
-							<div class="col-md-12">
-								<img class="personimage" src="./assets/demo/demo3/media/img/doctor.jpg">
-								<p class="personname">{{item.name}}</p>
-								<p class="persontype">{{item.latitude}}</p>
-							</div>
-						</div>
-
-
-
-						<p class="personappartmentno">
-							<i class="fa fa-clock-o"></i> 6:00 - 23:00</p>
-						<p class="personbuildingname">
-							<i class="fa fa-money"></i> $60 - $200</p>
-						<p class="personaddress">
-							<i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-						<a class="btn btn-default chatServiceButton" href="javascript:;">
-							<i class="la la-comments"></i> Message</a>
-
-					</div>
-					<div class="card-right col-lg-9">
-						<h6 class="text-muted pull-left">
-							<i class="fa fa-cog"></i> {{item.details}}</h6>
-						<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
-						<div class="clearfix"></div>
-						<div class="row services-categories">
-							<div class="col-md-12 category-list">
-								<h6 class="service-heading">{{item.longitude}}</h6>
-								<div class="row service-item">
-									<div class="col-md-6">
-										{{item.location}}
-									</div>
-									<div class="col-md-3">
-										<span class="m--font-success">
-											${{item.publish}}.50
-										</span>
-									</div>
-									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">{{item.created_at}} </a>
-									</div>
-									<div class="col-md-12">
-										<hr>
-									</div>
-
-								</div>
-								<div class="row service-item">
-									<div class="col-md-6">
-										{{item.name}}
-									</div>
-									<div class="col-md-3">
-										<span class="m--font-success">
-											${{item.price}}.00
-										</span>
-									</div>
-									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">{{item.category_id}} </a>
-									</div>
-									<div class="col-md-12">
-										<hr>
-									</div>
-
-								</div>
-								<div class="row service-item">
-									<div class="col-md-6">
-										{{item.staff}}
-									</div>
-									<div class="col-md-3">
-										<span class="m--font-success">
-											${{item.status}}
-										</span>
-									</div>
-									<div class="col-md-3">
-										<a class="btn btn-sm btn-primary" data-target="#addBookingModal" data-toggle="modal">{{item.duration}} </a>
-									</div>
-									<div class="col-md-12">
-										<hr>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div @fade class="row detailSection" *ngIf="isDisplayDetail">
 		<div class="col-md-12">
 			<div class="m-portlet" style=" margin-left: -30px;
@@ -2167,6 +2074,387 @@
 </div>
 <!-- More Detail Content End -->
 
+
+<!-- Map Detail Content Start -->
+<div class="m-content">
+	<!--Begin::Section-->
+	<div @fade class="row detailSection" *ngIf="isMapDetail">
+		<div class="col-md-12">
+			<div class="m-portlet" style=" margin-left: -30px;
+			margin-right: -30px;
+			margin-top: -50px;">
+				<div class="m-portlet__body">
+					<div class="row">
+
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-3">
+									<a class="btn btn-link" style="padding:0px; margin-top: -25px;" (click)="isMapDetail=false;">
+										<i class="fa fa-chevron-circle-left"></i> BACK</a>
+								</div>
+								<div class="col-sm-9">
+										<form style="    margin-top: -20px;
+										text-align: center;">
+												<input type="text" style="    background-color: #f2f3f8 !important;
+												border: 0 !important;
+												border-bottom: 2px solid #a9a9a9 !important;
+												border-radius: 0 !important;
+												padding-left: 0 !important;" class="custom-main-filter-focus">
+												<span class="custom-pointers">
+													<a role="button" href="#" class="custom-border-bottom">
+														<i class="flaticon-search-1"></i>
+													</a>
+												</span>
+										</form>
+								</div>
+
+								<!-- <div class="col-sm-4">
+									<div class="custom-float-right">
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+								</div> -->
+
+							</div>
+						</div>
+
+						<div class="col-sm-12" style="padding-right: 0px">
+								<div class="row">
+									<div class="col-sm-3" style="padding: 0px;">
+										   
+										     
+												 <form style="padding: 13px 15px 1px 15px; background-color: #dbdbdb;">
+														<div class="input-group mb-3">
+																<input type="text" class="form-control" placeholder="Serach Service" style="border-radius: 15px;" >
+																<div class="input-group-append custom-pointer">
+																  <!-- <span class="input-group-text">
+																	<i class="fa fa-search">
+
+																  </i></span> -->
+																  <!-- <button type="submit" class="custom-pointer custom-border-map-button" style="border: none;
+																  background: transparent;">
+																		<i class="fa fa-search"></i>
+																  </button> -->
+																</div>
+															  </div>
+												 </form>
+											
+
+										    <div class="custom-card-shadow custom-pointer" style="margin-top: 8px;" (click)="showServices = true;">
+												<h5>
+													Jane Clinic
+													<a class="custom-float-right" href="" style="font-size: 11px;" (click)="showServices=true;">
+														Services
+													</a>
+													<a class="custom-float-right" href="" style="font-size: 11px;">
+														OrderHistory &nbsp;
+													</a>
+												</h5>
+												<p class="custom-margin-bottom-zero">
+													<span class="checked"> 5.0 </span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													(25)
+													Dental
+												</p>
+												<p class="custom-margin-bottom-zero">
+													1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+												</p>
+												<p class="custom-margin-bottom-zero">
+													+1 416-488-5254
+												</p>
+												<p class="custom-margin-bottom-zero">
+													<span style="color:red">Close</span>
+													<span> 6:00 </span>
+													<span> - </span>
+													<span>Open</span>
+													<span> 23:00 </span> 
+												</p>
+											</div>
+
+											<div class="custom-card-shadow">
+													<h5>
+														Handy Autos
+														<a class="custom-float-right" href="" style="font-size: 11px;">
+															Services
+														</a>
+													</h5>
+													<p class="custom-margin-bottom-zero">
+														<span class="checked"> 3.0 </span>
+														<span class="fa fa-star checked"></span>
+														<span class="fa fa-star checked"></span>
+														<span class="fa fa-star checked"></span>
+														<span class="fa fa-star"></span>
+														<span class="fa fa-star"></span>
+														(12)
+														Gearbox
+													</p>
+													<p class="custom-margin-bottom-zero">
+														1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+													</p>
+													<p class="custom-margin-bottom-zero">
+														+1 416-488-5254
+													</p>
+													<p class="custom-margin-bottom-zero">
+														<span style="color:red">Close</span>
+														<span> 6:00 </span>
+														<span> - </span>
+														<span>Open</span>
+														<span> 23:00 </span> 
+													</p>
+											</div>
+
+											<div style="margin-top: 15px;">
+													<h5>
+															Chris Shining
+															<a class="custom-float-right" href="" style="font-size: 11px;">
+																Services
+															</a>
+															<a class="custom-float-right" href="" style="font-size: 11px;">
+																OrderHistory &nbsp;
+															</a>
+														</h5>
+														<p class="custom-margin-bottom-zero">
+															<span class="checked"> 4.0 </span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star"></span>
+															(7)
+															One Room With Bath
+														</p>
+														<p class="custom-margin-bottom-zero">
+															1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+														</p>
+														<p class="custom-margin-bottom-zero">
+															+1 416-488-5254
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<span style="color:red">Close</span>
+															<span> 6:00 </span>
+															<span> - </span>
+															<span>Open</span>
+															<span> 23:00 </span> 
+														</p>
+													<hr>
+													<h5>
+															Mont Hair
+															<a class="custom-float-right" href="" style="font-size: 11px;">
+																Services
+															</a>
+														</h5>
+														<p class="custom-margin-bottom-zero">
+															<span class="checked"> 4.0 </span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star"></span>
+															(17)
+															Hair Cutting
+														</p>
+														<p class="custom-margin-bottom-zero">
+															1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+														</p>
+														<p class="custom-margin-bottom-zero">
+															+1 416-488-5254
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<span style="color:red">Close</span>
+															<span> 6:00 </span>
+															<span> - </span>
+															<span>Open</span>
+															<span> 23:00 </span> 
+														</p>
+
+														<hr>
+											</div>
+									</div>
+
+									
+									
+									<div class="col-sm-9" style="padding-right: 0px">
+											<agm-map [latitude]="43.589045" [longitude]="-79.64412" [zoom]="10" #AgmMap>
+													<agm-marker [latitude]="43.589045" [longitude]="-79.64412">
+														<agm-info-window>
+															<strong>Category</strong>: Food
+															<br>
+															<strong>Subcategory</strong>: Seafood
+															<br>
+															<strong>Name</strong>: Mississaga Sea Restaraunt
+															<br>
+															<strong>Contact</strong>: 019182010
+														</agm-info-window>
+													</agm-marker>
+								
+													<agm-marker [latitude]="43.758931" [longitude]="-79.398645">
+														<agm-info-window>
+															<strong>Category</strong>: Games
+															<br>
+															<strong>Subcategory</strong>: Video
+															<br>
+															<strong>Name</strong>: North York Fun Games
+															<br>
+															<strong>Contact</strong>: 019182010
+														</agm-info-window>
+													</agm-marker>
+								
+													<agm-marker [latitude]="43.677718" [longitude]="-79.62482">
+														<agm-info-window>
+															<strong>Category</strong>: Shipping
+															<br>
+															<strong>Subcategory</strong>: Luggage
+															<br>
+															<strong>Name</strong>: Mississaga International Airport Cargo
+															<br>
+															<strong>Contact</strong>: 019182010
+														</agm-info-window>
+													</agm-marker>
+								
+								
+													<agm-circle [latitude]="43.677718" [longitude]="-79.62482" [radius]="15000" [fillColor]="'lightgreen'" [circleDraggable]="true"
+													 [editable]="true">
+													</agm-circle>
+												</agm-map>
+									</div>
+
+									<!-- side info popup start -->
+									<div style=" position: absolute;
+									margin-left: 27%;
+									background-color: white;
+									width: 35%;
+									height: 98%;
+									margin-top: 5px;" *ngIf="showServices"> 
+											<div class="container" style="padding: 10px">
+													<h4>
+															Chris Shining
+															<span class="custom-float-right custom-pointer" (click)="showServices=false;">
+																<i class="fa fa-times"></i>
+															</span>
+
+														</h4>
+														<p class="custom-margin-bottom-zero">
+															<span class="checked"> 4.0 </span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star"></span>
+															(7)
+															One Room With Bath
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Address: 
+															</strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Phone:
+															</strong>+1 416-488-5254
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Hours:
+															</strong>
+															<span style="color:red">Close</span>
+															<span> 6:00 </span>
+															<span> - </span>
+															<span>Open</span>
+															<span> 23:00 </span> 
+														</p>
+
+													 <br>
+													 
+													<h5 style="font-weight: 600;
+													font-size: 15px;">
+														Services
+													</h5>
+													<p class="custom-margin-bottom-zero">
+														<span class="custom-hover-change-color custom-pointer">
+															One bath with Room
+														</span>
+														<span class="custom-float-right m--font-success">
+															$120.00
+														</span>
+													</p>
+													<hr style="margin: 5px;">
+													<p class="custom-margin-bottom-zero">
+														<span class="custom-hover-change-color custom-pointer">
+															Multiple Rooms With Baths
+														</span>
+														<span class="custom-float-right m--font-success">
+															$260
+														</span>
+													</p>
+											</div>
+									</div>
+									<!-- side-info popup end -->
+								</div>
+							</div>
+
+						<!-- <div class="col-sm-12">
+							
+							<agm-map [latitude]="43.589045" [longitude]="-79.64412" [zoom]="10" #AgmMap>
+								<agm-marker [latitude]="43.589045" [longitude]="-79.64412">
+									<agm-info-window>
+										<strong>Category</strong>: Food
+										<br>
+										<strong>Subcategory</strong>: Seafood
+										<br>
+										<strong>Name</strong>: Mississaga Sea Restaraunt
+										<br>
+										<strong>Contact</strong>: 019182010
+									</agm-info-window>
+								</agm-marker>
+			
+								<agm-marker [latitude]="43.758931" [longitude]="-79.398645">
+									<agm-info-window>
+										<strong>Category</strong>: Games
+										<br>
+										<strong>Subcategory</strong>: Video
+										<br>
+										<strong>Name</strong>: North York Fun Games
+										<br>
+										<strong>Contact</strong>: 019182010
+									</agm-info-window>
+								</agm-marker>
+			
+								<agm-marker [latitude]="43.677718" [longitude]="-79.62482">
+									<agm-info-window>
+										<strong>Category</strong>: Shipping
+										<br>
+										<strong>Subcategory</strong>: Luggage
+										<br>
+										<strong>Name</strong>: Mississaga International Airport Cargo
+										<br>
+										<strong>Contact</strong>: 019182010
+									</agm-info-window>
+								</agm-marker>
+			
+			
+								<agm-circle [latitude]="43.677718" [longitude]="-79.62482" [radius]="15000" [fillColor]="'lightgreen'" [circleDraggable]="true"
+								 [editable]="true">
+								</agm-circle>
+							</agm-map>
+						
+						</div> -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Map Detail content End -->
+
 <!-- Right side bar Modal  Start-->
 <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000" >
 	<div>
@@ -2251,17 +2539,19 @@
 	
 						<p class="custom-p2-setting" style="margin-bottom: 20px;">
 						
-						<span class="text-muted" style="margin-right: 32px;"> Tax(10%) </span>
-						<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $10</span>
+								<span class="text-muted" style="margin-right: 3px;">Discount(40%)</span>
+								<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $40</span>
 				  
 					  </p>
 
 					  <p style="    text-align: right;
 					  font-weight: 500;
 					  margin-top: -15px;">
+
+					  <span class="text-muted" style="margin-right: 34px;"> Tax(10%) </span>
+					  <span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $10</span>
 						
-							<span class="text-muted">Discount(40%)</span>
-							<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $40</span>
+							
 					  
 					   </p>
 
@@ -2270,7 +2560,11 @@
 						<span style=" margin-right: 4.4rem;" > Total</span>
 						<span class="custom-theme-default" style="margin-right:12px;"> : $47.7</span>
 					  </p>
-	
+
+					  <div class="col text-right">
+							<button *ngIf="proceedCounter > 0 " type="button" class="btn btn-primary"
+								(click)="activeTab('payment')">Proceed</button>
+						</div>
 			   </div>
 
 				
@@ -2382,19 +2676,15 @@
 					  </p>
 	
 						<p class="custom-p2-setting" style="margin-bottom: 20px;">
-						
-						<span class="text-muted" style="margin-right: 32px;"> Tax(10%) </span>
-						<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $10</span>
-				  
+							<span class="text-muted" style="margin-right: 3px;">Discount(40%)</span>
+							<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $40</span>
 					  </p>
 
 					  <p style="    text-align: right;
 					  font-weight: 500;
 					  margin-top: -15px;">
-						
-							<span class="text-muted">Discount(40%)</span>
-							<span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $40</span>
-					  
+					      <span class="text-muted" style="margin-right: 34px;"> Tax(10%) </span>
+						  <span class="custom-theme-default text-muted" style="margin-right: 25px;"> : $10</span>
 					   </p>
 
 
@@ -2428,11 +2718,10 @@
 				  
 					  </p>
 
-					  <div class="col text-right">
+					  <!-- <div class="col text-right">
 						<button *ngIf="proceedCounter > 0 " type="button" class="btn btn-primary"
 							(click)="activeTab('payment')">Proceed</button>
-
-					</div>
+					</div> -->
 				  </div>
 
 					

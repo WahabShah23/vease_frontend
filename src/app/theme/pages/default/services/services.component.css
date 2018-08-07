@@ -188,6 +188,19 @@
   cursor: pointer;
 }
 
+.custom-border-bottom:hover{
+  text-decoration: none;
+}
+
+.custom-border-map-button:hover{
+  outline: none;
+  background-color: #5867dd;
+}
+
+.custom-margin-bottom-zero{
+  margin-bottom: 0px;
+}
+
 .custom-margin-right-forty{
   margin-right: 40px;
 }

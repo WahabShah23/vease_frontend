@@ -130,6 +130,13 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     //card Button Setting end
 
 
+    //Map buttons Start
+    isMapDetail = false;
+    //Map button End
+
+    //side pop-up
+    showServices = false;
+
 
     //Info Modal variable Start here
 
@@ -319,6 +326,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
 
     changeView() {
+      
         if (this.isListViewHide) {
             this.isListViewHide = false;
             this.isGridViewHide = true;
