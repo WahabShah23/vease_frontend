@@ -2124,8 +2124,7 @@
 						<div class="col-sm-12" style="padding-right: 0px">
 								<div class="row">
 									<div class="col-sm-3" style="padding: 0px;">
-										   
-										     
+										
 												 <form style="padding: 13px 15px 1px 15px; background-color: #dbdbdb;">
 														<div class="input-group mb-3">
 																<input type="text" class="form-control" placeholder="Serach Service" style="border-radius: 15px;" >
@@ -2143,16 +2142,17 @@
 												 </form>
 											
 
-										    <div class="custom-card-shadow custom-pointer" style="margin-top: 8px;" (click)="showServices = true;">
+										    <div class="custom-card-shadow custom-pointer" style="margin-top: 8px;">
 												<h5>
 													Jane Clinic
-													<a class="custom-float-right" href="" style="font-size: 11px;" (click)="showServices=true;">
+													<a class="custom-float-right" href="" style="font-size: 11px;" (click)="sideInfoPop('service')" title="Click to view Company Services">
 														Services
 													</a>
-													<a class="custom-float-right" href="" style="font-size: 11px;">
-														OrderHistory &nbsp;
+													<a class="custom-float-right" href="" style="font-size: 11px; margin-right: 5px" (click)="sideInfoPop('history')" title="Click to view Order History">
+														OrderHistory
 													</a>
 												</h5>
+												<span (click)="sideInfoPop('info')" title="Click to See the Info">
 												<p class="custom-margin-bottom-zero">
 													<span class="checked"> 5.0 </span>
 													<span class="fa fa-star checked"></span>
@@ -2161,7 +2161,7 @@
 													<span class="fa fa-star checked"></span>
 													<span class="fa fa-star checked"></span>
 													(25)
-													Dental
+													Dental 
 												</p>
 												<p class="custom-margin-bottom-zero">
 													1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
@@ -2176,6 +2176,7 @@
 													<span>Open</span>
 													<span> 23:00 </span> 
 												</p>
+											    </span>
 											</div>
 
 											<div class="custom-card-shadow">
@@ -2334,7 +2335,7 @@
 									margin-top: 5px;" *ngIf="showServices"> 
 											<div class="container" style="padding: 10px">
 													<h4>
-															Chris Shining
+															Jane Clinic
 															<span class="custom-float-right custom-pointer" (click)="showServices=false;">
 																<i class="fa fa-times"></i>
 															</span>
@@ -2397,6 +2398,376 @@
 											</div>
 									</div>
 									<!-- side-info popup end -->
+
+									<!-- Order History info popup start -->
+									<div style=" position: absolute;
+									margin-left: 27%;
+									background-color: white;  
+									width: 35%;
+									height: 98%;
+									margin-top: 5px;" *ngIf="showOrderHistory"> 
+											<div class="container" style="padding: 10px">
+													<h4>
+															Jane Clinic
+															<span class="custom-float-right custom-pointer" (click)="showOrderHistory=false;">
+																<i class="fa fa-times"></i>
+															</span>
+
+														</h4>
+														<p class="custom-margin-bottom-zero">
+															<span class="checked"> 4.0 </span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star"></span>
+															(7)
+															One Room With Bath
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Address: 
+															</strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Phone:
+															</strong>+1 416-488-5254
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Hours:
+															</strong>
+															<span style="color:red">Close</span>
+															<span> 6:00 </span>
+															<span> - </span>
+															<span>Open</span>
+															<span> 23:00 </span> 
+														</p>
+
+														<br>
+														
+													<h5 style="font-weight: 600;
+													font-size: 15px;">
+														Order History
+													</h5>
+													
+													<div id="accordion">
+														<div class="card">
+														  <div class="card-header" id="headingOne" style="padding: 0px;">
+															<h5 class="mb-0">
+															  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+																<span><i class="fa fa-chevron-down"></i></span>One Room With Bath 
+															  </button>
+															  <span class="custom-float-right" style="    font-size: 11px;
+															  margin: 11px;
+															  font-weight: 700;">
+																$120.00
+															  </span>
+															</h5>
+														  </div>
+													  
+														  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+															<div class="card-body">
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Address: 
+																	</strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+																</p>
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Date:
+																	</strong> 07 / 11 /2017 
+																</p>
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Detail:
+																	</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint repellat aliquam temporibus saepe illo ad quasi soluta quod. 
+																</p>
+															</div>
+														  </div>
+														</div>
+														<div class="card">
+														  <div class="card-header" id="headingTwo" style="padding: 0px;">
+															<h5 class="mb-0">
+															  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+																<span><i class="fa fa-chevron-down"></i></span>Multiple Rooms With Baths 
+															  </button>
+															  <span class="custom-float-right" style="    font-size: 11px;
+															  margin: 11px;
+															  font-weight: 700;">
+																$260
+															  </span>
+															</h5>
+														  </div>
+														  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+															<div class="card-body">
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Address: 
+																	</strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+																</p>
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Date:
+																	</strong> 07 / 11 /2017 
+																</p>
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Detail:
+																	</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint repellat aliquam temporibus saepe illo ad quasi soluta quod. 
+																</p>
+															</div>
+														  </div>
+														</div>
+														<div class="card">
+														  <div class="card-header" id="headingThree" style="padding: 0px;">
+															<h5 class="mb-0">
+															  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+																<span><i class="fa fa-chevron-down"></i></span>One Room Office with Bath 	
+															  </button>
+															  <span class="custom-float-right" style="    font-size: 11px;
+															  margin: 11px;
+															  font-weight: 700;">
+																$500.00
+															  </span>
+															</h5>
+														  </div>
+														  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+															<div class="card-body">
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Address: 
+																	</strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+																</p>
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Date:
+																	</strong> 07 / 11 /2017 
+																</p>
+																<p class="custom-margin-bottom-zero">
+																	<strong>
+																		Detail:
+																	</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint repellat aliquam temporibus saepe illo ad quasi soluta quod. 
+																</p>
+															</div>
+														  </div>
+														</div>
+													  </div>
+											</div>
+									</div>
+									<!-- Order-History popup end -->
+
+									<!-- Info popup start -->
+									<div style=" position: absolute;
+									margin-left: 27%;
+									background-color: white;  
+									width: 35%;
+									height: 98%;
+									margin-top: 5px; overflow-y: scroll;" *ngIf="showInfo"> 
+											<div class="container" style="padding: 10px">
+													<h4>
+															Jane Clinic
+															<span class="custom-float-right custom-pointer" (click)="showInfo=false;">
+																<i class="fa fa-times"></i>
+															</span>
+
+														</h4>
+														<p class="custom-margin-bottom-zero">
+															<span class="checked"> 4.0 </span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star checked"></span>
+															<span class="fa fa-star"></span>
+															(7)
+															One Room With Bath
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Address: 
+															</strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Phone:
+															</strong>+1 416-488-5254
+														</p>
+														<p class="custom-margin-bottom-zero">
+															<strong>
+																Hours:
+															</strong>
+															<span style="color:red">Close</span>
+															<span> 6:00 </span>
+															<span> - </span>
+															<span>Open</span>
+															<span> 23:00 </span> 
+														</p>
+
+														<br>
+														
+													<h5 style="font-weight: 600;
+													font-size: 15px;">
+														About Us
+													</h5>
+													<p>
+														Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab commodi ipsam, officiis, eligendi cumque architecto rem eum nobis exercitationem culpa quibusdam enim? Tempore rerum doloremque eveniet explicabo totam nisi dolor.
+													</p>
+													<h5 style="font-weight: 600;
+													font-size: 15px;">
+													Statistics 
+													</h5>
+													<div class="row">
+														<div class="col">
+															<div class="card">
+																<div class="card-content">
+																  <div class="card-body">
+																	<div class="media d-flex">
+																	  <div class="media-body text-left">
+																		<h4>255</h4>
+																		<span> All Orders</span>
+																	  </div>
+																	  <div class="align-self-center">
+																		<i class="icon-rocket danger font-large-2 float-right"></i>
+																	  </div>
+																	</div>
+																  </div>
+																</div>
+															  </div>
+														</div>
+														<div class="col" style="padding: 0px;">
+															<div class="card" style="padding-right: 0px;
+															padding-left: 10px;">
+																<div class="card-content">
+																  <div class="card-body">
+																	<div class="media d-flex">
+																	  <div class="media-body text-left">
+																		<h4>278</h4>
+																		<span>Rejected Orders</span>
+																	  </div>
+																	  <div class="align-self-center">
+																		<i class="icon-rocket danger font-large-2 float-right"></i>
+																	  </div>
+																	</div>
+																  </div>
+																</div>
+															  </div>
+														</div>
+														<div class="col">
+															<div class="card">
+																<div class="card-content">
+																  <div class="card-body">
+																	<div class="media d-flex">
+																	  <div class="media-body text-left">
+																		<h4>150</h4>
+																		<span>Completed</span>
+																	  </div>
+																	  <div class="align-self-center">
+																		<i class="icon-rocket danger font-large-2 float-right"></i>
+																	  </div>
+																	</div>
+																  </div>
+																</div>
+															  </div>
+														</div>
+													</div>
+													<h5 style="font-weight: 600;
+													font-size: 15px; margin-top: 10px;">
+													Reviews(3)
+													</h5>
+													<div class="row">
+														<div class="col reviewsSection">
+														
+															<div class="row TheReview">
+																<div class="col-md-2 ReviewerImage">
+																	<img alt="" class="m--img-rounded m--marginless m--img-centered" src="./assets/app/media/img/users/user4.jpg">
+																	<p>Jane Khan</p>
+																</div>
+						
+						
+																<div class="col-md-6 ReviewText">
+																	<p>Gel manicure lasted pretty long - already 1 month plus. However, would appreciate if they provided free gel removal
+																		if they want returning customers.</p>
+																</div>
+						
+																<div class="col-md-2 ReviewStars" style="padding-right: 0px;">
+																	<div class="custom-float-right">
+																		<span class="fa fa-star checked"></span>
+																		<span _ class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star"></span>
+																	</div>
+																</div>
+						
+																<div class="col-md-2 ReviewStars">
+																	<p>11/04/18</p>
+																</div>
+						
+															</div>
+						
+															<div class="row TheReview">
+																<div class="col-md-2 ReviewerImage">
+																	<img alt="" class="m--img-rounded m--marginless m--img-centered" src="./assets/app/media/img/users/user2.jpg">
+																	<p>Kane - The Boxer</p>
+																</div>
+						
+						
+																<div class="col-md-6 ReviewText">
+																	<p>Overall is good, the staff there also very nice &amp; also very beautiful ^.^
+																	</p>
+																</div>
+						
+																<div class="col-md-2 ReviewStars" style="padding-right: 0px;">
+																	<div class="custom-float-right">
+																		<span class="fa fa-star checked"></span>
+																		<span _ class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star "></span>
+																		<span class="fa fa-star"></span>
+																	</div>
+																</div>
+						
+																<div class="col-md-2 ReviewStars">
+																	<p>11/04/18</p>
+																</div>
+						
+															</div>
+						
+						
+															<div class="row TheReview">
+																<div class="col-md-2 ReviewerImage">
+																	<img alt="" class="m--img-rounded m--marginless m--img-centered" src="./assets/app/media/img/users/user4.jpg">
+																	<p>Jane Khan</p>
+																</div>
+						
+						
+																<div class="col-md-6 ReviewText">
+																	<p>Gel manicure lasted pretty long - already 1 month plus. However, would appreciate if they provided free gel removal
+																		if they want returning customers.</p>
+																</div>
+						
+																<div class="col-md-2 ReviewStars" style="padding-right: 0px;">
+																	<div class="custom-float-right">
+																		<span class="fa fa-star checked"></span>
+																		<span _ class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star"></span>
+																	</div>
+																</div>
+						
+																<div class="col-md-2 ReviewStars">
+																	<p>11/04/18</p>
+																</div>
+						
+															</div>
+														</div>
+													</div>
+											</div>
+									</div>
+									<!-- Info popup end -->
+
 								</div>
 							</div>
 

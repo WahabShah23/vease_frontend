@@ -136,7 +136,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     //side pop-up
     showServices = false;
-
+    showOrderHistory = false;
+    showInfo = false ;
 
     //Info Modal variable Start here
 
@@ -621,6 +622,22 @@ export class ServicesComponent implements OnInit, AfterViewInit {
        this.coupon2check = false;
        this.coupon3check = false;
        this.orderNowCheck=false;
+    }
+
+    sideInfoPop(value: string){
+        if(value == "history"){
+            this.showServices = false;
+            this.showOrderHistory = true;
+            this.showInfo = false ;
+        }else if (value == "service"){
+            this.showServices = true;
+            this.showOrderHistory = false;
+            this.showInfo = false ;
+        }else{
+            this.showServices = false;
+            this.showOrderHistory = false;
+            this.showInfo = true ;
+        }
     }
 
 }
