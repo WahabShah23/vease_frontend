@@ -4,11 +4,12 @@
 		<div class="mr-auto">
 			<h3 class="m-subheader__title">
 				Services
-				<!-- <small class="custom-small-header-setting">
+				
+				<small class="custom-small-header-setting">
 					<a (click)="adjustRadiusMap()" id="adjustRadius" style="cursor:pointer;">
 						<i class="fa fa-map-marker text-muted stats-icons custom-margin-left-zero"></i>
 					</a>
-				</small> -->
+				</small>
 
 
 				<small class="fa fa-search text-muted stats-icons custom-margin-left-zero" (click)="mainFilterHide == true? mainFilterHide=false : mainFilterHide=true">
@@ -19,6 +20,8 @@
 
 			<input type="text" class="custom-main-filter custom-main-filter-focus" *ngIf="mainFilterHide">
 		</div>
+
+
 		<div style="padding-right:0px;">
 			   <span (click)="isMapDetail=false;">
 			   <button class="btn btn-link pull-right" (click)="changeView()">
@@ -355,7 +358,7 @@
 
 												<div class="row">
 														<div class="col-md-12">
-															<a data-toggle="modal" (click)="visibleSidebar2 = true" data-target="#addBookingModal" class="btn btn-sm btn-primary custom-margin-right-book-button" 
+															<a (click)="visibleSidebar2 = true" class="btn btn-sm btn-primary custom-margin-right-book-button" 
 															[ngClass]="{'active': activeBook, 'disabled': disabledBook}">Book</a>
 														</div>
 												</div>  
@@ -901,7 +904,7 @@
 
 										<div class="row service-item">
 											<div class="col-md-1">
-												<span class="custom-width" (click)="visibleSidebar4 = true">
+												<span class="custom-width">
 													<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom">
 														<input type="checkbox" (change)="onCheckedUpdate($event)">
 														<span></span>
@@ -2078,11 +2081,11 @@
 <!-- Map Detail Content Start -->
 <div class="m-content">
 	<!--Begin::Section-->
-	<div @fade class="row detailSection" *ngIf="isMapDetail">
+	<div class="row detailSection" *ngIf="isMapDetail">
 		<div class="col-md-12">
 			<div class="m-portlet" style=" margin-left: -30px;
 			margin-right: -30px;
-			margin-top: -50px;">
+			margin-top: -60px;">
 				<div class="m-portlet__body">
 					<div class="row">
 
@@ -2092,7 +2095,7 @@
 									<a class="btn btn-link" style="padding:0px; margin-top: -25px;" (click)="isMapDetail=false;">
 										<i class="fa fa-chevron-circle-left"></i> BACK</a>
 								</div>
-								<div class="col-sm-9">
+								<!-- <div class="col-sm-9">
 										<form style="    margin-top: -20px;
 										text-align: center;">
 												<input type="text" style="    background-color: #f2f3f8 !important;
@@ -2106,7 +2109,7 @@
 													</a>
 												</span>
 										</form>
-								</div>
+								</div> -->
 
 								<!-- <div class="col-sm-4">
 									<div class="custom-float-right">
@@ -2118,12 +2121,40 @@
 									</div>
 								</div> -->
 
+								<div class="col-sm-9">
+										<div class="input-group mb-3">
+												<div class="input-group-prepend">
+												  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
+												  <div class="dropdown-menu">
+													<a class="dropdown-item" href="#">Personal</a>
+													<a class="dropdown-item" href="#">Autos</a>
+													<a class="dropdown-item" href="#">Health</a>
+												  </div>
+												  <div class="dropdown" style="margin-left: 5px;">
+														<a class="btn btn-primary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 0px;">
+														  Sub-Category
+														</a>
+													  
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+														  <a class="dropdown-item" href="#">Hair</a>
+														  <a class="dropdown-item" href="#">Maintenance and Repair</a>
+														</div>
+													</div>
+												</div>
+												<input type="text" class="form-control" aria-label="Text input with dropdown button">
+												<div class="input-group-append">
+													<button class="btn btn-primary"><i class="fa fa-search"></i></button>
+												</div>
+										</div>
+								</div>
+
 							</div>
 						</div>
 
 						<div class="col-sm-12" style="padding-right: 0px">
 								<div class="row">
-									<div class="col-sm-3" style="padding: 0px;">
+									<!-- All Service show Here -->
+									<div class="col-sm-3" style="padding: 0px; overflow-y: scroll; height: 47rem;">
 										
 												 <form style="padding: 13px 15px 1px 15px; background-color: #dbdbdb;">
 														<div class="input-group mb-3">
@@ -2141,16 +2172,16 @@
 															  </div>
 												 </form>
 											
-
-										    <div class="custom-card-shadow custom-pointer" style="margin-top: 8px;">
+											<div style="margin-top: 15px;">
+												<!-- First Card Start -->
 												<h5>
 													Jane Clinic
-													<a class="custom-float-right" href="" style="font-size: 11px;" (click)="sideInfoPop('service')" title="Click to view Company Services">
+													<!-- <a class="custom-float-right" href="" style="font-size: 11px;" (click)="sideInfoPop('service')" title="Click to view Company Services">
 														Services
 													</a>
 													<a class="custom-float-right" href="" style="font-size: 11px; margin-right: 5px" (click)="sideInfoPop('history')" title="Click to view Order History">
-														OrderHistory
-													</a>
+														Orders
+													</a> -->
 												</h5>
 												<span (click)="sideInfoPop('info')" title="Click to See the Info">
 												<p class="custom-margin-bottom-zero">
@@ -2176,111 +2207,159 @@
 													<span>Open</span>
 													<span> 23:00 </span> 
 												</p>
-											    </span>
-											</div>
+												</span>
+												<p class="text-right">
+														<button class="btn btn-sm btn-primary"  (click)="sideInfoPop('history')" title="Click to view Order History">
+															 <i class="fa fa-shopping-cart">
+																 
+															 </i>
+															 Order
+														</button>
+														<button class="btn btn-sm btn-primary" (click)="sideInfoPop('service')" title="Click to view Company Services">
+															 <i class="fa fa-cogs" ></i>
+															 Services
+														</button>	
+												 </p>
+												<!-- First Card End -->
 
-											<div class="custom-card-shadow">
-													<h5>
-														Handy Autos
-														<a class="custom-float-right" href="" style="font-size: 11px;">
+												<hr>
+												<!-- Second Card Start -->
+											    <h5>
+													Chris Shining
+													<!-- <a class="custom-float-right" href="" style="font-size: 11px;">
+														Services
+													</a>
+													<a class="custom-float-right" href="" style="font-size: 11px;     margin-right: 5px;">
+														Orders
+													</a> -->
+												</h5>
+												<p class="custom-margin-bottom-zero">
+													<span class="checked"> 4.0 </span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star"></span>
+													(7)
+													One Room With Bath
+												</p>
+												<p class="custom-margin-bottom-zero">
+													1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+												</p>
+												<p class="custom-margin-bottom-zero">
+													+1 416-488-5254
+												</p>
+												<p class="custom-margin-bottom-zero">
+													<span style="color:red">Close</span>
+													<span> 6:00 </span>
+													<span> - </span>
+													<span>Open</span>
+													<span> 23:00 </span> 
+												</p>
+												<p class="text-right">
+												   <button class="btn btn-sm btn-primary">
+														<i class="fa fa-shopping-cart">
+															
+														</i>
+														Order
+												   </button>
+												   <button class="btn btn-sm btn-primary">
+														<i class="fa fa-cogs"></i>
+														Services
+												   </button>	
+												</p>
+												<!-- Second Card Start -->
+												<hr>
+
+												<!-- Third Card Start -->
+												<h5>
+													Mont Hair
+													<!-- <a class="custom-float-right" href="" style="font-size: 11px;">
+														Services
+													</a> -->
+												</h5>
+												<p class="custom-margin-bottom-zero">
+													<span class="checked"> 4.0 </span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star"></span>
+													(17)
+													Hair Cutting
+												</p>
+												<p class="custom-margin-bottom-zero">
+													1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+												</p>
+												<p class="custom-margin-bottom-zero">
+													+1 416-488-5254
+												</p>
+												<p class="custom-margin-bottom-zero">
+													<span style="color:red">Close</span>
+													<span> 6:00 </span>
+													<span> - </span>
+													<span>Open</span>
+													<span> 23:00 </span> 
+												</p>
+												<p class="text-right">
+														
+													<button class="btn btn-sm btn-primary">
+															<i class="fa fa-cogs"></i>
 															Services
-														</a>
-													</h5>
-													<p class="custom-margin-bottom-zero">
-														<span class="checked"> 3.0 </span>
-														<span class="fa fa-star checked"></span>
-														<span class="fa fa-star checked"></span>
-														<span class="fa fa-star checked"></span>
-														<span class="fa fa-star"></span>
-														<span class="fa fa-star"></span>
-														(12)
-														Gearbox
-													</p>
-													<p class="custom-margin-bottom-zero">
-														1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-													</p>
-													<p class="custom-margin-bottom-zero">
-														+1 416-488-5254
-													</p>
-													<p class="custom-margin-bottom-zero">
-														<span style="color:red">Close</span>
-														<span> 6:00 </span>
-														<span> - </span>
-														<span>Open</span>
-														<span> 23:00 </span> 
-													</p>
-											</div>
+													</button>	
+											    </p>
+												<hr>
+												<!-- Third Card End -->
 
-											<div style="margin-top: 15px;">
-													<h5>
-															Chris Shining
-															<a class="custom-float-right" href="" style="font-size: 11px;">
-																Services
-															</a>
-															<a class="custom-float-right" href="" style="font-size: 11px;">
-																OrderHistory &nbsp;
-															</a>
-														</h5>
-														<p class="custom-margin-bottom-zero">
-															<span class="checked"> 4.0 </span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star"></span>
-															(7)
-															One Room With Bath
-														</p>
-														<p class="custom-margin-bottom-zero">
-															1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-														</p>
-														<p class="custom-margin-bottom-zero">
-															+1 416-488-5254
-														</p>
-														<p class="custom-margin-bottom-zero">
-															<span style="color:red">Close</span>
-															<span> 6:00 </span>
-															<span> - </span>
-															<span>Open</span>
-															<span> 23:00 </span> 
-														</p>
-													<hr>
-													<h5>
-															Mont Hair
-															<a class="custom-float-right" href="" style="font-size: 11px;">
-																Services
-															</a>
-														</h5>
-														<p class="custom-margin-bottom-zero">
-															<span class="checked"> 4.0 </span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star checked"></span>
-															<span class="fa fa-star"></span>
-															(17)
-															Hair Cutting
-														</p>
-														<p class="custom-margin-bottom-zero">
-															1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-														</p>
-														<p class="custom-margin-bottom-zero">
-															+1 416-488-5254
-														</p>
-														<p class="custom-margin-bottom-zero">
-															<span style="color:red">Close</span>
-															<span> 6:00 </span>
-															<span> - </span>
-															<span>Open</span>
-															<span> 23:00 </span> 
-														</p>
+												<!-- Forth Card Start -->
+												<h5>
+													Handy Autos
+													<!-- <a class="custom-float-right" href="" style="font-size: 11px;">
+														Services
+													</a> -->
+												</h5>
+												<p class="custom-margin-bottom-zero">
+													<span class="checked"> 3.0 </span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star checked"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													(12)
+													Gearbox
+												</p>
+												<p class="custom-margin-bottom-zero">
+													1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+												</p>
+												<p class="custom-margin-bottom-zero">
+													+1 416-488-5254
+												</p>
+												<p class="custom-margin-bottom-zero">
+													<span style="color:red">Close</span>
+													<span> 6:00 </span>
+													<span> - </span>
+													<span>Open</span>
+													<span> 23:00 </span> 
+												</p>
+												<p class="text-right">
+													<button class="btn btn-sm btn-primary">
+															<i class="fa fa-shopping-cart">
+																
+															</i>
+															Order
+													</button>
+													<button class="btn btn-sm btn-primary">
+															<i class="fa fa-cogs"></i>
+															Services
+													</button>	
+													 </p>
+												<!-- Forth Card End -->
 
-														<hr>
 											</div>
 									</div>
-
+									<!-- All Services End Here -->
 									
-									
+									<!-- Map Start Here -->
 									<div class="col-sm-9" style="padding-right: 0px">
 											<agm-map [latitude]="43.589045" [longitude]="-79.64412" [zoom]="10" #AgmMap>
 													<agm-marker [latitude]="43.589045" [longitude]="-79.64412">
@@ -2325,14 +2404,15 @@
 													</agm-circle>
 												</agm-map>
 									</div>
+									<!-- Map End Here -->
 
-									<!-- side info popup start -->
-									<div style=" position: absolute;
-									margin-left: 27%;
-									background-color: white;
-									width: 35%;
-									height: 98%;
-									margin-top: 5px;" *ngIf="showServices"> 
+									<!-- side Services info popup start -->
+									<div style="position: absolute;
+												margin-left: 27%;
+												background-color: white;
+												width: 35%;
+												height: 98%;
+												margin-top: 5px;" *ngIf="showServices"> 
 											<div class="container" style="padding: 10px">
 													<h4>
 															Jane Clinic
@@ -2349,6 +2429,7 @@
 															<span class="fa fa-star checked"></span>
 															<span class="fa fa-star"></span>
 															(7)
+															
 															One Room With Bath
 														</p>
 														<p class="custom-margin-bottom-zero">
@@ -2378,7 +2459,15 @@
 													font-size: 15px;">
 														Services
 													</h5>
+
 													<p class="custom-margin-bottom-zero">
+														<span class="custom-width">
+															<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+															height: 12px;">
+																<input type="checkbox" value="true" (change)="showBookButtonMap($event)">
+																<span></span>
+															</label>
+														</span>
 														<span class="custom-hover-change-color custom-pointer">
 															One bath with Room
 														</span>
@@ -2386,15 +2475,68 @@
 															$120.00
 														</span>
 													</p>
+
 													<hr style="margin: 5px;">
+
 													<p class="custom-margin-bottom-zero">
+			       										<span class="custom-width">
+															<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+															height: 12px;">
+																<input #tref type="checkbox" value="true" (change)="showBookButtonMap($event)">
+																<span></span>
+															</label>
+														</span>
 														<span class="custom-hover-change-color custom-pointer">
 															Multiple Rooms With Baths
 														</span>
 														<span class="custom-float-right m--font-success">
-															$260
+															$260.00
 														</span>
 													</p>
+
+													<hr style="margin: 5px;">
+
+													<p class="custom-margin-bottom-zero">
+			       										<span class="custom-width">
+															<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+															height: 12px;">
+																<input #tref type="checkbox" value="true" (change)="showBookButtonMap($event)">
+																<span></span>
+															</label>
+														</span>
+														<span class="custom-hover-change-color custom-pointer">
+															One Room Office with Bath 
+														</span>
+														<span class="custom-float-right m--font-success">
+															$500.00
+														</span>
+													</p>
+
+													<hr style="margin: 5px;">
+
+													<p class="custom-margin-bottom-zero">
+			       										<span class="custom-width">
+															<label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+															height: 12px;">
+																<input #tref type="checkbox" value="true" (change)="showBookButtonMap($event)">
+																<span></span>
+															</label>
+														</span>
+														<span class="custom-hover-change-color custom-pointer">
+															Multi Room Office with Baths 
+														</span>
+														<span class="custom-float-right m--font-success">
+															$800.00
+														</span>
+													</p>
+
+													<div class="row">
+															<div class="col-md-12" style="margin-top: 10px;
+															text-align: right;">
+															<a (click)="visibleSidebar2 = true" class="btn btn-sm btn-primary custom-margin-right-book-button" 
+															[ngClass]="{'active': activeBookMap, 'disabled': disabledBookMap}">Book</a>
+															</div>
+													</div>
 											</div>
 									</div>
 									<!-- side-info popup end -->
@@ -2449,7 +2591,7 @@
 														
 													<h5 style="font-weight: 600;
 													font-size: 15px;">
-														Order History
+														Orders
 													</h5>
 													
 													<div id="accordion">
@@ -2769,55 +2911,7 @@
 									<!-- Info popup end -->
 
 								</div>
-							</div>
-
-						<!-- <div class="col-sm-12">
-							
-							<agm-map [latitude]="43.589045" [longitude]="-79.64412" [zoom]="10" #AgmMap>
-								<agm-marker [latitude]="43.589045" [longitude]="-79.64412">
-									<agm-info-window>
-										<strong>Category</strong>: Food
-										<br>
-										<strong>Subcategory</strong>: Seafood
-										<br>
-										<strong>Name</strong>: Mississaga Sea Restaraunt
-										<br>
-										<strong>Contact</strong>: 019182010
-									</agm-info-window>
-								</agm-marker>
-			
-								<agm-marker [latitude]="43.758931" [longitude]="-79.398645">
-									<agm-info-window>
-										<strong>Category</strong>: Games
-										<br>
-										<strong>Subcategory</strong>: Video
-										<br>
-										<strong>Name</strong>: North York Fun Games
-										<br>
-										<strong>Contact</strong>: 019182010
-									</agm-info-window>
-								</agm-marker>
-			
-								<agm-marker [latitude]="43.677718" [longitude]="-79.62482">
-									<agm-info-window>
-										<strong>Category</strong>: Shipping
-										<br>
-										<strong>Subcategory</strong>: Luggage
-										<br>
-										<strong>Name</strong>: Mississaga International Airport Cargo
-										<br>
-										<strong>Contact</strong>: 019182010
-									</agm-info-window>
-								</agm-marker>
-			
-			
-								<agm-circle [latitude]="43.677718" [longitude]="-79.62482" [radius]="15000" [fillColor]="'lightgreen'" [circleDraggable]="true"
-								 [editable]="true">
-								</agm-circle>
-							</agm-map>
-						
-						</div> -->
-
+						</div>
 					</div>
 				</div>
 			</div>

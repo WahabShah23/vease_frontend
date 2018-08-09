@@ -132,6 +132,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     //Map buttons Start
     isMapDetail = false;
+    counterBookMap = 0 ;
+    disabledBookMap = true;
+    activeBookMap = false;
     //Map button End
 
     //side pop-up
@@ -637,6 +640,23 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             this.showServices = false;
             this.showOrderHistory = false;
             this.showInfo = true ;
+        }
+    }
+
+    showBookButtonMap(event: Event){
+        if((<HTMLInputElement>event.target).checked){
+            this.counterBookMap ++;
+            this.activeBookMap = true;
+            this.disabledBookMap = false;
+        }else{
+            if(this.counterBookMap <= 1){
+                this.activeBookMap = false;
+                this.disabledBookMap = true;
+            }
+            if(this.counterBookMap == 0){
+                return;
+            }
+            this.counterBookMap -- ;
         }
     }
 
