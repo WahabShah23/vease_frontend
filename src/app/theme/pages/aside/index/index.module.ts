@@ -6,25 +6,25 @@ import { LayoutModule } from '../../../layouts/layout.module';
 import { AsideComponent } from '../aside.component';
 
 const routes: Routes = [
-  {
-    "path": "",
-    "component": AsideComponent,
-    "children": [
-      {
+    {
         "path": "",
-        "component": IndexComponent
-      }
-    ]
-  }
+        "component": AsideComponent,
+        "children": [
+            {
+                "path": "",
+                "component": IndexComponent
+            }
+        ]
+    }
 ];
 @NgModule({
-  imports: [
-    CommonModule, RouterModule.forChild(routes), LayoutModule
-  ], exports: [
-    RouterModule
-  ], declarations: [
-    IndexComponent
-  ]
+    imports: [
+        CommonModule, RouterModule.forChild(routes), LayoutModule
+    ], exports: [
+        RouterModule
+    ], declarations: [
+        IndexComponent
+    ]
 })
 export class IndexModule {
 

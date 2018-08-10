@@ -6,15 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    NgbModule
-  ], exports: [
-    RouterModule
-  ], declarations: [
+    imports: [
+        CommonModule,
+        FormsModule,
+        NgbModule
+    ], exports: [
+        RouterModule
+    ], declarations: [
 
-  ]
+    ]
 })
 export class WizardWizard5Module {
 

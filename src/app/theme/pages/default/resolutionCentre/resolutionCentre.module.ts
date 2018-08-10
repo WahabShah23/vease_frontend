@@ -8,28 +8,28 @@ import { ResolutionCentreComponent } from "./resolutionCentre.component";
 import { HttpClientModule } from "@angular/common/http";
 
 const routes: Routes = [
-  {
-    path: "",
-    component: DefaultComponent,
-    children: [
-      {
+    {
         path: "",
-        component: ResolutionCentreComponent
-      }
-    ]
-  }
+        component: DefaultComponent,
+        children: [
+            {
+                path: "",
+                component: ResolutionCentreComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    LayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  exports: [RouterModule],
-  declarations: [ResolutionCentreComponent]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        LayoutModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+    ],
+    exports: [RouterModule],
+    declarations: [ResolutionCentreComponent]
 })
-export class ResolutionCentreModule {}
+export class ResolutionCentreModule { }

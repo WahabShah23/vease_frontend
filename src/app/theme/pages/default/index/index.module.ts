@@ -7,27 +7,27 @@ import { DefaultComponent } from "../default.component";
 import { AgmCoreModule } from "@agm/core";
 
 const routes: Routes = [
-  {
-    path: "",
-    component: DefaultComponent,
-    children: [
-      {
+    {
         path: "",
-        component: IndexComponent
-      }
-    ]
-  }
+        component: DefaultComponent,
+        children: [
+            {
+                path: "",
+                component: IndexComponent
+            }
+        ]
+    }
 ];
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    LayoutModule,
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg"
-    })
-  ],
-  exports: [RouterModule],
-  declarations: [IndexComponent]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        LayoutModule,
+        AgmCoreModule.forRoot({
+            apiKey: "AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg"
+        })
+    ],
+    exports: [RouterModule],
+    declarations: [IndexComponent]
 })
-export class IndexModule {}
+export class IndexModule { }

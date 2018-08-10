@@ -7,26 +7,26 @@ import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker'
 
 
 @Component({
-  selector: "wizard-lead-form",
-  templateUrl: "./leadFormWizard.html",
-  styleUrls: ["./leadFormWizard.css"],
-  encapsulation: ViewEncapsulation.None,
+    selector: "wizard-lead-form",
+    templateUrl: "./leadFormWizard.html",
+    styleUrls: ["./leadFormWizard.css"],
+    encapsulation: ViewEncapsulation.None,
 })
 export class WizardLeadForm implements OnInit, AfterViewInit {
 
-  Categorgy = "health";
+    Categorgy = "health";
 
 
-  constructor(private _script: ScriptLoaderService) {
+    constructor(private _script: ScriptLoaderService) {
 
-  }
-  ngOnInit() {
+    }
+    ngOnInit() {
 
-  }
-  ngAfterViewInit() {
-    this._script.loadScripts('wizard-lead-form',
-      ['assets/demo/default/custom/components/forms/wizard/wizard.js']);
+    }
+    ngAfterViewInit() {
+        this._script.loadScripts('wizard-lead-form',
+            ['assets/demo/default/custom/components/forms/wizard/wizard.js']);
 
-  }
+    }
 
 }

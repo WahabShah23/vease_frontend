@@ -13,32 +13,32 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ServerServices_Services } from "../../../../services/serverServices.services";
 
 const routes: Routes = [
-  {
-    path: "",
-    component: DefaultComponent,
-    children: [
-      {
+    {
         path: "",
-        component: EstimateResponseComponent
-      }
-    ]
-  }
+        component: DefaultComponent,
+        children: [
+            {
+                path: "",
+                component: EstimateResponseComponent
+            }
+        ]
+    }
 ];
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    CalendarModule.forRoot(),
-    LayoutModule,
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg"
-    }),
-    NgbModule.forRoot(),
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  exports: [NgbModule, HttpModule],
-  declarations: [EstimateResponseComponent],
-  providers: [ServerServices_Services]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        CalendarModule.forRoot(),
+        LayoutModule,
+        AgmCoreModule.forRoot({
+            apiKey: "AIzaSyABAXCmYooxcSc5GajYQIDIGgM9U2n6vyg"
+        }),
+        NgbModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    exports: [NgbModule, HttpModule],
+    declarations: [EstimateResponseComponent],
+    providers: [ServerServices_Services]
 })
-export class EstimateResponseModule {}
+export class EstimateResponseModule { }
