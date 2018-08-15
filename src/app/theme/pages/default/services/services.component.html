@@ -1,5 +1,6 @@
 <!-- Begin Sub Header -->
-<div class="m-subheader" appunwraptag="" [ngClass]="{'d-none':isDisplayDetail}">
+<div class="m-subheader" appunwraptag="" [ngClass]="{'d-none': isHeaderShow}">
+		<!--  -->
 	<div class="d-flex align-items-center">
 		<div class="mr-auto">
 			<h3 class="m-subheader__title">
@@ -28,10 +29,20 @@
 						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
 						<div class="dropdown-menu">
 						<a class="dropdown-item" href="#">Personal</a>
+							<a class="dropdown-item" href="" style="    padding-left: 32px;
+							margin-top: -15px;">Hair</a>
+							<a class="dropdown-item" href="" style="    padding-left: 32px;
+							margin-top: -15px;">Health</a>
+						<hr style="    margin: 0;
+						border-top: 1px solid;
+						width: 83%;
+						margin-left: 15px;">
 						<a class="dropdown-item" href="#">Autos</a>
-						<a class="dropdown-item" href="#">Health</a>
+							<a class="dropdown-item" href="" style="    padding-left: 32px;
+							margin-top: -15px;">Maintenance & Repair</a>
+					
 						</div>
-						<div class="dropdown" style="margin-left: 5px;">
+						<!-- <div class="dropdown" style="margin-left: 5px;">
 							<a class="btn btn-primary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 0px;">
 								Sub-Category
 							</a>
@@ -40,7 +51,7 @@
 								<a class="dropdown-item" href="#">Hair</a>
 								<a class="dropdown-item" href="#">Maintenance and Repair</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<input type="text" class="form-control" aria-label="Text input with dropdown button">
 					<div class="input-group-append">
@@ -52,12 +63,12 @@
 
 
 		<div style="padding-right:0px;">
-			   <span (click)="isMapDetail=false;">
+			   <span (click)="isDisplayDetail=false;">
 			   <button class="btn btn-link pull-right" (click)="changeView()">
 				<i class="fa" [ngClass]="{'fa-list' :   isListViewHide, 'fa-th' :isGridViewHide }"></i> {{viewName}} </button>
 			   </span>
 				
-				<button class="btn btn-link  pull-right" (click)="isMapDetail=true;">
+				<button class="btn btn-link  pull-right" (click)="mapViewChanging()" [hidden]="isDisplayDetail">
 						<i class="fa fa-map-marker" style="padding-right: 2px;
 						margin-top: -1px;"></i>Map View</button>
 				
@@ -65,7 +76,8 @@
 	</div>
 </div>
 
-<div class="m-subheader breadcrumb-header m--padding-top-5" *ngIf="!isDisplayDetail">
+<!-- *ngIf="isDisplayDetail" -->
+<div class="m-subheader breadcrumb-header m--padding-top-5" *ngIf="isBreadCrum">
 	<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 		<li class="m-nav__item m-nav__item--home">
 			<a class="m-nav__link m-nav__link--icon" routerLink="/index" ng-reflect-href="#">
@@ -83,17 +95,44 @@
 				</span>
 			</a>
 		</li>
+		<li class="m-nav__separator">
+				-
+			</li>
+	
+			<li class="m-nav__item" *ngIf="mapView">
+				<a class="m-nav__link" routerLink="/services">
+					<span class="m-nav__link-text" style=" font-size: 11px;">
+						Map View
+					</span>
+				</a>
+			</li>
+
+			<li class="m-nav__item"  [hidden]="isListViewHide">
+				<a class="m-nav__link" routerLink="/services">
+					<span class="m-nav__link-text" style=" font-size: 11px;">
+						List View
+					</span>
+				</a>
+			</li>
+
+			<li class="m-nav__item" [hidden]="isGridViewHide">
+				<a class="m-nav__link" routerLink="/services">
+					<span class="m-nav__link-text" style=" font-size: 11px;">
+						Grid View
+					</span>
+				</a>
+			</li>
 	</ul>
 </div>
 
-<hr class="customhr" *ngIf="!isDisplayDetail" />
+<hr class="customhr" *ngIf="isBreadCrum" />
 <!-- END: Subheader -->
 
 
 <!--Begin::Section-->
-<div class="m-content" [hidden] = "isMapDetail">
+<div class="m-content" [hidden] = "listGridViewContent">
 
-	<div class="row" [hidden]="isDisplayDetail">
+	<div class="row">
 
 		<!-- Filter Section Start -->
 		<div class="col-xl-3 col-lg-4">
@@ -261,7 +300,7 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Maintenance &amp; Repair
-														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isMoreDetail()">More Details</button>
 												</h6>
 
 
@@ -432,7 +471,7 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Hair
-														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isMoreDetail()">More Details</button>
 												</h6>
 
 												<div class="row service-item">
@@ -581,7 +620,7 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Checkup Services
-														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isMoreDetail()">More Details</button>
 												</h6>
 
 												<div class="row service-item">
@@ -716,7 +755,7 @@
 										<div class="row services-categories">
 											<div class="col-md-12 category-list">
 												<h6 class="service-heading">Room Cleaning
-														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+														<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isMoreDetail()">More Details</button>
 												</h6>
 
 												<div class="row service-item">
@@ -895,7 +934,7 @@
 							<div class="card-right col-lg-9">
 								<h6 class="text-muted pull-left">
 									<i class="fa fa-cog"></i> Service Details</h6>
-								<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+								<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isMoreDetail()">More Details</button>
 								<div class="clearfix"></div>
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
@@ -1064,7 +1103,7 @@
 							<div class="card-right col-lg-9">
 								<h6 class="text-muted pull-left">
 									<i class="fa fa-cog"></i> Service Details</h6>
-								<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isDisplayDetail=true;">More Details</button>
+								<button class="btn btn-link personMoreDetailsButton pull-right custom-padding-zero" (click)="isMoreDetail()">More Details</button>
 								<div class="clearfix"></div>
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
@@ -1204,7 +1243,7 @@
 							<div class="card-right col-lg-9">
 								<h6 class="text-muted pull-left">
 									<i class="fa fa-cog"></i> Service Details</h6>
-								<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
+								<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isMoreDetail()">More Details</button>
 								<div class="clearfix"></div>
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
@@ -1376,7 +1415,7 @@
 							<div class="card-right col-lg-9">
 								<h6 class="text-muted pull-left">
 									<i class="fa fa-cog"></i> Service Details</h6>
-								<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isDisplayDetail=true;">More Details</button>
+								<button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isMoreDetail()">More Details</button>
 								<div class="clearfix"></div>
 								<div class="row services-categories">
 									<div class="col-md-12 category-list">
@@ -1563,9 +1602,9 @@
 
 
 <!-- More Detail Content start -->
-<div class="m-content">
+<div class="m-content" style="margin-top: 30px;">
 	<!--Begin::Section-->
-	<div class="row detailSection" *ngIf="isDisplayDetail">
+	<div class="row detailSection" *ngIf="moreDetailShow">
 		<div class="col-md-12">
 			<div class="m-portlet" style=" margin-left: -30px;
 			margin-right: -30px;
@@ -1576,7 +1615,7 @@
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-sm-4">
-									<a class="btn btn-link" style="padding:0px;" (click)="isDisplayDetail=false;">
+									<a class="btn btn-link" style="padding:0px;" (click)="backToContent()">
 										<i class="fa fa-chevron-circle-left"></i> BACK</a>
 								</div>
 								<div class="col-sm-4">
@@ -2110,20 +2149,21 @@
 <!-- Map Detail Content Start -->
 <div class="m-content">
 	<!--Begin::Section-->
-	<div class="row detailSection" *ngIf="isMapDetail">
+	<div class="row detailSection" *ngIf="mapView">
 		<div class="col-md-12">
-			<div class="m-portlet" style=" margin-left: -30px;
-			margin-right: -30px;
-			margin-top: -60px;">
+			<div class="m-portlet" style="margin-left: -30px;
+										  margin-right: -30px;
+										  margin-top: -80px;
+										  margin-bottom: -32px;">
 				<div class="m-portlet__body">
 					<div class="row">
 
 						<div class="col-sm-12">
 							<div class="row">
-								<div class="col-sm-3">
+								<!-- <div class="col-sm-3">
 									<a class="btn btn-link" style="padding:0px; margin-top: -25px;" (click)="isMapDetail=false;">
 										<i class="fa fa-chevron-circle-left"></i> BACK</a>
-								</div>
+								</div> -->
 								<!-- <div class="col-sm-9">
 										<form style="    margin-top: -20px;
 										text-align: center;">
@@ -2976,11 +3016,19 @@
 					Items-List
 				</a>
 			</li>
+
+			<li class="nav-item m-tabs__item" *ngIf="proceedCounter > 0 ">
+				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href=""  aria-selected="false" (click)="activeTab('schedule')"  [ngClass]="{ 'active' : activeScheduleTab}" >
+					Schedule
+				</a>
+			</li>
+
 			<li class="nav-item m-tabs__item" *ngIf="proceedCounter > 0 ">
 				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href=""  aria-selected="false" (click)="activeTab('payment')"  [ngClass]="{ 'active' : activePaymentTab}" >
 					Payment
 				</a>
 			</li>
+			
 			<li class="nav-item m-tabs__item" *ngIf="proceedCounter > 0 ">
 				<a class="nav-link m-tabs__link custom-font-size" data-toggle="tab" href="" ng-reflect-href="#m_tabs_5_3" aria-selected="false" (click)="activeTab('more')" [ngClass]="{ 'active' : activeMoreTab}">
 					Confirmation
@@ -2991,6 +3039,7 @@
 
 		<div class="tab-content">
 
+			<!-- Items Tab Start Here -->
 			<div class="tab-pane active show" id="m_tabs_5_1" role="tabpanel"  [ngClass]="{ 'active' : activeItemTab, 
 			'show':  activeItemTab }">
 
@@ -3073,7 +3122,7 @@
 
 					  <div class="col text-right">
 							<button *ngIf="proceedCounter > 0 " type="button" class="btn btn-primary"
-								(click)="activeTab('payment')">Proceed</button>
+								(click)="activeTab('schedule')">Proceed</button>
 						</div>
 			   </div>
 
@@ -3236,7 +3285,9 @@
 
 					
 			</div>
+			<!-- Items Tab End Here -->
 
+			<!-- Payment Tab Start Here -->
 			<div class="tab-pane" [ngClass]="{ 'active' : activePaymentTab, 
 			'show':  activePaymentTab }"
 				id="m_tabs_5_2" role="tabpanel">
@@ -3388,7 +3439,9 @@
 				</form>
 
 			</div>
+			<!-- Payment Tab End Here -->
 
+			<!-- Conformation Tab Start Here -->
 			<div class="tab-pane" id="m_tabs_5_3" role="tabpanel" [ngClass]="{ 'active' : activeMoreTab, 
 			'show':  activeMoreTab }">
 
@@ -3446,14 +3499,64 @@
 				</div>
 
 			</div>
+			<!-- Conformation Tab end Here -->
 
-			<div class="tab-pane" id="m_tabs_5_4" role="tabpanel">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-				text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-				dummy text ever since the 1500s, when an unknown printer took a galley of type and
+			<!-- schedule Tab Start Here -->
+			<div class="tab-pane" id="m_tabs_5_4 " role="tabpanel"  [ngClass]="{ 'active' : activeScheduleTab, 
+			'show':  activeScheduleTab }">
+				
+				<form>
+					<div class="form-group">
+						<label for="sel1" style="font-weight: bold;">Select Employee</label>
+						<select class="form-control" id="sel1">
+							<option>All Preferences </option>
+							<option>John Smith </option>
+							<option>David Luiz</option>
+						</select>
+					</div>
+
+					<div class="form-group m-form__group">
+                        <label>
+                           <strong> Date &amp; Time Slot 1</strong>    
+                        </label>
+                        <br>
+                        <div>
+                            <div class="input-group date">
+                                <input class="form-control m-input" id="m_datetimepicker_3" placeholder="Select date &amp; time" readonly="" type="text">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o glyphicon-th"></i>
+                                    </span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label>
+                           <strong> Date &amp; Time Slot 2</strong>
+                        </label>
+                        <br>
+                        <div>
+                            <div class="input-group date">
+                                <input class="form-control m-input" id="m_datetimepicker_1" placeholder="Select date &amp; time" readonly="" type="text">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o glyphicon-th"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+				</form>
+				<div class="col text-right">
+						<button *ngIf="proceedCounter > 0 " type="button" class="btn btn-primary"
+							(click)="activeTab('payment')">Proceed</button>
+				</div>
 			</div>
+			<!-- schedule Tab Start Here -->
 
 		</div>
 	</div>

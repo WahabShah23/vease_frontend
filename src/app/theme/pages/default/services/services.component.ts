@@ -114,12 +114,22 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     isGridView = false;
     viewName = "Grid View";
-    isListViewHide = false;
+    isListViewHide = true;
     isGridViewHide = true;
-    isDisplayDetail = false;
+    isDisplayDetail = true;
     viewDate: Date = new Date();
     paymentCheckTickHide = false;
     isCustomer = true;
+
+    //view button start
+
+    mapView = true;
+    listGridViewContent = true;
+    moreDetailShow = false;
+    isHeaderShow = false;
+    isBreadCrum = true;
+
+    //view button end
 
     //Card Button Setting start
 
@@ -154,6 +164,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     proceedCounter = 0;
     activePaymentTab = false;
+    activeScheduleTab = false;
     activeItemTab = true;
     activeMoreTab = false;
     moreCheck = false;
@@ -330,7 +341,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
 
     changeView() {
-      
+        this.listGridViewContent = false;
+        this.mapView = false;
         if (this.isListViewHide) {
             this.isListViewHide = false;
             this.isGridViewHide = true;
@@ -602,14 +614,23 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             this.activePaymentTab = false;
             this.activeItemTab = true;
             this.activeMoreTab = false;
+            this.activeScheduleTab = false;
         }else if(value == "payment"){
             this.activePaymentTab = true;
             this.activeItemTab = false;
             this.activeMoreTab = false;
-        }else{
+            this.activeScheduleTab = false;
+        }else if(value == "schedule"){
+            this.activePaymentTab = false;
+            this.activeItemTab = false;
+            this.activeMoreTab = false;
+            this.activeScheduleTab = true;
+        }
+        else{
             this.activePaymentTab = false;
             this.activeItemTab = false;
             this.activeMoreTab = true;
+            this.activeScheduleTab = false;
         }
     }
 
@@ -658,6 +679,30 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             }
             this.counterBookMap -- ;
         }
+    }
+
+    isMoreDetail(){
+        this.moreDetailShow = true;
+        this.mapView = false;
+        this.listGridViewContent = true;
+        this.isHeaderShow = true;
+        this.isBreadCrum = false;
+    }
+
+    backToContent(){
+        this.moreDetailShow = false;
+        this.mapView = false;
+        this.listGridViewContent = false;
+        this.isHeaderShow = false;
+        this.isBreadCrum = true;
+    }
+
+    mapViewChanging(){
+        this.listGridViewContent = true;
+        this.mapView = true;
+        this.isDisplayDetail = true;
+        this.isListViewHide = true;
+       this.isGridViewHide = true;
     }
 
 }
