@@ -3509,20 +3509,79 @@
 					<div class="form-group">
 						<label for="sel1" style="font-weight: bold;">Select Employee</label>
 						<select class="form-control" id="sel1">
-							<option>All Preferences </option>
+							<option>No Preferences </option>
 							<option>John Smith </option>
 							<option>David Luiz</option>
 						</select>
 					</div>
 
+					<!-- <div class="row">
+							<div class="col">
+								<h5>
+									Company Timings
+								</h5>
+								<table class="table table-hover table-sm ">
+										<thead>
+										  <tr>
+											<th scope="col">Days</th>
+											<th scope="col">Start Time</th>
+											<th scope="col">Close Time</th>
+										  </tr>
+										</thead>
+										<tbody> 
+										  <tr class="custom-pointer custom-hover-change-color">
+											<td>Monday</td>
+											<td>9 am</td>
+											<td>6 pm</td>
+										  </tr>
+										  <tr class="custom-pointer custom-hover-change-color">
+											<td>Monday</td>
+											<td>9 am</td>
+											<td>6 pm</td>
+											</tr>
+										   <tr class="custom-pointer custom-hover-change-color">
+											<td>Tuesday</td>
+											<td>9 am</td>
+											<td>6 pm</td>
+										   </tr>
+											<tr class="custom-pointer custom-hover-change-color">
+												<td>Wednesday</td>
+												<td>9 am</td>
+												<td>6 pm</td>
+											</tr>
+											<tr class="custom-pointer custom-hover-change-color">
+												<td>Thursday</td>
+												<td>9 am</td>
+												<td>6 pm</td>
+											</tr>
+											<tr class="custom-pointer custom-hover-change-color">
+												<td>Friday</td>
+												<td>9 am</td>
+												<td>4 pm</td>
+											</tr>
+											<tr class="custom-pointer custom-hover-change-color">
+													<td>Saturaday</td>
+													<td class="m--font-danger">close</td>
+													
+												</tr>
+												<tr class="custom-pointer custom-hover-change-color">
+														<td>Sunday</td>
+														<td class="m--font-danger">close</td>
+														
+													</tr>
+										</tbody>
+									  </table>
+							</div>
+					</div> -->
+
 					<div class="form-group m-form__group">
                         <label>
-                           <strong> Date &amp; Time Slot 1</strong>    
+                           <strong>Select Date</strong>    
                         </label>
                         <br>
                         <div>
                             <div class="input-group date">
-                                <input class="form-control m-input" id="m_datetimepicker_3" placeholder="Select date &amp; time" readonly="" type="text">
+                                <input class="form-control m-input " id="m_datepicker_2_validate" placeholder="Select Date" readonly="" type="text">
                                 <div class="input-group-append">
                                     <span class="input-group-text">
                                         <i class="la la-calendar-check-o glyphicon-th"></i>
@@ -3534,12 +3593,12 @@
 
                     <div class="form-group m-form__group">
                         <label>
-                           <strong> Date &amp; Time Slot 2</strong>
+                           <strong> Select Time Slot </strong>
                         </label>
                         <br>
                         <div>
                             <div class="input-group date">
-                                <input class="form-control m-input" id="m_datetimepicker_1" placeholder="Select date &amp; time" readonly="" type="text">
+                                <input class="form-control m-input timepicker" id="m_timepicker_2_validate" placeholder="Select Time " readonly="" type="text">
                                 <div class="input-group-append">
                                     <span class="input-group-text">
                                         <i class="la la-calendar-check-o glyphicon-th"></i>
@@ -3547,14 +3606,16 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
 				</form>
+
+				
+
 				<div class="col text-right">
 						<button *ngIf="proceedCounter > 0 " type="button" class="btn btn-primary"
 							(click)="activeTab('payment')">Proceed</button>
 				</div>
+
 			</div>
 			<!-- schedule Tab Start Here -->
 
