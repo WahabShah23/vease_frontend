@@ -63,10 +63,10 @@
 
 
 		<div style="padding-right:0px;">
-			   <span (click)="isDisplayDetail=false;">
+			<!--   <span (click)="isDisplayDetail=false;">
 			   <button class="btn btn-link pull-right" (click)="changeView()">
 				<i class="fa" [ngClass]="{'fa-list' :   isListViewHide, 'fa-th' :isGridViewHide }"></i> {{viewName}} </button>
-			   </span>
+			   </span> -->
 				
 				<button class="btn btn-link  pull-right" (click)="mapViewChanging()" [hidden]="isDisplayDetail">
 						<i class="fa fa-map-marker" style="padding-right: 2px;
@@ -107,7 +107,7 @@
 				</a>
 			</li>
 
-			<li class="m-nav__item"  [hidden]="isListViewHide">
+		<!--	<li class="m-nav__item"  [hidden]="isListViewHide">
 				<a class="m-nav__link" routerLink="/services">
 					<span class="m-nav__link-text" style=" font-size: 11px;">
 						List View
@@ -121,7 +121,7 @@
 						Grid View
 					</span>
 				</a>
-			</li>
+			</li> -->
 	</ul>
 </div>
 

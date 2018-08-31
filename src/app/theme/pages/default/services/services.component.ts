@@ -133,7 +133,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     //Card Button Setting start
 
-    counterBook = 0 ;
+    counterBook = 0;
     disabledBook = true;
     activeBook = false;
 
@@ -142,7 +142,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
     //Map buttons Start
     isMapDetail = false;
-    counterBookMap = 0 ;
+    counterBookMap = 0;
     disabledBookMap = true;
     activeBookMap = false;
     //Map button End
@@ -150,13 +150,13 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     //side pop-up
     showServices = false;
     showOrderHistory = false;
-    showInfo = false ;
+    showInfo = false;
 
     //Info Modal variable Start here
 
-    companyInfoTitle="";
-    priceInfoTitle="";
-    serviceInfoTitle="";
+    companyInfoTitle = "";
+    priceInfoTitle = "";
+    serviceInfoTitle = "";
 
     //Info Modal variable End here
 
@@ -171,7 +171,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     coupon1check = false;
     coupon2check = false;
     coupon3check = false;
-    orderNowCheck=false;
+    orderNowCheck = false;
     hideTermsModal = true;
     hideTermsModal1 = true;
 
@@ -559,74 +559,74 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         }
     }
 
-    updateInfoModal(company:string, price:string, title:string){
+    updateInfoModal(company: string, price: string, title: string) {
         this.companyInfoTitle = company;
-        this.priceInfoTitle=price
-        this.serviceInfoTitle=title
+        this.priceInfoTitle = price
+        this.serviceInfoTitle = title
     }
 
-    showProceedButton(event: Event){
-        if((<HTMLInputElement>event.target).checked){
-            this.proceedCounter ++;
-            this.hideTermsModal1=false;
-        }else{
-            this.hideTermsModal1=true;
-            if(this.proceedCounter == 0){
+    showProceedButton(event: Event) {
+        if ((<HTMLInputElement>event.target).checked) {
+            this.proceedCounter++;
+            this.hideTermsModal1 = false;
+        } else {
+            this.hideTermsModal1 = true;
+            if (this.proceedCounter == 0) {
                 return;
             }
-            this.proceedCounter --;
+            this.proceedCounter--;
         }
     }
 
-    showProceedButton1(event: Event){
-        if((<HTMLInputElement>event.target).checked){
-            this.proceedCounter ++;
+    showProceedButton1(event: Event) {
+        if ((<HTMLInputElement>event.target).checked) {
+            this.proceedCounter++;
             this.hideTermsModal = false;
-        }else{
+        } else {
             this.hideTermsModal = true;
-            if(this.proceedCounter == 0){
+            if (this.proceedCounter == 0) {
                 return;
             }
-            this.proceedCounter --;
+            this.proceedCounter--;
         }
     }
 
-    showBookButton(event: Event){
-        if((<HTMLInputElement>event.target).checked){
-            this.counterBook ++;
+    showBookButton(event: Event) {
+        if ((<HTMLInputElement>event.target).checked) {
+            this.counterBook++;
             this.activeBook = true;
             this.disabledBook = false;
-        }else{
-            if(this.counterBook <= 1){
+        } else {
+            if (this.counterBook <= 1) {
                 this.activeBook = false;
                 this.disabledBook = true;
             }
-            if(this.counterBook == 0){
+            if (this.counterBook == 0) {
                 return;
             }
-            this.counterBook -- ;
+            this.counterBook--;
         }
     }
 
 
-    activeTab(value: string){
-        if(value == "items"){
+    activeTab(value: string) {
+        if (value == "items") {
             this.activePaymentTab = false;
             this.activeItemTab = true;
             this.activeMoreTab = false;
             this.activeScheduleTab = false;
-        }else if(value == "payment"){
+        } else if (value == "payment") {
             this.activePaymentTab = true;
             this.activeItemTab = false;
             this.activeMoreTab = false;
             this.activeScheduleTab = false;
-        }else if(value == "schedule"){
+        } else if (value == "schedule") {
             this.activePaymentTab = false;
             this.activeItemTab = false;
             this.activeMoreTab = false;
             this.activeScheduleTab = true;
         }
-        else{
+        else {
             this.activePaymentTab = false;
             this.activeItemTab = false;
             this.activeMoreTab = true;
@@ -635,53 +635,53 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     }
 
 
-    thanksUpdate(){
-       this.visibleSidebar2 = false
-       this.proceedCounter = 0;
-       this.activePaymentTab = false;
-       this.activeItemTab = true;
-       this.activeMoreTab = false;
-       this.moreCheck = false;
-       this.coupon1check = false;
-       this.coupon2check = false;
-       this.coupon3check = false;
-       this.orderNowCheck=false;
+    thanksUpdate() {
+        this.visibleSidebar2 = false
+        this.proceedCounter = 0;
+        this.activePaymentTab = false;
+        this.activeItemTab = true;
+        this.activeMoreTab = false;
+        this.moreCheck = false;
+        this.coupon1check = false;
+        this.coupon2check = false;
+        this.coupon3check = false;
+        this.orderNowCheck = false;
     }
 
-    sideInfoPop(value: string){
-        if(value == "history"){
+    sideInfoPop(value: string) {
+        if (value == "history") {
             this.showServices = false;
             this.showOrderHistory = true;
-            this.showInfo = false ;
-        }else if (value == "service"){
+            this.showInfo = false;
+        } else if (value == "service") {
             this.showServices = true;
             this.showOrderHistory = false;
-            this.showInfo = false ;
-        }else{
+            this.showInfo = false;
+        } else {
             this.showServices = false;
             this.showOrderHistory = false;
-            this.showInfo = true ;
+            this.showInfo = true;
         }
     }
 
-    showBookButtonMap(event: Event){
-        if((<HTMLInputElement>event.target).checked){
-            this.counterBookMap ++;
+    showBookButtonMap(event: Event) {
+        if ((<HTMLInputElement>event.target).checked) {
+            this.counterBookMap++;
             this.activeBookMap = true;
             this.disabledBookMap = false;
-        }else{
-            if(this.counterBookMap <= 1){
+        } else {
+            if (this.counterBookMap <= 1) {
                 this.activeBookMap = false;
                 this.disabledBookMap = true;
             }
-            if(this.counterBookMap == 0){
+            if (this.counterBookMap == 0) {
                 return;
             }
-            this.counterBookMap -- ;
+            this.counterBookMap--;
         }
     }
 
-    isMoreDetail(){
+    isMoreDetail() {
         this.moreDetailShow = true;
         this.mapView = false;
         this.listGridViewContent = true;
@@ -689,7 +689,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.isBreadCrum = false;
     }
 
-    backToContent(){
+    backToContent() {
         this.moreDetailShow = false;
         this.mapView = false;
         this.listGridViewContent = false;
@@ -697,12 +697,12 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         this.isBreadCrum = true;
     }
 
-    mapViewChanging(){
+    mapViewChanging() {
         this.listGridViewContent = true;
         this.mapView = true;
         this.isDisplayDetail = true;
         this.isListViewHide = true;
-       this.isGridViewHide = true;
+        this.isGridViewHide = true;
     }
 
 }
